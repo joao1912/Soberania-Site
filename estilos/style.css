@@ -170,5 +170,15 @@ img.carta {
     border: 2px solid white;
 }
 
+section.conteinerPrincipal_cartas_escuro h2 {
+    font-size: 1.3em;
+}
+
+section.conteinerPrincipal_cartas_claro h2 {
+    font-size: 1.3em;
+}
+
+
+
 
 
