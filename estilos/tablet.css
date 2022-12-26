@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+main#manualCartas {
+    width: 90vw;
+    padding-top: 36px;
+}
+
+section.conteinerPrincipal_cartas_escuro {
+    margin: auto;
+    width: 80vw;
+    height: 200px;
+    margin-bottom: 120px;
+    padding-right: 30px;
+}
+
+section.conteinerPrincipal_cartas_claro {
+    margin: auto;
+    width: 80vw;
+    height: 200px;
+    margin-bottom: 120px;
+    padding-left: 30px;
+}
