@@ -20,3 +20,15 @@ section.conteinerPrincipal_cartas_claro {
     margin-bottom: 120px;
     padding-left: 30px;
 }
+
+/* pag 4 (Play)*/
+
+#mainPlay {
+    width: 97vw;
+    height: auto;
+    
+}
+
+html {
+    background-color: lightgray;
+}
