@@ -131,6 +131,7 @@ section.conteinerPrincipal_cartas_escuro {
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
+    height: 150px;
 }
 
 section.conteinerPrincipal_cartas_claro {
@@ -138,6 +139,7 @@ section.conteinerPrincipal_cartas_claro {
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
+    height: 150px;
 }
 
 section.conteinerCarta_escuro {
