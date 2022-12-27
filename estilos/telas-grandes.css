@@ -1,6 +1,68 @@
 @charset "UTF-8";
-@media screen and (min-width:992px){
-    main#manualCartas {
-        background-color: aqua;
-    }
+
+.baseDeConteudo {
+    width: 60vw;
+    padding: 30px;
+}
+
+
+
+/*pag 2 (Como usar)*/ 
+#infoFerramentas {
+    width: 80vw;
+    padding: 30px;
+}
+
+/*Pag 3 (cartas)*/
+
+main#manualCartas {
+    width: 70vw;
+}
+
+section.conteinerPrincipal_cartas_escuro {
+    transition: width 1s;
+    width: 40vw;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-right: 80px;
+}
+
+section.conteinerPrincipal_cartas_claro {
+    transition: width 1s;
+    width: 40vw;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+
+section.conteinerCarta_escuro {
+    width: 200px;
+    height: 350px;
+    margin-top: 12px;
+}
+
+section.conteinerCarta_claro {
+    width: 200px;
+    height: 350px;
+    margin-top: 12px;
+}
+
+
+img.carta {
+    width: 180px;
+    height: 330px;
+}
+
+/* pag 4 (Play)*/
+
+#mainPlay {
+    width: 97vw;
+    height: auto;
+    
+}
+
+html {
+    background-color: lightgray;
 }

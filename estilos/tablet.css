@@ -6,6 +6,7 @@ main#manualCartas {
 }
 
 section.conteinerPrincipal_cartas_escuro {
+    transition: width 1s;
     margin: auto;
     width: 80vw;
     height: 200px;
@@ -14,6 +15,7 @@ section.conteinerPrincipal_cartas_escuro {
 }
 
 section.conteinerPrincipal_cartas_claro {
+    transition: width 1s;
     margin: auto;
     width: 80vw;
     height: 200px;
