@@ -224,5 +224,43 @@ input#play:hover {
 }
 
 
+/*pag 5 (Jogo Iniciado)*/
+
+header#headerFormulario {
+    background-image: none;
+    background-color: lightgray;
+    margin-bottom: -40px;
+    margin-top: 10px;
+}
+
+section.jogoIniciado {
+    background-color: white;
+    width: 93vw;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.278);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.jogoIniciado  h2{
+    text-align: center;
+    padding: 20px;
+}
+
+.conteinerBotao {
+    background-color: antiquewhite;
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+}
+
+
+
+
+
+
 
 
