@@ -257,7 +257,9 @@ section.jogoIniciado {
 
 }
 
-
+.jogoIniciado input.botao {
+    width: 40px;
+}
 
 
 
