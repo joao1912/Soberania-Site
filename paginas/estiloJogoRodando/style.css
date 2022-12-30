@@ -4,9 +4,130 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 html,body {
     background-color: antiquewhite;
 }
+
+section#evento {
+    background-color: black;
+    padding: 15px;
+}
+
+section#evento h1 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+section#evento i{
+    padding: 10px;
+    background-color: white;
+    text-align: left;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+section#evento i:hover {
+    background-color: rgb(77, 76, 76);
+    color: red;
+}
+
+main {
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-size: 2.3em;
+    text-decoration: underline;
+}
+
+section#DadosJogadores {
+    background-color: white;
+    width: 90vw;
+    padding: 10px;
+    margin: auto;
+    margin-top: 17px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 0px 8px rgba(63, 63, 63, 0.27);
+}
+
+section#DadosJogadores h1 {
+    text-align: center;
+    font-size: 2.3em;
+    text-decoration: underline;
+}
+
+section.status {
+    margin: 10px;
+    padding: 10px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.27);
+}
+
+section h2 {
+    text-align: center;
+}
+
+section#pais1 {
+    background-color: cadetblue;
+}
+
+section#pais2 {
+    background-color: brown;
+}
+
+section#pais3 {
+    background-color: coral;
+}
+
+section#pais4 {
+    background-color: thistle;
+    margin-bottom: 10px;
+}
+
+section#ferramentas {
+    background-color: white;
+    width: 90vw;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 8px rgba(63, 63, 63, 0.27);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}
+
+section#ferramentas h1,h2 {
+    text-align: center;
+}
+
+section#ferramentas div {
+    width: 80%;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+section#ferramentas div:hover {
+    background-color: rgb(170, 170, 170);
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: border-radius 0.3s;
+}
+
+footer {
+    
+}
+
 

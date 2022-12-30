@@ -262,7 +262,22 @@ section.jogoIniciado {
 }
 
 
-/* Jogo Rodando */
+footer i{
+    padding: 10px;
+    background-color: white;
+    text-align: left;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+    margin: 10px;
+
+    margin-top: -20px;
+}
+
+footer i:hover {
+    background-color: rgb(77, 76, 76);
+    color: red;
+}
 
 
 

@@ -38,4 +38,6 @@ function CardEvent() {
 
 function JogoRodando() {
     window.location.href = "pagina-jogoRodando.html"
+
+    
 }
