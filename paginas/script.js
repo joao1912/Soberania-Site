@@ -38,6 +38,58 @@ function CardEvent() {
 
 function JogoRodando() {
     window.location.href = "pagina-jogoRodando.html"
+    /* população */ 
+    let pop_1 = document.getElementById("populacao_P1")
+    let pop_2 = document.getElementById("populacao_P2")
+    let pop_3 = document.getElementById("populacao_P3")
+    let pop_4 = document.getElementById("populacao_P4")
 
+    /* militar */
+    let mili_1 = document.getElementById("militar_P1")
+    let mili_2 = document.getElementById("militar_P2")
+    let mili_3 = document.getElementById("militar_P3")
+    let mili_4 = document.getElementById("militar_P4")
+
+    /* Economia */
+    let econ_1 = document.getElementById("economia_P1")
+    let econ_2 = document.getElementById("economia_P2")
+    let econ_3 = document.getElementById("economia_P3")
+    let econ_4 = document.getElementById("economia_P4")
+
+    /* Opinião Publica */
+    let OP_1 = document.getElementById("op_P1")
+    let OP_2 = document.getElementById("op_P2")
+    let OP_3 = document.getElementById("op_P3")
+    let OP_4 = document.getElementById("op_P4")
+
+    let player_1 = {
+        populacao: 50, /* MAX (50)*/
+        militar: 5, /* MAX (15)*/
+        economia: 10000,
+        opiniao_publica: 100 /* MAX (100)*/
+    }
+
+    let player_2 = {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
+
+    let player_3 = {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
+
+    let player_4 = {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
+
+    
     
 }
