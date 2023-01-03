@@ -126,6 +126,8 @@ section#ferramentas div:hover {
     transition: border-radius 0.3s;
 }
 
-
+section.status p {
+    line-height: 1.5em;
+}
 
 
