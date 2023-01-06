@@ -1,3 +1,5 @@
+let botaoHome = document.getElementById("Bsair")
+
 let quantJ1 = document.getElementById("quant1")
 let quantJ2 = document.getElementById("quant2")
 let quantJ3 = document.getElementById("quant3")
@@ -58,9 +60,6 @@ let player_4 = {
     opiniao_publica: 100
 }
 
-
-
-
 /* --------------------------------------------- */
          /* Configurações importantes*/ 
 let QuantidadeJogadores = ""
@@ -70,6 +69,13 @@ let Cartas_de_evento = ""
 function iniciar() {
     window.location.href = "pagina-jogoIniciado.html"
 }
+
+botaoHome.addEventListener("click",function(){
+    let sair = confirm("Você ira perder todo progresso, deseja sair?")
+    if(sair) { 
+        window.location.href = "../index.html" 
+    } 
+})
 
 function QuantJogadores() {
     if (quantJ1.checked) {
@@ -93,9 +99,23 @@ function CardEvent() {
 
 function JogoRodando() {
     window.location.href = "pagina-JogoRodando.html"
+    alert(Cartas_de_evento + " cartas de evento")
+    alert(QuantidadeJogadores + "quantidade jogadores")
 }
 
 function economia() {
-    
+    window.location.href = "../ferramentas/economia.html"
+}
+
+function fabricar() {
+    window.location.href = "../ferramentas/fabricar.html"
+}
+
+function usarCarta() {
+    window.location.href = "../ferramentas/usar-carta.html"
+}
+
+function regras() {
+    window.location.href = "../ferramentas/regras.html"
 }
 
