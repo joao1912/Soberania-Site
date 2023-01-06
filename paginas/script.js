@@ -107,8 +107,6 @@ function JogoRodando() {
 }
 
 function economia() {
-    alert(player_1.economia)
-    player_1.economia = "500"
     window.location.href = "../ferramentas/economia.html"
 }
 
