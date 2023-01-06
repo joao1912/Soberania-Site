@@ -32,39 +32,41 @@ let OP_2 = document.getElementById("op_P2")
 let OP_3 = document.getElementById("op_P3")
 let OP_4 = document.getElementById("op_P4")
 
-let player_1 = {
-    populacao: 50, /* MAX (50)*/
-    militar: 5, /* MAX (15)*/
-    economia: 10000,
-    opiniao_publica: 100 /* MAX (100)*/
-}
+function atributos() {
+    let player_1 = {
+        populacao: 50, /* MAX (50)*/
+        militar: 5, /* MAX (15)*/
+        economia: 10000,
+        opiniao_publica: 100 /* MAX (100)*/
+    }
 
-let player_2 = {
-    populacao: 50,
-    militar: 5,
-    economia: 10000,
-    opiniao_publica: 100
-}
+    let player_2 = {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
 
-let player_3 = {
-    populacao: 50,
-    militar: 5,
-    economia: 10000,
-    opiniao_publica: 100
-}
+    let player_3 = {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
 
-let player_4 = {
-    populacao: 50,
-    militar: 5,
-    economia: 10000,
-    opiniao_publica: 100
-}
+    let player_4 = {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
 
-/* --------------------------------------------- */
-         /* Configurações importantes*/ 
-let QuantidadeJogadores = ""
-let Cartas_de_evento = ""
-/* --------------------------------------------- */
+    /* --------------------------------------------- */
+            /* Configurações importantes*/ 
+    let QuantidadeJogadores = ""
+    let Cartas_de_evento = ""
+    /* --------------------------------------------- */
+}
 
 function iniciar() {
     window.location.href = "pagina-jogoIniciado.html"
@@ -98,12 +100,15 @@ function CardEvent() {
 }
 
 function JogoRodando() {
+    atributos()
     window.location.href = "pagina-JogoRodando.html"
     alert(Cartas_de_evento + " cartas de evento")
     alert(QuantidadeJogadores + "quantidade jogadores")
 }
 
 function economia() {
+    alert(player_1.economia)
+    player_1.economia = "500"
     window.location.href = "../ferramentas/economia.html"
 }
 
