@@ -60,6 +60,7 @@ let player_4 = {
 
 
 
+
 /* --------------------------------------------- */
          /* Configurações importantes*/ 
 let QuantidadeJogadores = ""
@@ -91,7 +92,7 @@ function CardEvent() {
 }
 
 function JogoRodando() {
-    window.location.href = "pagina-jogoRodando.html"
+    window.location.href = "pagina-JogoRodando.html"
 }
 
 function economia() {
