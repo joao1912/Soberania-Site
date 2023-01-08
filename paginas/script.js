@@ -104,33 +104,45 @@ function JogoRodando() {
 
 function economia() {
     document.getElementById("ferramentas").style.display = "none"
-    for(let c = 0 ; c < 10 ; c++) {
-        document.getElementsByClassName("atributosF")[c].style.display = "none"
-        
-    }
+    document.getElementById("telaEconomia").style.display = "block"
 }
 
 function fabricar() {
     document.getElementById("ferramentas").style.display = "none"
-    
-    for(let c = 0 ; c < 10 ; c++) {
-        document.getElementsByClassName("atributosF")[c].style.display = "none"
-    }
+    document.getElementById("telaFabricar").style.display = "block"
 }
 
 function usarCarta() {
     document.getElementById("ferramentas").style.display = "none"
-    for(let c = 0 ; c < 10 ; c++) {
-        let tela = document.getElementsByClassName("atributosF")[c]
-        tela.style.display = "none"
-    }
+    document.getElementById("telaUsarCarta").style.display = "block"
 }
 
 function regras() {
     document.getElementById("ferramentas").style.display = "none"
-    for(let c = 0 ; c < 10 ; c++) {
-        let tela = document.getElementsByClassName("atributosF")[c]
-        tela.style.display = "none"
-    }
+    document.getElementById("telaRegras").style.display = "block"
 }
+
+
+document.getElementsByClassName("Aretornar")[0].addEventListener('click',function(){
+    document.getElementById("telaEconomia").style.display = "none"
+    document.getElementById("ferramentas").style.display = "block"
+})
+
+document.getElementsByClassName("Aretornar")[1].addEventListener('click',function(){
+    document.getElementById("telaFabricar").style.display = "none"
+    document.getElementById("ferramentas").style.display = "block"
+})
+
+document.getElementsByClassName("Aretornar")[2].addEventListener('click',function(){
+    document.getElementById("telaUsarCarta").style.display = "none"
+    document.getElementById("ferramentas").style.display = "block"
+})
+
+document.getElementsByClassName("Aretornar")[3].addEventListener('click',function(){
+    document.getElementById("telaRegras").style.display = "none"
+    document.getElementById("ferramentas").style.display = "block"
+})
+
+
+
 
