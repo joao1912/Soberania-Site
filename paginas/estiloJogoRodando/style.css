@@ -221,7 +221,72 @@ div.paisMoney {
     height: 60px;
 }
 
+i#sinalPais_Positivo {
+    background-color: white;
+    cursor: default;
+    color: black;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
 
+i#sinalPais_Negativo {
+    background-color: white;
+    cursor: default;
+    color: black;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+div.quantDinheiro {
+    display: block;
+    margin: auto;
+    margin-top: 5px; 
+    margin-bottom: 10px;
+    background-color: rgba(211, 211, 211, 0.514);
+    padding: 3px;
+    text-align: left;
+    border-radius: 2px;
+    width: 100px;
+}
+
+.quantDinheiro span {
+    padding-top: 4px;
+    background-color: lightgray;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+div.infoPais {
+    display: block;
+    width: 100px;
+    height: 25px;
+    border-radius: 2px;
+    margin: auto;
+    background-color: rgba(211, 211, 211, 0.514);
+    margin-bottom: 3px;
+}
+
+div.nomePais {
+    display: block;
+    width: 100px;
+    height: 25px;
+    border-radius: 2px;
+    margin: auto;
+    background-color: rgba(211, 211, 211, 0.514);
+}
+
+div.botaoTransfer {
+    display: block;
+    background-color: gray;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 15px;
+}
 
 
 
