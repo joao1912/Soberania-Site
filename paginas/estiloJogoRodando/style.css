@@ -242,7 +242,7 @@ i#sinalPais_Negativo {
 div.quantDinheiro {
     display: block;
     margin: auto;
-    margin-top: 5px; 
+    margin-top: 5px;  
     margin-bottom: 10px;
     background-color: rgba(211, 211, 211, 0.514);
     padding: 3px;
@@ -257,6 +257,11 @@ div.quantDinheiro {
     padding: 3px;
     border-radius: 5px;
     font-size: 1.5em;
+    cursor: default;
+}
+
+.textoMoney {
+    size: 80px; /*Arrumar aqui*/
 }
 
 div.infoPais {
