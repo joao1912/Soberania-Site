@@ -197,6 +197,50 @@ div.paisMoney {
     margin-top: -2%;
 }
 
+#menuIcone1 {
+    background-color: gray;
+    padding: 0.8px;
+    border-radius: 3px;
+    width: 100px;
+}
+
+#menuIcone1:hover {
+    background-color: rgb(149, 148, 148);
+    cursor: pointer;
+}
+
+#menuIcone2 {
+    background-color: gray;
+    padding: 0.8px;
+    border-radius: 3px;
+    width: 100px;
+}
+
+#menuIcone2:hover {
+    background-color: rgb(149, 148, 148);
+    cursor: pointer;
+}
+
+div.selecionarPais {
+    position: relative;
+    background-color: white;
+    width: 100px;
+    height: 125px;
+    visibility: hidden;      /*VISIBILIDADE*/
+
+}
+
+.selecionarPais li {
+    border: 1px solid black;
+    padding: 2.5px;
+    list-style: none;
+}
+
+.selecionarPais li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
 .subTela div {
     display: inline-block;
 }
