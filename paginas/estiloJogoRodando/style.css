@@ -327,7 +327,13 @@ div.quantDinheiro {
 }
 
 #bigIcon {
-    
+    width: 100px;
+    height: 60px;
+    margin-top: -10px;
+    margin-left: -4px;
+    border-radius: 2px;
+    padding: 18px;
+    padding-left: 36px;
 }
 
 .textoMoney {
