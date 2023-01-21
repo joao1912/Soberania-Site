@@ -125,10 +125,18 @@ function regras() {
 
 
 
+
 (function(){
+
+    let economiaPositivo = ""
+    let economiaNegativo = ""
+
     document.getElementsByClassName("Aretornar")[0].addEventListener('click',function(){
     document.getElementById("telaEconomia").style.display = "none"
     document.getElementById("ferramentas").style.display = "block"
+    document.querySelector(".infoPais").textContent = "$ - "
+    economiaPositivo = ""
+    economiaNegativo = ""
     })
 
     document.getElementsByClassName("Aretornar")[1].addEventListener('click',function(){
@@ -168,30 +176,41 @@ function regras() {
         }
     })
 
+
     document.querySelector("#pais1_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = player_1.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaNegativo = "pais1"
     })
     document.querySelector("#pais2_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = player_2.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaNegativo = "pais3"
     })
     document.querySelector("#pais3_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = player_3.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaNegativo = "pais3"
     })
     document.querySelector("#pais4_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent =  player_4.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaNegativo = "pais4"
     })
     document.querySelector("#banco_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = "$$$$$$"
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaNegativo = "banco"
     })
 
 
@@ -199,28 +218,84 @@ function regras() {
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_1.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaPositivo = "pais1"
     })
     document.querySelector("#pais2_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_2.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaPositivo = "pais2"
     })
     document.querySelector("#pais3_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_3.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaPositivo = "pais3"
     })
     document.querySelector("#pais4_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_4.economia
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaPositivo = "pais4"
     })
     document.querySelector("#banco_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = "$$$$$$"
         document.querySelector(".botaoTransfer").style.visibility = "visible"
+
+        economiaPositivo = "banco"
     })
 
+    document.querySelector(".botaoTransfer").addEventListener("click",function(){ /* textoMoney */
+        let transfer = 0
+        let dinheiroAtual = document.querySelector(".infoPais")[1]
+        if(economiaNegativo === "banco" && economiaPositivo === "banco") {
+            /* erro */
+        } else {
+            transfer = Number(document.querySelector(".textoMoney").value)
+            alert(transfer)
+            switch(economiaNegativo) {
+                case "pais1":
+                    player_1.economia -= transfer
+                    dinheiroAtual = player_1.economia
+                    break
+                case "pais2":
+                    player_2.economia -= transfer
+                    break
+                case "pais3":
+                    player_3.economia -= transfer
+                    break
+                case "pais4":
+                    player_4.economia -= transfer
+                    break
+                case "banco":
+                /* NULL */
+            }
+            
+            switch(economiaPositivo) {
+                case "pais1":
+                    player_1.economia += transfer
+                    break
+                case "pais2":
+                    player_2.economia += transfer
+                    break
+                case "pais3":
+                    player_3.economia += transfer
+                    break
+                case "pais4":
+                    player_4.economia += transfer
+                    break
+                case "banco":
+                /* NULL */
+            }
+        }
+        alert(player_1.economia + "player 1")
+        alert(player_2.economia + "player 2")
+    })
     
 })()
 
