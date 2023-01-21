@@ -164,7 +164,49 @@ function regras() {
         }
     })
 
-    
+    document.querySelector("#pais1_negativo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais1").style.visibility = "hidden"
+        document.querySelector(".infoPais").textContent = player_1.economia
+    })
+    document.querySelector("#pais2_negativo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais1").style.visibility = "hidden"
+        document.querySelector(".infoPais").textContent = player_2.economia
+    })
+    document.querySelector("#pais3_negativo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais1").style.visibility = "hidden"
+        document.querySelector(".infoPais").textContent = player_3.economia
+    })
+    document.querySelector("#pais4_negativo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais1").style.visibility = "hidden"
+        document.querySelector(".infoPais").textContent =  player_4.economia
+    })
+    document.querySelector("#banco_negativo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais1").style.visibility = "hidden"
+        document.querySelector(".infoPais").textContent = "$$$$$$"
+    })
+
+
+    document.querySelector("#pais1_positivo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais2").style.visibility = "hidden"
+        document.querySelectorAll(".infoPais")[1].textContent = player_1.economia
+    })
+    document.querySelector("#pais2_positivo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais2").style.visibility = "hidden"
+        document.querySelectorAll(".infoPais")[1].textContent = player_2.economia
+    })
+    document.querySelector("#pais3_positivo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais2").style.visibility = "hidden"
+        document.querySelectorAll(".infoPais")[1].textContent = player_3.economia
+    })
+    document.querySelector("#pais4_positivo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais2").style.visibility = "hidden"
+        document.querySelectorAll(".infoPais")[1].textContent = player_4.economia
+    })
+    document.querySelector("#banco_positivo").addEventListener("click",function(){
+        document.querySelector("#selecionarPais2").style.visibility = "hidden"
+        document.querySelectorAll(".infoPais")[1].textContent = "$$$$$$"
+    })
+
 })()
 
 
