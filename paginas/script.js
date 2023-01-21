@@ -130,13 +130,17 @@ function regras() {
 
     let economiaPositivo = ""
     let economiaNegativo = ""
-
+    let transfer = 0
     document.getElementsByClassName("Aretornar")[0].addEventListener('click',function(){
     document.getElementById("telaEconomia").style.display = "none"
     document.getElementById("ferramentas").style.display = "block"
-    document.querySelector(".infoPais").textContent = "$ - "
+    document.querySelectorAll(".infoPais")[0].innerHTML = "$ - "
+    document.querySelectorAll(".infoPais")[1].innerHTML = "$ - "
     economiaPositivo = ""
     economiaNegativo = ""
+    transfer = 0
+    document.querySelector(".textoMoney").value = ""
+
     })
 
     document.getElementsByClassName("Aretornar")[1].addEventListener('click',function(){
@@ -251,26 +255,29 @@ function regras() {
     })
 
     document.querySelector(".botaoTransfer").addEventListener("click",function(){ /* textoMoney */
-        let transfer = 0
-        let dinheiroAtual = document.querySelector(".infoPais")[1]
+        let dinheiroAtual_negativo = document.querySelectorAll(".infoPais")[0]
+        let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
         if(economiaNegativo === "banco" && economiaPositivo === "banco") {
             /* erro */
         } else {
             transfer = Number(document.querySelector(".textoMoney").value)
-            alert(transfer)
             switch(economiaNegativo) {
                 case "pais1":
                     player_1.economia -= transfer
-                    dinheiroAtual = player_1.economia
+                    dinheiroAtual_negativo.innerHTML = player_1.economia
+                    econ_1.innerHTML = "<p>Economia: <strong>10000</strong></p>" /* ERRO */
                     break
                 case "pais2":
                     player_2.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = player_2.economia
                     break
                 case "pais3":
                     player_3.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = player_3.economia
                     break
                 case "pais4":
                     player_4.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = player_4.economia
                     break
                 case "banco":
                 /* NULL */
@@ -279,22 +286,25 @@ function regras() {
             switch(economiaPositivo) {
                 case "pais1":
                     player_1.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = player_1.economia
                     break
                 case "pais2":
                     player_2.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = player_2.economia
                     break
                 case "pais3":
                     player_3.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = player_3.economia
                     break
                 case "pais4":
                     player_4.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = player_4.economia
                     break
                 case "banco":
                 /* NULL */
             }
         }
-        alert(player_1.economia + "player 1")
-        alert(player_2.economia + "player 2")
+        document.querySelector(".textoMoney").value = ""
     })
     
 })()
