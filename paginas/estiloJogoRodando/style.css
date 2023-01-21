@@ -221,22 +221,42 @@ div.paisMoney {
     cursor: pointer;
 }
 
-div.selecionarPais {
+div#selecionarPais1 {
     position: relative;
     background-color: white;
     width: 100px;
     height: 125px;
     visibility: hidden;      /*VISIBILIDADE*/
-
+    margin-top: -5px;
 }
 
-.selecionarPais li {
+#selecionarPais1 li {
     border: 1px solid black;
     padding: 2.5px;
     list-style: none;
 }
 
-.selecionarPais li:hover {
+#selecionarPais1 li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+div#selecionarPais2 {
+    position: relative;
+    background-color: white;
+    width: 100px;
+    height: 125px;
+    visibility: hidden;      /*VISIBILIDADE*/
+    margin-top: -5px;
+}
+
+#selecionarPais2 li {
+    border: 1px solid black;
+    padding: 2.5px;
+    list-style: none;
+}
+
+#selecionarPais2 li:hover {
     background-color: lightgray;
     cursor: pointer;
 }

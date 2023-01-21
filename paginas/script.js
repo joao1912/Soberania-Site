@@ -123,26 +123,49 @@ function regras() {
 }
 
 
-document.getElementsByClassName("Aretornar")[0].addEventListener('click',function(){
+
+
+(function(){
+    document.getElementsByClassName("Aretornar")[0].addEventListener('click',function(){
     document.getElementById("telaEconomia").style.display = "none"
     document.getElementById("ferramentas").style.display = "block"
-})
+    })
 
-document.getElementsByClassName("Aretornar")[1].addEventListener('click',function(){
+    document.getElementsByClassName("Aretornar")[1].addEventListener('click',function(){
     document.getElementById("telaFabricar").style.display = "none"
     document.getElementById("ferramentas").style.display = "block"
-})
+    })
 
-document.getElementsByClassName("Aretornar")[2].addEventListener('click',function(){
+    document.getElementsByClassName("Aretornar")[2].addEventListener('click',function(){
     document.getElementById("telaUsarCarta").style.display = "none"
     document.getElementById("ferramentas").style.display = "block"
-})
+    })
 
-document.getElementsByClassName("Aretornar")[3].addEventListener('click',function(){
+    document.getElementsByClassName("Aretornar")[3].addEventListener('click',function(){
     document.getElementById("telaRegras").style.display = "none"
     document.getElementById("ferramentas").style.display = "block"
-})
+    })
 
+    document.getElementById("menuIcone1").addEventListener("click",function(){
+        const menu = document.querySelector("#selecionarPais1")
+        if(menu.style.visibility == "hidden") {
+            menu.style.visibility = "visible"
+        } else {
+            menu.style.visibility = "hidden"
+        }
+    })
+
+    document.getElementById("menuIcone2").addEventListener("click",function(){
+        const menu = document.querySelector("#selecionarPais2")
+        if(menu.style.visibility == "hidden") {
+            menu.style.visibility = "visible"
+        } else {
+            menu.style.visibility = "hidden"
+        }
+    })
+
+    
+})()
 
 
 
