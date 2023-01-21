@@ -150,8 +150,10 @@ function regras() {
         const menu = document.querySelector("#selecionarPais1")
         if(menu.style.visibility == "hidden") {
             menu.style.visibility = "visible"
+            document.querySelector(".botaoTransfer").style.visibility = "hidden"
         } else {
             menu.style.visibility = "hidden"
+            document.querySelector(".botaoTransfer").style.visibility = "visible"
         }
     })
 
@@ -159,54 +161,67 @@ function regras() {
         const menu = document.querySelector("#selecionarPais2")
         if(menu.style.visibility == "hidden") {
             menu.style.visibility = "visible"
+            document.querySelector(".botaoTransfer").style.visibility = "hidden"
         } else {
             menu.style.visibility = "hidden"
+            document.querySelector(".botaoTransfer").style.visibility = "visible"
         }
     })
 
     document.querySelector("#pais1_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = player_1.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#pais2_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = player_2.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#pais3_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = player_3.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#pais4_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent =  player_4.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#banco_negativo").addEventListener("click",function(){
         document.querySelector("#selecionarPais1").style.visibility = "hidden"
         document.querySelector(".infoPais").textContent = "$$$$$$"
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
 
 
     document.querySelector("#pais1_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_1.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#pais2_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_2.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#pais3_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_3.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#pais4_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = player_4.economia
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
     document.querySelector("#banco_positivo").addEventListener("click",function(){
         document.querySelector("#selecionarPais2").style.visibility = "hidden"
         document.querySelectorAll(".infoPais")[1].textContent = "$$$$$$"
+        document.querySelector(".botaoTransfer").style.visibility = "visible"
     })
 
+    
 })()
 
 

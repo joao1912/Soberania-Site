@@ -326,6 +326,10 @@ div.quantDinheiro {
     position: sticky;
 }
 
+#bigIcon {
+    
+}
+
 .textoMoney {
     width: 59px;
 }
@@ -351,7 +355,7 @@ div.nomePais {
     background-color: rgba(211, 211, 211, 0.514);
 }
 
-div.botaoTransfer {
+div#botaoTransferNULL {
     display: block;
     background-color: gray;
     width: 85px;
@@ -364,6 +368,24 @@ div.botaoTransfer {
     padding-top: 5px;
     font-weight: bold;
     text-align: center;
+    margin-left: 30px;
+    visibility: hidden;
+}
+
+div.botaoTransfer {
+    display: block;
+    background-color: gray;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 15px;
+    border: 1.7px solid aliceblue;
+    font-size: 1em;
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: -63px;
 }
 
 div.botaoTransfer:hover {
