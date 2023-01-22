@@ -126,12 +126,19 @@ main#manualCartas {
     margin-bottom: 20px;
 }
 
+h2.tiposCartas {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
 section.conteinerPrincipal_cartas_escuro {
     background-color: #549E00;
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
-    height: 150px;
+    height: 190px;
 }
 
 section.conteinerPrincipal_cartas_claro {
@@ -139,7 +146,7 @@ section.conteinerPrincipal_cartas_claro {
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
-    height: 150px;
+    height: 190px;
 }
 
 section.conteinerCarta_escuro {
@@ -178,6 +185,10 @@ section.conteinerPrincipal_cartas_escuro h2 {
 
 section.conteinerPrincipal_cartas_claro h2 {
     font-size: 1.3em;
+}
+
+section.conteinerPrincipal_cartas_escuro p {
+    line-height: 1.3em;
 }
 
 /* pag 4 (Play)*/
