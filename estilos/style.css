@@ -116,6 +116,10 @@ section#info > h2 {
 
 /*Pag 3   (Cartas)*/
 
+.destaque {
+    font-weight: bold;
+}
+
 main#manualCartas {
     background-color: white;
     width: 95vw;
@@ -148,6 +152,21 @@ section.conteinerPrincipal_cartas_claro {
     margin-bottom: 150px;
     height: 190px;
 }
+
+section.conteinerPrincipal_cartas_escuro p {
+    margin-top: 10px;
+    line-height: 1.2em;
+}
+
+section.conteinerPrincipal_cartas_claro p {
+    margin-top: 10px;
+    line-height: 1.2em;
+}
+
+.cartaQuant { 
+    text-decoration: underline;
+}
+
 
 section.conteinerCarta_escuro {
     position: relative;
