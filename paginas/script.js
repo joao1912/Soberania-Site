@@ -64,6 +64,7 @@ let player_4 = {
         /* Configurações importantes*/ 
 let QuantidadeJogadores = ""
 let Cartas_de_evento = ""
+let CodigoErro = ""
 /* --------------------------------------------- */
 
 
@@ -120,6 +121,14 @@ function usarCarta() {
 function regras() {
     document.getElementById("ferramentas").style.display = "none"
     document.getElementById("telaRegras").style.display = "block"
+}
+
+function Erros(n, erro) {
+    console.log(erro)
+
+
+    alert("tesdjawndjwndw")
+    CodigoErro = []
 }
 
 
@@ -257,27 +266,56 @@ function regras() {
     document.querySelector(".botaoTransfer").addEventListener("click",function(){ /* textoMoney */
         let dinheiroAtual_negativo = document.querySelectorAll(".infoPais")[0]
         let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
-        if(economiaNegativo === "banco" && economiaPositivo === "banco") {
-            /* erro */
+        let valorT = Number(document.querySelector(".textoMoney").value)
+        if(economiaNegativo === economiaPositivo) {
+            alert("erro 1")
+        } else if(valorT == "" || valorT < 0) {
+            alert("erro 2") /* valor negativo */
+        } else if(typeof valorT !== "number") {
+            alert("erro 3")
         } else {
+            
             transfer = Number(document.querySelector(".textoMoney").value)
             switch(economiaNegativo) {
                 case "pais1":
+                    if(transfer > player_1.economia) {
+                        alert("erro s")
+                        CodigoErro = [1,"#saldo_insuficiente#"]
+                        break
+                    }
                     player_1.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = player_1.economia
-                    econ_1.innerHTML = "<p>Economia: <strong>10000</strong></p>" /* ERRO */
+                    econ_1.innerHTML = `Economia: <strong>${player_1.economia}</strong>`
                     break
                 case "pais2":
+                    if(transfer > player_2.economia) {
+                        alert("erro")
+                        CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
+                        break
+                    }
                     player_2.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = player_2.economia
+                    econ_2.innerHTML = `Economia: <strong>${player_2.economia}</strong>`
                     break
                 case "pais3":
+                    if(transfer > player_3.economia) {
+                        alert("erro")
+                        CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
+                        break
+                    }
                     player_3.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = player_3.economia
+                    econ_3.innerHTML = `Economia: <strong>${player_3.economia}</strong>`
                     break
                 case "pais4":
+                    if(transfer > player_4.economia) {
+                        alert("erro")
+                        CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"] 
+                        break
+                    }
                     player_4.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = player_4.economia
+                    econ_4.innerHTML = `Economia: <strong>${player_4.economia}</strong>`
                     break
                 case "banco":
                 /* NULL */
@@ -285,20 +323,41 @@ function regras() {
             
             switch(economiaPositivo) {
                 case "pais1":
+                    if(CodigoErro.indexOf(1) !== -1) {
+                        Erros(...CodigoErro)
+                        break
+                    }
                     player_1.economia += transfer
                     dinheiroAtual_positivo.innerHTML = player_1.economia
+                    econ_1.innerHTML = `Economia: <strong>${player_1.economia}</strong>`
                     break
+
                 case "pais2":
+                    if(CodigoErro.indexOf(1) !== -1) {
+                        Erros(...CodigoErro)
+                        break
+                    }
                     player_2.economia += transfer
                     dinheiroAtual_positivo.innerHTML = player_2.economia
+                    econ_2.innerHTML = `Economia: <strong>${player_2.economia}</strong>`
                     break
                 case "pais3":
+                    if(CodigoErro.indexOf(1) !== -1) {
+                        Erros(...CodigoErro)
+                        break
+                    }
                     player_3.economia += transfer
                     dinheiroAtual_positivo.innerHTML = player_3.economia
+                    econ_3.innerHTML = `Economia: <strong>${player_3.economia}</strong>`
                     break
                 case "pais4":
+                    if(CodigoErro.indexOf(1) !== -1) {
+                        Erros(...CodigoErro)
+                        break
+                    }
                     player_4.economia += transfer
                     dinheiroAtual_positivo.innerHTML = player_4.economia
+                    econ_4.innerHTML = `Economia: <strong>${player_4.economia}</strong>`
                     break
                 case "banco":
                 /* NULL */
