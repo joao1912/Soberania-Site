@@ -124,10 +124,30 @@ function regras() {
 }
 
 function Erros(n, erro) {
+    let telaError = document.querySelector("#erros")
+    telaError.style.display = "block"
     console.log(erro)
+    switch(erro) {
+        case "#saldo_insuficiente#":
+            telaError.innerHTML = "Saldo Insuficiente"
+            break
+        case "#pagamento_invalido#":
+            telaError.innerHTML = "Pagamento Inválido"
+            break
+        case "#valor_invalido#":
+            telaError.innerHTML = "Valor Inválido"
+            break
+        case "#apenas_numeros#":
+            telaError.innerHTML = "Apenas Números"
+            break
+    }
 
-
-    alert("tesdjawndjwndw")
+    /* valor_invalido */
+    /* apenas_numeros */
+    setTimeout(function(){
+        var a = document.getElementById("erros");
+        a.style="display:none"
+        }, 3000);
     CodigoErro = []
 }
 
@@ -268,18 +288,20 @@ function Erros(n, erro) {
         let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
         let valorT = Number(document.querySelector(".textoMoney").value)
         if(economiaNegativo === economiaPositivo) {
-            alert("erro 1")
+            CodigoErro = [1,"#pagamento_invalido#"]
+            Erros(...CodigoErro)
         } else if(valorT == "" || valorT < 0) {
-            alert("erro 2") /* valor negativo */
+            CodigoErro = [1,"#valor_invalido#"]
+            Erros(...CodigoErro)
         } else if(typeof valorT !== "number") {
-            alert("erro 3")
+            CodigoErro = [1,"#apenas_numeros#"]
+            Erros(...CodigoErro)
         } else {
             
             transfer = Number(document.querySelector(".textoMoney").value)
             switch(economiaNegativo) {
                 case "pais1":
                     if(transfer > player_1.economia) {
-                        alert("erro s")
                         CodigoErro = [1,"#saldo_insuficiente#"]
                         break
                     }
@@ -289,7 +311,6 @@ function Erros(n, erro) {
                     break
                 case "pais2":
                     if(transfer > player_2.economia) {
-                        alert("erro")
                         CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
                         break
                     }
@@ -299,7 +320,6 @@ function Erros(n, erro) {
                     break
                 case "pais3":
                     if(transfer > player_3.economia) {
-                        alert("erro")
                         CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
                         break
                     }
@@ -309,7 +329,6 @@ function Erros(n, erro) {
                     break
                 case "pais4":
                     if(transfer > player_4.economia) {
-                        alert("erro")
                         CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"] 
                         break
                     }

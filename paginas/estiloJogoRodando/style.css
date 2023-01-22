@@ -177,8 +177,8 @@ section.tela {
 .tela i:hover {
     color: gray;
     cursor: pointer;
-    padding: 7px;
-    transition: padding 0.4s;
+    transform: scale(1.1);
+    transition: 0.2s linear;
 }
 
 #centralizador {
@@ -399,4 +399,33 @@ div.botaoTransfer:hover {
     background-color: rgb(95, 94, 94);
     border: 1.7px solid rgb(196, 201, 206);
     color: lightgray;
+}
+
+div#erros {
+    display: none;
+    margin: auto;
+    text-align: center;
+    margin-top: 11px;
+    padding: 2px;
+    width: 20px;
+    height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 2px solid rgba(184, 5, 5, 0.874);
+    border-radius: 15px;
+    color: white;
+    color: transparent;  
+    background-color: rgb(50, 49, 49);
+    animation: crescer 500ms both;
+}
+
+
+@keyframes crescer {
+    from {
+        width: 20px;
+    } 
+    to {
+        width: 200px;
+        color: white;
+    }
 }
