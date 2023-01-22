@@ -67,6 +67,87 @@ let Cartas_de_evento = ""
 let CodigoErro = ""
 /* --------------------------------------------- */
 
+/* CADASTRO DAS CARTAS DO JOGO*/
+ /* [codigo, quantidade] */
+
+const cartas = {
+    petroleo: [1,20],
+    uranio: [2,1],
+    metal: [3,12],        /* item */
+    concreto: [4,10],
+    munição: [5,8],
+    projeto: [6,8],
+
+    bombaAtomica: [7,1],
+    tanque: [8,4],
+    aviaoDeTransporte: [9,4],
+    espiao: [10,1],
+    sabotagem: [11,1],
+    bombardeiro: [12,2],
+    submarino: [13,4],
+    navioDeTransporte: [14,4],
+    helicoptero: [15,4],          /* multiplicador */
+    navioMilitar: [16,4],
+    caça: [17,4],
+    forcasEspeciais: [18,8],
+    soldado: [19,60],
+    artilharia: [20,4],
+
+    pandemia:[21,1],
+    criseEconomica: [22,1],
+    guerraCivil: [23,1],
+    iWantYou: [24,1],         /* adversidade */
+    avancoNaMedicina: [25,1],
+    aUniaoFazAForca: [26,1],
+
+    meteoro: [27,1],
+    alienigena: [28,1],
+    descoberta: [29,1], /* cooperação */
+    apocalipse: [30,1],
+
+    ouro: [31,1],
+    saudePublica: [32,1],
+    caridade: [33,1],
+    caridadeEmpresarial: [34,1],
+    safraBoaDeSoja: [35,1],       /* 10 boas */
+    contraCorrupcao: [36,1],
+    saneamentoBasico: [37,1],
+    melhoraNaSaude: [38,1],
+    investirEmMedicamento: [39,1],
+    aceitarRefugiados: [40,1],
+
+    terremoto: [41,1],
+    erupcaoVulcanica: [42,1],
+    vazamentoDeEsgoto: [43,1],
+    surtoDeCatapora: [44,1],
+    perdaNaSafra: [45,1],
+    faltaDeAgua: [46,1],     /* 10 ruins */
+    greve: [45,1],
+    morteInocente: [46,1],
+    aumentoNoImposto: [47,1],
+    quebraNaBolsa: [48,1],
+
+    industria: [49,8],
+    municipio: [50,500],
+    oficina: [51,4],
+    aeroporto: [52,4],
+    porto: [53,4],           /* cartas de construção */
+    capital: [54,4],
+    antiaerio: [55,4],
+
+    motorDeDobraEspacial: [56,1],
+    bombaDeAntiMateria: [57,1],
+    maquinaDoTempo: [58,1],
+    pilulaDeImortalidade: [59,1],
+    proteseAvancada: [60,1],          /* cartas de objetivo */
+    dominacao1: [61,1],
+    dominacao2: [62,1],
+    dominacao3: [63,1],
+    dominacao4: [64,1],
+    FUTURACARTA: [65,1]
+}
+
+
 
 function iniciar() {
     window.location.href = "pagina-jogoIniciado.html"
