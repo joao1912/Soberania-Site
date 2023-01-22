@@ -287,7 +287,7 @@ function Erros(n, erro) {
         let dinheiroAtual_negativo = document.querySelectorAll(".infoPais")[0]
         let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
         let valorT = Number(document.querySelector(".textoMoney").value)
-        if(economiaNegativo === economiaPositivo) {
+        if(economiaNegativo === economiaPositivo || economiaNegativo === "" || economiaPositivo === "") {
             CodigoErro = [1,"#pagamento_invalido#"]
             Erros(...CodigoErro)
         } else if(valorT == "" || valorT < 0) {
