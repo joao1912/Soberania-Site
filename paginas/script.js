@@ -184,24 +184,30 @@ function JogoRodando() {
     window.location.href = "pagina-JogoRodando.html"
 }
 
+const telaFerramentas = document.getElementById("ferramentas")
+const telaEconomia = document.getElementById("telaEconomia")
+const telaFabricar = document.getElementById("telaFabricar")
+const telaUsarCarta = document.getElementById("telaUsarCarta")
+const telaRegras = document.getElementById("telaRegras")
+
 function economia() {
-    document.getElementById("ferramentas").style.display = "none"
-    document.getElementById("telaEconomia").style.display = "block"
+    telaFerramentas.style.display = "none"
+    telaEconomia.style.display = "block"
 }
 
 function fabricar() {
-    document.getElementById("ferramentas").style.display = "none"
-    document.getElementById("telaFabricar").style.display = "block"
+    telaFerramentas.style.display = "none"
+    telaFabricar.style.display = "block"
 }
 
 function usarCarta() {
-    document.getElementById("ferramentas").style.display = "none"
-    document.getElementById("telaUsarCarta").style.display = "block"
+    telaFerramentas.style.display = "none"
+    telaUsarCarta.style.display = "block"
 }
 
 function regras() {
-    document.getElementById("ferramentas").style.display = "none"
-    document.getElementById("telaRegras").style.display = "block"
+    telaFerramentas.style.display = "none"
+    telaRegras.style.display = "block"
 }
 
 function Erros(n, erro) {
@@ -226,8 +232,8 @@ function Erros(n, erro) {
     /* valor_invalido */
     /* apenas_numeros */
     setTimeout(function(){
-        var a = document.getElementById("erros");
-        a.style="display:none"
+        const eventoErro = document.getElementById("erros");
+        eventoErro.style="display:none"
         }, 3000);
     CodigoErro = []
 }
@@ -241,11 +247,15 @@ function Erros(n, erro) {
     let economiaPositivo = ""
     let economiaNegativo = ""
     let transfer = 0
-    document.getElementsByClassName("Aretornar")[0].addEventListener('click',function(){
-    document.getElementById("telaEconomia").style.display = "none"
-    document.getElementById("ferramentas").style.display = "block"
-    document.querySelectorAll(".infoPais")[0].innerHTML = "$ - "
-    document.querySelectorAll(".infoPais")[1].innerHTML = "$ - "
+
+    const botoesDeRetorno = document.getElementsByClassName("Aretornar")
+    const economiaAtualPais = document.querySelectorAll(".infoPais")
+
+    botoesDeRetorno[0].addEventListener('click',function(){
+    telaEconomia.style.display = "none"
+    telaFerramentas.style.display = "block"
+    economiaAtualPais[0].innerHTML = "$ - "
+    economiaAtualPais[1].innerHTML = "$ - "
     economiaPositivo = ""
     economiaNegativo = ""
     transfer = 0
@@ -253,29 +263,31 @@ function Erros(n, erro) {
 
     })
 
-    document.getElementsByClassName("Aretornar")[1].addEventListener('click',function(){
-    document.getElementById("telaFabricar").style.display = "none"
-    document.getElementById("ferramentas").style.display = "block"
+    botoesDeRetorno[1].addEventListener('click',function(){
+    telaFabricar.style.display = "none"
+    telaFerramentas.style.display = "block"
     })
 
-    document.getElementsByClassName("Aretornar")[2].addEventListener('click',function(){
-    document.getElementById("telaUsarCarta").style.display = "none"
-    document.getElementById("ferramentas").style.display = "block"
+    botoesDeRetorno[2].addEventListener('click',function(){
+    telaUsarCarta.style.display = "none"
+    telaFerramentas.style.display = "block"
     })
 
-    document.getElementsByClassName("Aretornar")[3].addEventListener('click',function(){
-    document.getElementById("telaRegras").style.display = "none"
-    document.getElementById("ferramentas").style.display = "block"
+    botoesDeRetorno[3].addEventListener('click',function(){
+    telaRegras.style.display = "none"
+    telaFerramentas.style.display = "block"
     })
+
+    const botaoTransfer = document.querySelector(".botaoTransfer")
 
     document.getElementById("menuIcone1").addEventListener("click",function(){
         const menu = document.querySelector("#selecionarPais1")
         if(menu.style.visibility == "hidden") {
             menu.style.visibility = "visible"
-            document.querySelector(".botaoTransfer").style.visibility = "hidden"
+            botaoTransfer.style.visibility = "hidden"
         } else {
             menu.style.visibility = "hidden"
-            document.querySelector(".botaoTransfer").style.visibility = "visible"
+            botaoTransfer.style.visibility = "visible"
         }
     })
 
@@ -283,88 +295,102 @@ function Erros(n, erro) {
         const menu = document.querySelector("#selecionarPais2")
         if(menu.style.visibility == "hidden") {
             menu.style.visibility = "visible"
-            document.querySelector(".botaoTransfer").style.visibility = "hidden"
+            botaoTransfer.style.visibility = "hidden"
         } else {
             menu.style.visibility = "hidden"
-            document.querySelector(".botaoTransfer").style.visibility = "visible"
+            botaoTransfer.style.visibility = "visible"
         }
     })
 
+    const paisNegativo_1 = document.querySelector("#pais1_negativo")
+    const paisNegativo_2 = document.querySelector("#pais2_negativo")
+    const paisNegativo_3 = document.querySelector("#pais3_negativo")
+    const paisNegativo_4 = document.querySelector("#pais4_negativo")
+    const bancoNegativo = document.querySelector("#banco_negativo")
 
-    document.querySelector("#pais1_negativo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais1").style.visibility = "hidden"
-        document.querySelector(".infoPais").textContent = player_1.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    const paisPositivo_1 = document.querySelector("#pais1_positivo")
+    const paisPositivo_2 = document.querySelector("#pais2_positivo")
+    const paisPositivo_3 = document.querySelector("#pais3_positivo")
+    const paisPositivo_4 = document.querySelector("#pais4_positivo")
+    const bancoPositivo = document.querySelector("#banco_positivo")
+
+    const selecaoPais1 = document.querySelector("#selecionarPais1")
+    const selecaoPais2 = document.querySelector("#selecionarPais2")
+
+    paisNegativo_1.addEventListener("click",function(){
+        selecaoPais1.style.visibility = "hidden"
+        economiaAtualPais[0].textContent = player_1.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaNegativo = "pais1"
     })
-    document.querySelector("#pais2_negativo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais1").style.visibility = "hidden"
-        document.querySelector(".infoPais").textContent = player_2.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    paisNegativo_2.addEventListener("click",function(){
+        selecaoPais1.style.visibility = "hidden"
+        economiaAtualPais[0].textContent = player_2.economia
+        botaoTransfer.style.visibility = "visible"
+
+        economiaNegativo = "pais2"
+    })
+    paisNegativo_3.addEventListener("click",function(){
+        selecaoPais1.style.visibility = "hidden"
+        economiaAtualPais[0].textContent = player_3.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaNegativo = "pais3"
     })
-    document.querySelector("#pais3_negativo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais1").style.visibility = "hidden"
-        document.querySelector(".infoPais").textContent = player_3.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
-
-        economiaNegativo = "pais3"
-    })
-    document.querySelector("#pais4_negativo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais1").style.visibility = "hidden"
-        document.querySelector(".infoPais").textContent =  player_4.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    paisNegativo_4.addEventListener("click",function(){
+        selecaoPais1.style.visibility = "hidden"
+        economiaAtualPais[0].textContent =  player_4.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaNegativo = "pais4"
     })
-    document.querySelector("#banco_negativo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais1").style.visibility = "hidden"
-        document.querySelector(".infoPais").textContent = "$$$$$$"
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    bancoNegativo.addEventListener("click",function(){
+        selecaoPais1.style.visibility = "hidden"
+        economiaAtualPais[0].textContent = "$$$$$$"
+        botaoTransfer.style.visibility = "visible"
 
         economiaNegativo = "banco"
     })
 
 
-    document.querySelector("#pais1_positivo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais2").style.visibility = "hidden"
-        document.querySelectorAll(".infoPais")[1].textContent = player_1.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    paisPositivo_1.addEventListener("click",function(){
+        selecaoPais2.style.visibility = "hidden"
+        economiaAtualPais[1].textContent = player_1.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaPositivo = "pais1"
     })
-    document.querySelector("#pais2_positivo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais2").style.visibility = "hidden"
-        document.querySelectorAll(".infoPais")[1].textContent = player_2.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    paisPositivo_2.addEventListener("click",function(){
+        selecaoPais2.style.visibility = "hidden"
+        economiaAtualPais[1].textContent = player_2.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaPositivo = "pais2"
     })
-    document.querySelector("#pais3_positivo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais2").style.visibility = "hidden"
-        document.querySelectorAll(".infoPais")[1].textContent = player_3.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    paisPositivo_3.addEventListener("click",function(){
+        selecaoPais2.style.visibility = "hidden"
+        economiaAtualPais[1].textContent = player_3.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaPositivo = "pais3"
     })
-    document.querySelector("#pais4_positivo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais2").style.visibility = "hidden"
-        document.querySelectorAll(".infoPais")[1].textContent = player_4.economia
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    paisPositivo_4.addEventListener("click",function(){
+        selecaoPais2.style.visibility = "hidden"
+        economiaAtualPais[1].textContent = player_4.economia
+        botaoTransfer.style.visibility = "visible"
 
         economiaPositivo = "pais4"
     })
-    document.querySelector("#banco_positivo").addEventListener("click",function(){
-        document.querySelector("#selecionarPais2").style.visibility = "hidden"
-        document.querySelectorAll(".infoPais")[1].textContent = "$$$$$$"
-        document.querySelector(".botaoTransfer").style.visibility = "visible"
+    bancoPositivo.addEventListener("click",function(){
+        selecaoPais2.style.visibility = "hidden"
+        economiaAtualPais[1].textContent = "$$$$$$"
+        botaoTransfer.style.visibility = "visible"
 
         economiaPositivo = "banco"
     })
 
-    document.querySelector(".botaoTransfer").addEventListener("click",function(){ /* textoMoney */
+    botaoTransfer.addEventListener("click",function(){ 
         let dinheiroAtual_negativo = document.querySelectorAll(".infoPais")[0]
         let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
         let valorT = Number(document.querySelector(".textoMoney").value)
