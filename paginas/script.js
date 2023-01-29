@@ -305,18 +305,6 @@ function Erros(n, erro) {
         }
     })
 
-    const paisNegativo_1 = document.querySelector("#pais1_negativo")
-    const paisNegativo_2 = document.querySelector("#pais2_negativo")
-    const paisNegativo_3 = document.querySelector("#pais3_negativo")
-    const paisNegativo_4 = document.querySelector("#pais4_negativo")
-    const bancoNegativo = document.querySelector("#banco_negativo")
-
-    const paisPositivo_1 = document.querySelector("#pais1_positivo")
-    const paisPositivo_2 = document.querySelector("#pais2_positivo")
-    const paisPositivo_3 = document.querySelector("#pais3_positivo")
-    const paisPositivo_4 = document.querySelector("#pais4_positivo")
-    const bancoPositivo = document.querySelector("#banco_positivo")
-
     const selecaoPais1 = document.querySelector("#selecionarPais1")
     const selecaoPais2 = document.querySelector("#selecionarPais2")
 
