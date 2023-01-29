@@ -320,79 +320,79 @@ function Erros(n, erro) {
     const selecaoPais1 = document.querySelector("#selecionarPais1")
     const selecaoPais2 = document.querySelector("#selecionarPais2")
 
-    paisNegativo_1.addEventListener("click",function(){
-        selecaoPais1.style.visibility = "hidden"
-        economiaAtualPais[0].textContent = player_1.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaNegativo = "pais1"
-    })
-    paisNegativo_2.addEventListener("click",function(){
-        selecaoPais1.style.visibility = "hidden"
-        economiaAtualPais[0].textContent = player_2.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaNegativo = "pais2"
-    })
-    paisNegativo_3.addEventListener("click",function(){
-        selecaoPais1.style.visibility = "hidden"
-        economiaAtualPais[0].textContent = player_3.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaNegativo = "pais3"
-    })
-    paisNegativo_4.addEventListener("click",function(){
-        selecaoPais1.style.visibility = "hidden"
-        economiaAtualPais[0].textContent =  player_4.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaNegativo = "pais4"
-    })
-    bancoNegativo.addEventListener("click",function(){
-        selecaoPais1.style.visibility = "hidden"
-        economiaAtualPais[0].textContent = "$$$$$$"
-        botaoTransfer.style.visibility = "visible"
-
-        economiaNegativo = "banco"
-    })
-
-
-    paisPositivo_1.addEventListener("click",function(){
-        selecaoPais2.style.visibility = "hidden"
-        economiaAtualPais[1].textContent = player_1.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaPositivo = "pais1"
-    })
-    paisPositivo_2.addEventListener("click",function(){
-        selecaoPais2.style.visibility = "hidden"
-        economiaAtualPais[1].textContent = player_2.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaPositivo = "pais2"
-    })
-    paisPositivo_3.addEventListener("click",function(){
-        selecaoPais2.style.visibility = "hidden"
-        economiaAtualPais[1].textContent = player_3.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaPositivo = "pais3"
-    })
-    paisPositivo_4.addEventListener("click",function(){
-        selecaoPais2.style.visibility = "hidden"
-        economiaAtualPais[1].textContent = player_4.economia
-        botaoTransfer.style.visibility = "visible"
-
-        economiaPositivo = "pais4"
-    })
-    bancoPositivo.addEventListener("click",function(){
-        selecaoPais2.style.visibility = "hidden"
-        economiaAtualPais[1].textContent = "$$$$$$"
-        botaoTransfer.style.visibility = "visible"
-
-        economiaPositivo = "banco"
+    selecaoPais1.addEventListener("click",function(event){
+        const pais = event.target.id
+        switch(pais) {
+            case "pais1_negativo": 
+                selecaoPais1.style.visibility = "hidden"
+                economiaAtualPais[0].textContent = player_1.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaNegativo = "pais1"
+                break
+            case "pais2_negativo": 
+                selecaoPais1.style.visibility = "hidden"
+                economiaAtualPais[0].textContent = player_2.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaNegativo = "pais2"
+                break
+            case "pais3_negativo": 
+                selecaoPais1.style.visibility = "hidden"
+                economiaAtualPais[0].textContent = player_3.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaNegativo = "pais3"
+                break
+            case "pais4_negativo": 
+                selecaoPais1.style.visibility = "hidden"
+                economiaAtualPais[0].textContent =  player_4.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaNegativo = "pais4"
+                break
+            case "banco_negativo":
+                selecaoPais1.style.visibility = "hidden"
+                economiaAtualPais[0].textContent = "$$$$$$"
+                botaoTransfer.style.visibility = "visible"
+                economiaNegativo = "banco"
+                break
+        }
     })
 
+    selecaoPais2.addEventListener("click",function(event){
+        const pais = event.target.id
+
+        switch(pais) {
+            case "pais1_positivo":
+                selecaoPais2.style.visibility = "hidden"
+                economiaAtualPais[1].textContent = player_1.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaPositivo = "pais1" 
+                break
+            case "pais2_positivo":
+                selecaoPais2.style.visibility = "hidden"
+                economiaAtualPais[1].textContent = player_2.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaPositivo = "pais2"
+                break
+            case "pais3_positivo":
+                selecaoPais2.style.visibility = "hidden"
+                economiaAtualPais[1].textContent = player_3.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaPositivo = "pais3"
+                break
+            case "pais4_positivo":
+                selecaoPais2.style.visibility = "hidden"
+                economiaAtualPais[1].textContent = player_4.economia
+                botaoTransfer.style.visibility = "visible"
+                economiaPositivo = "pais4"
+                break
+            case "banco_positivo":
+                selecaoPais2.style.visibility = "hidden"
+                economiaAtualPais[1].textContent = "$$$$$$"
+                botaoTransfer.style.visibility = "visible"
+                economiaPositivo = "banco"
+                break
+        }
+    })
+    
     botaoTransfer.addEventListener("click",function(){ 
         let dinheiroAtual_negativo = document.querySelectorAll(".infoPais")[0]
         let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
