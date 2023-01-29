@@ -139,6 +139,14 @@ section.tela {
     display: none;
 }
 
+div.atributosF {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+
+
 .tela {
     background-color: white;
     width: 90vw;
@@ -280,7 +288,7 @@ div#selecionarPais2 {
     transform: translate(-50%,-50%);
 }
 
-#retornar {
+.retornar {
     display: block;
     height: 60px;
 }

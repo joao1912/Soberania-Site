@@ -190,25 +190,30 @@ const telaFabricar = document.getElementById("telaFabricar")
 const telaUsarCarta = document.getElementById("telaUsarCarta")
 const telaRegras = document.getElementById("telaRegras")
 
-function economia() {
-    telaFerramentas.style.display = "none"
-    telaEconomia.style.display = "block"
-}
+telaFerramentas.addEventListener("click",function(event){
+    let botao = event.target.id
+    switch(botao) {
+        case "economia":
+            telaFerramentas.style.display = "none"
+            telaEconomia.style.display = "block"
+            break
+        case "fabricarCard":
+            telaFerramentas.style.display = "none"
+            telaFabricar.style.display = "block"
+            break
+        case "usarCard":
+            telaFerramentas.style.display = "none"
+            telaUsarCarta.style.display = "block"
+            break
+        case "regras":
+            telaFerramentas.style.display = "none"
+            telaRegras.style.display = "block"
+            break
+        default:
+            break
+    }
 
-function fabricar() {
-    telaFerramentas.style.display = "none"
-    telaFabricar.style.display = "block"
-}
-
-function usarCarta() {
-    telaFerramentas.style.display = "none"
-    telaUsarCarta.style.display = "block"
-}
-
-function regras() {
-    telaFerramentas.style.display = "none"
-    telaRegras.style.display = "block"
-}
+})
 
 function Erros(n, erro) {
     let telaError = document.querySelector("#erros")
@@ -229,18 +234,12 @@ function Erros(n, erro) {
             break
     }
 
-    /* valor_invalido */
-    /* apenas_numeros */
     setTimeout(function(){
         const eventoErro = document.getElementById("erros");
         eventoErro.style="display:none"
         }, 3000);
     CodigoErro = []
-}
-
-
-
-
+};
 
 (function(){
 
@@ -251,6 +250,8 @@ function Erros(n, erro) {
     const botoesDeRetorno = document.getElementsByClassName("Aretornar")
     const economiaAtualPais = document.querySelectorAll(".infoPais")
 
+    
+
     botoesDeRetorno[0].addEventListener('click',function(){
     telaEconomia.style.display = "none"
     telaFerramentas.style.display = "block"
@@ -260,6 +261,8 @@ function Erros(n, erro) {
     economiaNegativo = ""
     transfer = 0
     document.querySelector(".textoMoney").value = ""
+    document.querySelector("#selecionarPais1").style.visibility = "hidden"
+    document.querySelector("#selecionarPais2").style.visibility = "hidden"
 
     })
 
