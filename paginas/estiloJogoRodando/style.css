@@ -131,6 +131,7 @@ section.status p {
 
 /* Jogo rodando */
 
+
 .atributosF {
     display: block; 
 }
@@ -436,4 +437,92 @@ div#erros {
         width: 200px;
         color: white;
     }
+
 }
+/*----------------------------------------------*/
+
+/* PROVISORIO */
+
+.tela {
+    display: none;
+}
+
+#fabricarCartas {
+    display: block;
+}
+
+#telaCartaMultiplicador {
+    display: none;
+}
+
+#telaCartaContrucao {
+    display: none;
+}
+
+#telaCartaObjetivos {
+    display: none;
+}
+/*----------------------------------------------*/
+
+#telaFabricar .subTela > div{
+    display: flex;
+    flex-direction: column;
+}
+
+#telaFabricar  .retornar {
+    height: 55px;
+}
+
+#telaFabricar .botao {
+    width: 70%;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    margin-top: 12px;
+    border-radius: 10px;
+}
+
+#telaFabricar .botao:hover {
+    background-color: rgb(170, 170, 170);
+    color: black;
+    cursor: pointer;
+    transition: border-radius 0.3s;
+}
+
+.botoesExtrasCartas {
+    height: 1360px;
+}
+
+#telaCartaMultiplicador .subTela {
+    height: 1315px;
+}
+
+#telaCartaContrucao .subTela {
+    height: 1315px;
+}
+
+#telaCartaObjetivos .subTela {
+    height: 1315px;
+}
+
+.botoesExtrasCartas h1 {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.cartaFabricacao {
+    margin: auto;
+    margin-top: 30px;
+    width: 85%;
+    height: 150px;
+    background-color: rgb(161, 160, 160);
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.396);
+}
+
+
+
+
+
