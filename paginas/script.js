@@ -482,5 +482,51 @@ function Erros(n, erro) {
         }
         document.querySelector(".textoMoney").value = ""
     })
-    
+
+    const telaFabricar = document.querySelector("#telaFabricar")
+    const botoesFabricarCartas = document.querySelector("#telaBotoesExtras")
+    const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
+
+    botoesFabricarCartas.addEventListener("click",function(event){
+        const botao = event.target.id
+        
+        const telaMultiplicador = document.querySelector("#telaCartaMultiplicador")
+        const telaConstrucao = document.querySelector("#telaCartaContrucao")
+        const telaObjetivos = document.querySelector("#telaCartaObjetivos")
+        
+        switch(botao) {
+            case "cartasMultiplicador":
+                telaFabricar.style.display = "none"
+                telaMultiplicador.style.display = "block"
+                break
+            case "cartasConstrucao":
+                telaFabricar.style.display = "none"
+                telaConstrucao.style.display = "block"
+                break
+            case "cartasObjetivos":
+                telaFabricar.style.display = "none"
+                telaObjetivos.style.display = "block"
+                break
+        }
+    })
+    botoesDeRetorno[4].addEventListener("click",function(){
+        for(let c = 0 ; c < 3 ; c++) {
+            telasDasCartas[c].style.display = "none"
+            telaFabricar.style.display = "block"
+        }
+    })
+
+    botoesDeRetorno[5].addEventListener("click",function(){
+        for(let c = 0 ; c < 3 ; c++) {
+            telasDasCartas[c].style.display = "none"
+            telaFabricar.style.display = "block"
+        }
+    })
+
+    botoesDeRetorno[6].addEventListener("click",function(){
+        for(let c = 0 ; c < 3 ; c++) {
+            telasDasCartas[c].style.display = "none"
+            telaFabricar.style.display = "block"
+        }
+    })
 })()
