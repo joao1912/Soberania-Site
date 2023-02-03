@@ -439,30 +439,6 @@ div#erros {
     }
 
 }
-/*----------------------------------------------*/
-
-/* PROVISORIO */
-
-.tela {
-    display: none;
-}
-
-#fabricarCartas {
-    display: block;
-}
-
-#telaCartaMultiplicador {
-    display: none;
-}
-
-#telaCartaContrucao {
-    display: none;
-}
-
-#telaCartaObjetivos {
-    display: none;
-}
-/*----------------------------------------------*/
 
 #telaFabricar .subTela > div{
     display: flex;
@@ -514,7 +490,7 @@ div#erros {
 .cartaFabricacao {
     margin: auto;
     margin-top: 30px;
-    width: 85%;
+    width: 97%;
     height: 150px;
     background-color: rgb(161, 160, 160);
     border-radius: 20px;
@@ -522,7 +498,42 @@ div#erros {
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.396);
 }
 
+.custoConteiner {
+    width: 99%;
+    height: 35px;
+    background-color: lightgray;
+    margin: auto;
+    border-radius: 50px;
+    margin-top: 10px;
+}
 
+.custoConteinerInterno {
+    background-color: antiquewhite;
+    width: 60px;
+    height: 100%;
+    float: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    text-align: center;
+    padding-top: 9px;
+    font-weight: bold;
+}
+
+span.custo {
+    display: block;
+    padding: 10px;
+    height: 90%;
+    margin-left: 53px;
+
+}
+
+section.custoMonetario {
+    height: 40px;
+    width: 80px;
+    background-color: lightgray;
+    margin-top: 9px;
+    border-radius: 50px;
+}
 
 
 
