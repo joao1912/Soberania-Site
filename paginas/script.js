@@ -68,64 +68,321 @@ let CodigoErro = ""
 /* --------------------------------------------- */
 
 /* CADASTRO DAS CARTAS DO JOGO*/
- /* [codigo, quantidade] */
+const cartas = [
+    {
+        nome: "petroleo",
+        codigo: 0,
+        quantidade: 20
+    },
 
-const cartas = {
-    petroleo: [1,20],
-    uranio: [2,1],
-    metal: [3,12],        /* item */
-    concreto: [4,10],
-    munição: [5,8],
-    projeto: [6,8],
+    {
+        nome: "uranio",
+        codigo: 1,
+        quantidade: 1 
+    },
 
-    bombaAtomica: [7,1],
-    tanque: [8,4],
-    aviaoDeTransporte: [9,4],
-    espiao: [10,1],
-    sabotagem: [11,1],
-    bombardeiro: [12,2],
-    submarino: [13,4],
-    navioDeTransporte: [14,4],
-    helicoptero: [15,4],          /* multiplicador */
-    navioMilitar: [16,4],
-    caça: [17,4],
-    forcasEspeciais: [18,8],
-    soldado: [19,60],
-    artilharia: [20,4],
+    {
+        nome: "metal",
+        codigo: 2,
+        quantidade: 12 
+    },
 
-    pandemia:[21,1],
-    criseEconomica: [22,1],
-    guerraCivil: [23,1],
-    iWantYou: [24,1],         /* adversidade */
-    avancoNaMedicina: [25,1],
-    aUniaoFazAForca: [26,1],
+    {
+        nome: "concreto",
+        codigo: 3,
+        quantidade: 10 
+    },
 
-    meteoro: [27,1],
-    alienigena: [28,1],
-    descoberta: [29,1], /* cooperação */
-    apocalipse: [30,1],
+    {
+        nome: "munição",
+        codigo: 4,
+        quantidade: 8 
+    },
 
-    ouro: [31,1],
-    saudePublica: [32,1],
-    caridade: [33,1],
-    caridadeEmpresarial: [34,1],
-    safraBoaDeSoja: [35,1],       /* 10 boas */
-    contraCorrupcao: [36,1],
-    saneamentoBasico: [37,1],
-    melhoraNaSaude: [38,1],
-    investirEmMedicamento: [39,1],
-    aceitarRefugiados: [40,1],
+    {
+        nome: "projeto",
+        codigo: 5,
+        quantidade: 8 
+    },
 
-    terremoto: [41,1],
-    erupcaoVulcanica: [42,1],
-    vazamentoDeEsgoto: [43,1],
-    surtoDeCatapora: [44,1],
-    perdaNaSafra: [45,1],
-    faltaDeAgua: [46,1],     /* 10 ruins */
-    greve: [45,1],
-    morteInocente: [46,1],
-    aumentoNoImposto: [47,1],
-    quebraNaBolsa: [48,1],
+    /* MULTIPLICADORES */
+    {
+        nome: "bomba-atomica",
+        codigo: 6,
+        quantidade: 1 
+    },
+
+    {
+        nome: "tanque",
+        codigo: 7,
+        quantidade: 4 
+    },
+
+    {
+        nome: "aviao-de-transporte",
+        codigo: 8,
+        quantidade: 4 
+    },
+
+    {
+        nome: "espião",
+        codigo: 9,
+        quantidade: 4 
+    },
+
+    {
+        nome: "sabotagem",
+        codigo: 10,
+        quantidade: 1 
+    },
+
+    {
+        nome: "bombardeiro",
+        codigo: 11,
+        quantidade: 2 
+    },
+
+    {
+        nome: "submarino",
+        codigo: 12,
+        quantidade: 4
+    },
+
+    {
+        nome: "navio-de-transporte",
+        codigo: 13,
+        quantidade: 4
+    },
+
+    {
+        nome: "helicoptero",
+        codigo: 14,
+        quantidade: 4
+    },
+
+    {
+        nome: "navio-militar",
+        codigo: 15,
+        quantidade: 4
+    },
+
+    {
+        nome: "caça",
+        codigo: 16,
+        quantidade: 4
+    },
+
+    {
+        nome: "forças-especiais",
+        codigo: 17,
+        quantidade: 8 
+    },
+
+    {
+        nome: "soldado",
+        codigo: 18,
+        quantidade: 60 
+    },
+
+    {
+        nome: "artilharia",
+        codigo: 19,
+        quantidade: 4 
+    },
+
+    /* ADVERSIDADE */
+
+    {
+        nome: "pandemia",
+        codigo: 20,
+        quantidade: 1 
+    },
+
+    {
+        nome: "crise-economica",
+        codigo: 21,
+        quantidade: 1 
+    },
+
+    {
+        nome: "guerra-civil",
+        codigo: 22,
+        quantidade: 1 
+    },
+
+    {
+        nome: "i-want-you",
+        codigo: 23,
+        quantidade: 1
+    },
+
+    {
+        nome: "avanço-na-medicina",
+        codigo: 24,
+        quantidade: 1
+    },
+
+    {
+        nome: "a-união-faz-a-força",
+        codigo: 25,
+        quantidade: 1 
+    },
+
+    /* COOPERAÇÃO */
+
+    {
+        nome: "meteoro",
+        codigo: 26,
+        quantidade: 1 
+    },
+
+    {
+        nome: "alienigenas",
+        codigo: 27,
+        quantidade: 1
+    },
+
+    {
+        nome: "descoberta",
+        codigo: 28,
+        quantidade: 1
+    },
+
+    {
+        nome: "apocalipse",
+        codigo: 29,
+        quantidade: 1
+    },
+
+    /* PADRÃO BOAS */
+
+    {
+        nome: "ouro",
+        codigo: 30,
+        quantidade: 1,
+    },
+
+    {
+        nome: "saude-publica",
+        codigo: 31,
+        quantidade: 1,
+    },
+
+    {
+        nome: "caridade",
+        codigo: 32,
+        quantidade: 1,
+    },
+
+    {
+        nome: "caridade-empresarial",
+        codigo: 33,
+        quantidade: 1,
+    },
+
+    {
+        nome: "safra-boa-de-soja",
+        codigo: 34,
+        quantidade: 1,
+    },
+
+    {
+        nome: "contra-corrupção",
+        codigo: 35,
+        quantidade: 1,
+    },
+
+    {
+        nome: "saneamento-basico",
+        codigo: 36,
+        quantidade: 1,
+    },
+
+    {
+        nome: "melhora-na-saude",
+        codigo: 37,
+        quantidade: 1,
+    },
+
+    {
+        nome: "investir-em-medicamentos",
+        codigo: 38,
+        quantidade: 1,
+    },
+
+    {
+        nome: "aceitar-refugiados",
+        codigo: 39,
+        quantidade: 1,
+    },
+
+    /* PADRÃO RUINS */
+
+    {
+        nome: "terremoto",
+        codigo: 40,
+        quantidade: 1,
+    },
+
+    {
+        nome: "erupção-vulcanica",
+        codigo: 41,
+        quantidade: 1,
+    },
+
+    {
+        nome: "vazamento-de-esgoto",
+        codigo: 42,
+        quantidade: 1,
+    },
+
+    {
+        nome: "surto-de-catapora",
+        codigo: 43,
+        quantidade: 1,
+    },
+
+    {
+        nome: "perda-na-safra",
+        codigo: 44,
+        quantidade: 1,
+    },
+
+    {
+        nome: "falta-de-agua",
+        codigo: 45,
+        quantidade: 1,
+    },
+
+    {
+        nome: "greve",
+        codigo: 46,
+        quantidade: 1,
+    },
+
+    {
+        nome: "morte-inocente",
+        codigo: 47,
+        quantidade: 1,
+    },
+
+    {
+        nome: "aumento-no-imposto",
+        codigo: 48,
+        quantidade: 1,
+    },
+
+    {
+        nome: "quebra-na-bolsa",
+        codigo: 49,
+        quantidade: 1,
+    }
+
+
+
+]
+
+const cartas_antigo = {
 
     industria: [49,8],
     municipio: [50,500],
