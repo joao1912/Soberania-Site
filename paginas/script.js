@@ -1,37 +1,64 @@
-let botaoHome = document.getElementById("Bsair")
+const botaoHome = document.getElementById("Bsair")
 
-let quantJ1 = document.getElementById("quant1")
-let quantJ2 = document.getElementById("quant2")
-let quantJ3 = document.getElementById("quant3")
-let quantJ4 = document.getElementById("quant4")
+const quantJ1 = document.getElementById("quant1")
+const quantJ2 = document.getElementById("quant2")
+const quantJ3 = document.getElementById("quant3")
+const quantJ4 = document.getElementById("quant4")
 
-let eventYes = document.getElementById("eventSim")
-let eventNo = document.getElementById("eventNao")
+const eventYes = document.getElementById("eventSim")
+const eventNo = document.getElementById("eventNao")
 
 /* população */ 
-let pop_1 = document.getElementById("populacao_P1")
-let pop_2 = document.getElementById("populacao_P2")
-let pop_3 = document.getElementById("populacao_P3")
-let pop_4 = document.getElementById("populacao_P4")
+const pop_1 = document.getElementById("populacao_P1")
+const pop_2 = document.getElementById("populacao_P2")
+const pop_3 = document.getElementById("populacao_P3")
+const pop_4 = document.getElementById("populacao_P4")
 
 /* militar */
-let mili_1 = document.getElementById("militar_P1")
-let mili_2 = document.getElementById("militar_P2")
-let mili_3 = document.getElementById("militar_P3")
-let mili_4 = document.getElementById("militar_P4")
+const mili_1 = document.getElementById("militar_P1")
+const mili_2 = document.getElementById("militar_P2")
+const mili_3 = document.getElementById("militar_P3")
+const mili_4 = document.getElementById("militar_P4")
 
 /* Economia */
-let econ_1 = document.getElementById("economia_P1")
-let econ_2 = document.getElementById("economia_P2")
-let econ_3 = document.getElementById("economia_P3")
-let econ_4 = document.getElementById("economia_P4")
+const econ_1 = document.getElementById("economia_P1")
+const econ_2 = document.getElementById("economia_P2")
+const econ_3 = document.getElementById("economia_P3")
+const econ_4 = document.getElementById("economia_P4")
 
 /* Opinião Publica */
-let OP_1 = document.getElementById("op_P1")
-let OP_2 = document.getElementById("op_P2")
-let OP_3 = document.getElementById("op_P3")
-let OP_4 = document.getElementById("op_P4")
-
+const OP_1 = document.getElementById("op_P1")
+const OP_2 = document.getElementById("op_P2")
+const OP_3 = document.getElementById("op_P3")
+const OP_4 = document.getElementById("op_P4")
+/*
+let players = {
+    jogador1: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+    jogador2: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+    jogador3: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+    jogador4: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    }
+}
+*/
 let player_1 = {
     populacao: 50, /* MAX (50)*/
     militar: 5, /* MAX (15)*/
@@ -376,35 +403,109 @@ const cartas = [
         nome: "quebra-na-bolsa",
         codigo: 49,
         quantidade: 1,
-    }
+    },
 
+    /* CARTAS DE CONSTRUÇÃO */
 
+    {
+        nome: "industria",
+        codigo: 50,
+        quantidade: 8,
+    },
+
+    {
+        nome: "municipio",
+        codigo: 51,
+        quantidade: 500,
+    },
+
+    {
+        nome: "oficina",
+        codigo: 52,
+        quantidade: 4,
+    },
+
+    {
+        nome: "aeroporto",
+        codigo: 53,
+        quantidade: 4,
+    },
+
+    {
+        nome: "porto",
+        codigo: 54,
+        quantidade: 4,
+    },
+
+    {
+        nome: "capital",
+        codigo: 55,
+        quantidade: 4,
+    },
+
+    {
+        nome: "antiaereo",
+        codigo: 56,
+        quantidade: 4,
+    },
+
+    /* CARTAS DE OBJETIVO */
+
+    {
+        nome: "motor-de-dobra-espacial",
+        codigo: 57,
+        quantidade: 1,
+    },
+
+    {
+        nome: "bomba-de-antimatéria",
+        codigo: 58,
+        quantidade: 1,
+    },
+
+    {
+        nome: "maquina-do-tempo",
+        codigo: 59,
+        quantidade: 1,
+    },
+
+    {
+        nome: "pilula-de-imortalidade",
+        codigo: 60,
+        quantidade: 1,
+    },
+
+    {
+        nome: "protese-avançada",
+        codigo: 61,
+        quantidade: 1,
+    },
+
+    {
+        nome: "dominação-1",
+        codigo: 62,
+        quantidade: 1,
+    },
+
+    {
+        nome: "dominação-2",
+        codigo: 63,
+        quantidade: 1,
+    },
+
+    {
+        nome: "dominação-3",
+        codigo: 64,
+        quantidade: 1,
+    },
+
+    {
+        nome: "dominação-4",
+        codigo: 65,
+        quantidade: 1,
+    },
 
 ]
-
-const cartas_antigo = {
-
-    industria: [49,8],
-    municipio: [50,500],
-    oficina: [51,4],
-    aeroporto: [52,4],
-    porto: [53,4],           /* cartas de construção */
-    capital: [54,4],
-    antiaerio: [55,4],
-
-    motorDeDobraEspacial: [56,1],
-    bombaDeAntiMateria: [57,1],
-    maquinaDoTempo: [58,1],
-    pilulaDeImortalidade: [59,1],
-    proteseAvancada: [60,1],          /* cartas de objetivo */
-    dominacao1: [61,1],
-    dominacao2: [62,1],
-    dominacao3: [63,1],
-    dominacao4: [64,1],
-    FUTURACARTA: [65,1]
-}
-
-
 
 function iniciar() {
     window.location.href = "pagina-jogoIniciado.html"
