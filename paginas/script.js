@@ -31,34 +31,7 @@ const OP_1 = document.getElementById("op_P1")
 const OP_2 = document.getElementById("op_P2")
 const OP_3 = document.getElementById("op_P3")
 const OP_4 = document.getElementById("op_P4")
-/*
-let players = {
-    jogador1: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-    jogador2: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-    jogador3: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-    jogador4: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    }
-}
-*/
+
 let player_1 = {
     populacao: 50, /* MAX (50)*/
     militar: 5, /* MAX (15)*/
@@ -85,6 +58,36 @@ let player_4 = {
     militar: 5,
     economia: 10000,
     opiniao_publica: 100
+}
+
+let atributos = {
+    player1: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+
+    player2: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+
+    player3: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+    player4: {
+        populacao: 50,
+        militar: 5,
+        economia: 10000,
+        opiniao_publica: 100
+    },
+    
 }
 
 /* --------------------------------------------- */
