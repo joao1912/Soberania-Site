@@ -1,43 +1,58 @@
 const botaoHome = document.getElementById("Bsair")
 
 const quantJ1 = document.getElementById("quant1")
-const quantJ2 = document.getElementById("quant2")
+const quantJ2 = document.getElementById("quant2") /* procurar a origem */
 const quantJ3 = document.getElementById("quant3")
 const quantJ4 = document.getElementById("quant4")
 
 const eventYes = document.getElementById("eventSim")
 const eventNo = document.getElementById("eventNao")
 
-/* população */ 
-const pop_1 = document.getElementById("populacao_P1")
-const pop_2 = document.getElementById("populacao_P2")
-const pop_3 = document.getElementById("populacao_P3")
-const pop_4 = document.getElementById("populacao_P4")
 
-/* militar */
-const mili_1 = document.getElementById("militar_P1")
-const mili_2 = document.getElementById("militar_P2")
-const mili_3 = document.getElementById("militar_P3")
-const mili_4 = document.getElementById("militar_P4")
-
-/* Economia */
-const econ_1 = document.getElementById("economia_P1")
-const econ_2 = document.getElementById("economia_P2")
-const econ_3 = document.getElementById("economia_P3")
-const econ_4 = document.getElementById("economia_P4")
-
-/* Opinião Publica */
-const OP_1 = document.getElementById("op_P1")
-const OP_2 = document.getElementById("op_P2")
-const OP_3 = document.getElementById("op_P3")
-const OP_4 = document.getElementById("op_P4")
+/* --------------------------------------------- */
+    /* Configurações importantes*/ 
+    let QuantidadeJogadores = ""
+    let Cartas_de_evento = ""
+    let CodigoErro = ""
+/* --------------------------------------------- */
 
 let atributos = dados()
-
 function dados() {
-    if (localStorage.length > 0) {
-        return JSON.parse(localStorage.getItem("atributos"))
-    } else {
+    
+    try {
+        if(JSON.parse(localStorage.getItem("atributos")) !== null) {
+            return JSON.parse(localStorage.getItem("atributos"))
+        } else {
+            return {
+                player1: {
+                    populacao: 50,
+                    militar: 5,
+                    economia: 10000,
+                    opiniao_publica: 100
+                },
+            
+                player2: {
+                    populacao: 50,
+                    militar: 5,
+                    economia: 10000,
+                    opiniao_publica: 100
+                },
+            
+                player3: {
+                    populacao: 50,
+                    militar: 5,
+                    economia: 10000,
+                    opiniao_publica: 100
+                },
+                player4: {
+                    populacao: 50,
+                    militar: 5,
+                    economia: 10000,
+                    opiniao_publica: 100
+                },
+            }
+        }
+    } catch(e) {
         return {
             player1: {
                 populacao: 50,
@@ -69,50 +84,61 @@ function dados() {
     }
 }
 
+function setQuantPlayers(){
+    switch(QuantidadeJogadores) {
+        case 2:
+            document.getElementById("pais3").remove()
+            document.getElementById("pais4").remove()
+            break
+        case 3:
+            document.getElementById("pais4").remove()
+            break
+        default:
+    }
+}
+
 function setDataAttributes() {
     return localStorage.setItem("atributos", JSON.stringify(atributos))
 }
 
 function reoladed(objAtributos) {
+
     document.getElementById("DadosJogadores").innerHTML = `
     <h1>Status</h1>
     <section class="status" id="pais1">
         <h2>país 1</h2>
-        <p id="populacao_P1">${}</p> 
-        <p id="militar_P1">${}</p>
-        <p id="economia_P1">${}</p>
-        <p id="op_P1">${}</p>
+        <p id="populacao_P1">População: <strong>${objAtributos.player1.populacao}/50</strong></p> 
+        <p id="militar_P1">Militar: <strong>${objAtributos.player1.militar}/15</strong></p>
+        <p id="economia_P1">Economia: <strong>$ ${objAtributos.player1.economia}</strong></p>
+        <p id="op_P1">Opinião publica: <strong>${objAtributos.player1.opiniao_publica}/100</strong></p>
     </section>
     <section class="status" id="pais2">
         <h2>país 2</h2>
-        <p id="populacao_P2">${}</p>
-        <p id="militar_P12">${}</p>
-        <p id="economia_P2">${}</p>
-        <p id="op_P2">${}</p>
+        <p id="populacao_P2">População: <strong>${objAtributos.player2.populacao}/50</strong></p>
+        <p id="militar_P2">Militar: <strong>${objAtributos.player2.militar}/15</strong></p>
+        <p id="economia_P2">Economia: <strong>$ ${objAtributos.player2.economia}</strong></p>
+        <p id="op_P2">Opinião publica: <strong>${objAtributos.player2.opiniao_publica}/100</strong></p>
     </section>
     <section class="status" id="pais3">
         <h2>país 3</h2>
-        <p id="populacao_P3">${}</p>
-        <p id="militar_P3">${}</p>
-        <p id="economia_P3">${}</p>
-        <p id="op_P3">${}</p>
+        <p id="populacao_P3">População: <strong>${objAtributos.player3.populacao}/50</strong></p>
+        <p id="militar_P3">Militar: <strong>${objAtributos.player3.militar}/15</strong></p>
+        <p id="economia_P3">Economia: <strong>$ ${objAtributos.player3.economia}</strong></p>
+        <p id="op_P3">Opinião publica: <strong>${objAtributos.player3.opiniao_publica}/100</strong></p>
     </section>
     <section class="status" id="pais4">
         <h2>país 4</h2>
-        <p id="populacao_P4">${}</p>
-        <p id="militar_P4">${}</p>
-        <p id="economia_P4">${}</p>
-        <p id="op_P4">${}</p>
+        <p id="populacao_P4">População: <strong>${objAtributos.player4.populacao}/50</strong></p>
+        <p id="militar_P4">Militar: <strong>${objAtributos.player4.militar}/15</strong></p>
+        <p id="economia_P4">Economia: <strong>$ ${objAtributos.player4.economia}</strong></p>
+        <p id="op_P4">Opinião publica: <strong>${objAtributos.player4.opiniao_publica}/100</strong></p>
     </section>
     `
+    setQuantPlayers()
 }
-reoladed()
-/* --------------------------------------------- */
-        /* Configurações importantes*/ 
-let QuantidadeJogadores = ""
-let Cartas_de_evento = ""
-let CodigoErro = ""
-/* --------------------------------------------- */
+
+reoladed(atributos)
+setDataAttributes()
 
 /* CADASTRO DAS CARTAS DO JOGO*/
 const cartas = [
@@ -535,6 +561,7 @@ botaoHome.addEventListener("click",function(){
     let sair = confirm("Você ira perder todo progresso, deseja sair?")
     if(sair) { 
         window.location.href = "../index.html" 
+        localStorage.clear()
     } 
 })
 
@@ -691,25 +718,25 @@ function Erros(n, erro) {
         switch(pais) {
             case "pais1_negativo": 
                 selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = player_1.economia
+                economiaAtualPais[0].textContent = atributos.player1.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaNegativo = "pais1"
                 break
             case "pais2_negativo": 
                 selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = player_2.economia
+                economiaAtualPais[0].textContent = atributos.player2.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaNegativo = "pais2"
                 break
             case "pais3_negativo": 
                 selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = player_3.economia
+                economiaAtualPais[0].textContent = atributos.player3.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaNegativo = "pais3"
                 break
             case "pais4_negativo": 
                 selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent =  player_4.economia
+                economiaAtualPais[0].textContent =  atributos.player4.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaNegativo = "pais4"
                 break
@@ -728,25 +755,25 @@ function Erros(n, erro) {
         switch(pais) {
             case "pais1_positivo":
                 selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = player_1.economia
+                economiaAtualPais[1].textContent = atributos.player1.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaPositivo = "pais1" 
                 break
             case "pais2_positivo":
                 selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = player_2.economia
+                economiaAtualPais[1].textContent = atributos.player2.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaPositivo = "pais2"
                 break
             case "pais3_positivo":
                 selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = player_3.economia
+                economiaAtualPais[1].textContent = atributos.player3.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaPositivo = "pais3"
                 break
             case "pais4_positivo":
                 selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = player_4.economia
+                economiaAtualPais[1].textContent = atributos.player4.economia
                 botaoTransfer.style.visibility = "visible"
                 economiaPositivo = "pais4"
                 break
@@ -777,40 +804,44 @@ function Erros(n, erro) {
             transfer = Number(document.querySelector(".textoMoney").value)
             switch(economiaNegativo) {
                 case "pais1":
-                    if(transfer > player_1.economia) {
+                    if(transfer > atributos.player1.economia) {
                         CodigoErro = [1,"#saldo_insuficiente#"]
                         break
                     }
-                    player_1.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = player_1.economia
-                    econ_1.innerHTML = `Economia: <strong>${player_1.economia}</strong>`
+                    atributos.player1.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = atributos.player1.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "pais2":
-                    if(transfer > player_2.economia) {
+                    if(transfer > atributos.player2.economia) {
                         CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
                         break
                     }
-                    player_2.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = player_2.economia
-                    econ_2.innerHTML = `Economia: <strong>${player_2.economia}</strong>`
+                    atributos.player2.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = atributos.player2.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "pais3":
-                    if(transfer > player_3.economia) {
+                    if(transfer > atributos.player3.economia) {
                         CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
                         break
                     }
-                    player_3.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = player_3.economia
-                    econ_3.innerHTML = `Economia: <strong>${player_3.economia}</strong>`
+                    atributos.player3.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = atributos.player3.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "pais4":
-                    if(transfer > player_4.economia) {
+                    if(transfer > atributos.player4.economia) {
                         CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"] 
                         break
                     }
-                    player_4.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = player_4.economia
-                    econ_4.innerHTML = `Economia: <strong>${player_4.economia}</strong>`
+                    atributos.player4.economia -= transfer
+                    dinheiroAtual_negativo.innerHTML = atributos.player4.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "banco":
                 /* NULL */
@@ -822,9 +853,10 @@ function Erros(n, erro) {
                         Erros(...CodigoErro)
                         break
                     }
-                    player_1.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = player_1.economia
-                    econ_1.innerHTML = `Economia: <strong>${player_1.economia}</strong>`
+                    atributos.player1.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = atributos.player1.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
 
                 case "pais2":
@@ -832,27 +864,30 @@ function Erros(n, erro) {
                         Erros(...CodigoErro)
                         break
                     }
-                    player_2.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = player_2.economia
-                    econ_2.innerHTML = `Economia: <strong>${player_2.economia}</strong>`
+                    atributos.player2.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = atributos.player2.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "pais3":
                     if(CodigoErro.indexOf(1) !== -1) {
                         Erros(...CodigoErro)
                         break
                     }
-                    player_3.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = player_3.economia
-                    econ_3.innerHTML = `Economia: <strong>${player_3.economia}</strong>`
+                    atributos.player3.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = atributos.player3.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "pais4":
                     if(CodigoErro.indexOf(1) !== -1) {
                         Erros(...CodigoErro)
                         break
                     }
-                    player_4.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = player_4.economia
-                    econ_4.innerHTML = `Economia: <strong>${player_4.economia}</strong>`
+                    atributos.player4.economia += transfer
+                    dinheiroAtual_positivo.innerHTML = atributos.player4.economia
+                    reoladed(atributos)
+                    setDataAttributes()
                     break
                 case "banco":
                 /* NULL */
@@ -908,35 +943,3 @@ function Erros(n, erro) {
         }
     })
 })()
-
-/*
-    <h1>Status</h1>
-            <section class="status" id="pais1">
-                <h2>país 1</h2>
-                <p id="populacao_P1">População: <strong>50/50</strong></p> 
-                <p id="militar_P1">Militar: <strong>05/15</strong></p>
-                <p id="economia_P1">Economia: <strong>10000</strong></p>
-                <p id="op_P1">Opinião Publica: <strong>100/100</strong></p>
-            </section>
-            <section class="status" id="pais2">
-                <h2>país 2</h2>
-                <p id="populacao_P2">População: <strong>50/50</strong></p>
-                <p id="militar_P12">Militar: <strong>05/15</strong></p>
-                <p id="economia_P2">Economia: <strong>10000</strong></p>
-                <p id="op_P2">Opinião Publica: <strong>100/100</strong></p>
-            </section>
-            <section class="status" id="pais3">
-                <h2>país 3</h2>
-                <p id="populacao_P3">População: <strong>50/50</strong></p>
-                <p id="militar_P3">Militar: <strong>05/15</strong></p>
-                <p id="economia_P3">Economia: <strong>10000</strong></p>
-                <p id="op_P3">Opinião Publica: <strong>100/100</strong></p>
-            </section>
-            <section class="status" id="pais4">
-                <h2>país 4</h2>
-                <p id="populacao_P4">População: <strong>50/50</strong></p>
-                <p id="militar_P4">Militar: <strong>05/15</strong></p>
-                <p id="economia_P4">Economia: <strong>10000</strong></p>
-                <p id="op_P4">Opinião Publica: <strong>100/100</strong></p>
-            </section>
-*/
