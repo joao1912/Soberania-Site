@@ -32,64 +32,81 @@ const OP_2 = document.getElementById("op_P2")
 const OP_3 = document.getElementById("op_P3")
 const OP_4 = document.getElementById("op_P4")
 
-let player_1 = {
-    populacao: 50, /* MAX (50)*/
-    militar: 5, /* MAX (15)*/
-    economia: 10000,
-    opiniao_publica: 100 /* MAX (100)*/
+let atributos = dados()
+
+function dados() {
+    if (localStorage.length > 0) {
+        return JSON.parse(localStorage.getItem("atributos"))
+    } else {
+        return {
+            player1: {
+                populacao: 50,
+                militar: 5,
+                economia: 10000,
+                opiniao_publica: 100
+            },
+        
+            player2: {
+                populacao: 50,
+                militar: 5,
+                economia: 10000,
+                opiniao_publica: 100
+            },
+        
+            player3: {
+                populacao: 50,
+                militar: 5,
+                economia: 10000,
+                opiniao_publica: 100
+            },
+            player4: {
+                populacao: 50,
+                militar: 5,
+                economia: 10000,
+                opiniao_publica: 100
+            },
+        }
+    }
 }
 
-let player_2 = {
-    populacao: 50,
-    militar: 5,
-    economia: 10000,
-    opiniao_publica: 100
+function setDataAttributes() {
+    return localStorage.setItem("atributos", JSON.stringify(atributos))
 }
 
-let player_3 = {
-    populacao: 50,
-    militar: 5,
-    economia: 10000,
-    opiniao_publica: 100
+function reoladed(objAtributos) {
+    document.getElementById("DadosJogadores").innerHTML = `
+    <h1>Status</h1>
+    <section class="status" id="pais1">
+        <h2>país 1</h2>
+        <p id="populacao_P1">${}</p> 
+        <p id="militar_P1">${}</p>
+        <p id="economia_P1">${}</p>
+        <p id="op_P1">${}</p>
+    </section>
+    <section class="status" id="pais2">
+        <h2>país 2</h2>
+        <p id="populacao_P2">${}</p>
+        <p id="militar_P12">${}</p>
+        <p id="economia_P2">${}</p>
+        <p id="op_P2">${}</p>
+    </section>
+    <section class="status" id="pais3">
+        <h2>país 3</h2>
+        <p id="populacao_P3">${}</p>
+        <p id="militar_P3">${}</p>
+        <p id="economia_P3">${}</p>
+        <p id="op_P3">${}</p>
+    </section>
+    <section class="status" id="pais4">
+        <h2>país 4</h2>
+        <p id="populacao_P4">${}</p>
+        <p id="militar_P4">${}</p>
+        <p id="economia_P4">${}</p>
+        <p id="op_P4">${}</p>
+    </section>
+    `
 }
-
-let player_4 = {
-    populacao: 50,
-    militar: 5,
-    economia: 10000,
-    opiniao_publica: 100
-}
-
-let atributos = {
-    player1: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-
-    player2: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-
-    player3: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-    player4: {
-        populacao: 50,
-        militar: 5,
-        economia: 10000,
-        opiniao_publica: 100
-    },
-    
-}
-
+reoladed()
 /* --------------------------------------------- */
         /* Configurações importantes*/ 
 let QuantidadeJogadores = ""
@@ -891,3 +908,35 @@ function Erros(n, erro) {
         }
     })
 })()
+
+/*
+    <h1>Status</h1>
+            <section class="status" id="pais1">
+                <h2>país 1</h2>
+                <p id="populacao_P1">População: <strong>50/50</strong></p> 
+                <p id="militar_P1">Militar: <strong>05/15</strong></p>
+                <p id="economia_P1">Economia: <strong>10000</strong></p>
+                <p id="op_P1">Opinião Publica: <strong>100/100</strong></p>
+            </section>
+            <section class="status" id="pais2">
+                <h2>país 2</h2>
+                <p id="populacao_P2">População: <strong>50/50</strong></p>
+                <p id="militar_P12">Militar: <strong>05/15</strong></p>
+                <p id="economia_P2">Economia: <strong>10000</strong></p>
+                <p id="op_P2">Opinião Publica: <strong>100/100</strong></p>
+            </section>
+            <section class="status" id="pais3">
+                <h2>país 3</h2>
+                <p id="populacao_P3">População: <strong>50/50</strong></p>
+                <p id="militar_P3">Militar: <strong>05/15</strong></p>
+                <p id="economia_P3">Economia: <strong>10000</strong></p>
+                <p id="op_P3">Opinião Publica: <strong>100/100</strong></p>
+            </section>
+            <section class="status" id="pais4">
+                <h2>país 4</h2>
+                <p id="populacao_P4">População: <strong>50/50</strong></p>
+                <p id="militar_P4">Militar: <strong>05/15</strong></p>
+                <p id="economia_P4">Economia: <strong>10000</strong></p>
+                <p id="op_P4">Opinião Publica: <strong>100/100</strong></p>
+            </section>
+*/
