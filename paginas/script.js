@@ -11,7 +11,7 @@ const eventNo = document.getElementById("eventNao")
 
 /* --------------------------------------------- */
     /* Configurações importantes*/ 
-    let QuantidadeJogadores = ""
+    let QuantidadeJogadores = 4
     let Cartas_de_evento = ""
     let CodigoErro = ""
 /* --------------------------------------------- */
@@ -94,6 +94,38 @@ function setQuantPlayers(){
             document.getElementById("pais4").remove()
             break
         default:
+    }
+    setQuantTablesTransfer(QuantidadeJogadores)
+}
+
+function setQuantTablesTransfer(quantPlayers) {
+    const conteinerPlayersTransfer_negativo = document.querySelector("#selecionarPais1")
+    const conteinerPlayersTransfer_positivo = document.querySelector("#selecionarPais2")
+    const ul_negativo = conteinerPlayersTransfer_negativo.firstElementChild
+    const ul_positivo = conteinerPlayersTransfer_positivo.firstElementChild
+
+    const pais3_negativo = ul_negativo.firstElementChild.nextElementSibling.nextElementSibling
+    const pais4_negativo = ul_negativo.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling
+    
+    const pais3_positivo = ul_positivo.firstElementChild.nextElementSibling.nextElementSibling
+    const pais4_positivo = ul_positivo.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling
+    
+    if (quantPlayers === 2) {
+        pais3_negativo.remove()
+        pais4_negativo.remove()
+
+        pais3_positivo.remove()
+        pais4_positivo.remove()
+
+        conteinerPlayersTransfer_negativo.style.height = "75px"
+        conteinerPlayersTransfer_positivo.style.height = "75px"
+    } else if(quantPlayers === 3) {
+        pais4_negativo.remove()
+
+        pais4_positivo.remove()
+
+        conteinerPlayersTransfer_negativo.style.height = "100px"
+        conteinerPlayersTransfer_positivo.style.height = "100px"
     }
 }
 
