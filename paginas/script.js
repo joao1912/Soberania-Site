@@ -172,43 +172,10 @@ function reoladed(objAtributos) {
 reoladed(atributos)
 setDataAttributes()
 
+console.log(somar(3,5))
+
 /* CADASTRO DAS CARTAS DO JOGO*/
 const cartas = [
-    {
-        nome: "petroleo",
-        codigo: 0,
-        quantidade: 20
-    },
-
-    {
-        nome: "uranio",
-        codigo: 1,
-        quantidade: 1 
-    },
-
-    {
-        nome: "metal",
-        codigo: 2,
-        quantidade: 12 
-    },
-
-    {
-        nome: "concreto",
-        codigo: 3,
-        quantidade: 10 
-    },
-
-    {
-        nome: "munição",
-        codigo: 4,
-        quantidade: 8 
-    },
-
-    {
-        nome: "projeto",
-        codigo: 5,
-        quantidade: 8 
-    },
 
     /* MULTIPLICADORES */
     {
@@ -295,43 +262,7 @@ const cartas = [
         quantidade: 4 
     },
 
-    /* ADVERSIDADE */
-
-    {
-        nome: "pandemia",
-        codigo: 20,
-        quantidade: 1 
-    },
-
-    {
-        nome: "crise-economica",
-        codigo: 21,
-        quantidade: 1 
-    },
-
-    {
-        nome: "guerra-civil",
-        codigo: 22,
-        quantidade: 1 
-    },
-
-    {
-        nome: "i-want-you",
-        codigo: 23,
-        quantidade: 1
-    },
-
-    {
-        nome: "avanço-na-medicina",
-        codigo: 24,
-        quantidade: 1
-    },
-
-    {
-        nome: "a-união-faz-a-força",
-        codigo: 25,
-        quantidade: 1 
-    },
+    
 
     /* COOPERAÇÃO */
 
@@ -357,68 +288,6 @@ const cartas = [
         nome: "apocalipse",
         codigo: 29,
         quantidade: 1
-    },
-
-    /* PADRÃO BOAS */
-
-    {
-        nome: "ouro",
-        codigo: 30,
-        quantidade: 1,
-    },
-
-    {
-        nome: "saude-publica",
-        codigo: 31,
-        quantidade: 1,
-    },
-
-    {
-        nome: "caridade",
-        codigo: 32,
-        quantidade: 1,
-    },
-
-    {
-        nome: "caridade-empresarial",
-        codigo: 33,
-        quantidade: 1,
-    },
-
-    {
-        nome: "safra-boa-de-soja",
-        codigo: 34,
-        quantidade: 1,
-    },
-
-    {
-        nome: "contra-corrupção",
-        codigo: 35,
-        quantidade: 1,
-    },
-
-    {
-        nome: "saneamento-basico",
-        codigo: 36,
-        quantidade: 1,
-    },
-
-    {
-        nome: "melhora-na-saude",
-        codigo: 37,
-        quantidade: 1,
-    },
-
-    {
-        nome: "investir-em-medicamentos",
-        codigo: 38,
-        quantidade: 1,
-    },
-
-    {
-        nome: "aceitar-refugiados",
-        codigo: 39,
-        quantidade: 1,
     },
 
     /* PADRÃO RUINS */
@@ -481,50 +350,6 @@ const cartas = [
         nome: "quebra-na-bolsa",
         codigo: 49,
         quantidade: 1,
-    },
-
-    /* CARTAS DE CONSTRUÇÃO */
-
-    {
-        nome: "industria",
-        codigo: 50,
-        quantidade: 8,
-    },
-
-    {
-        nome: "municipio",
-        codigo: 51,
-        quantidade: 500,
-    },
-
-    {
-        nome: "oficina",
-        codigo: 52,
-        quantidade: 4,
-    },
-
-    {
-        nome: "aeroporto",
-        codigo: 53,
-        quantidade: 4,
-    },
-
-    {
-        nome: "porto",
-        codigo: 54,
-        quantidade: 4,
-    },
-
-    {
-        nome: "capital",
-        codigo: 55,
-        quantidade: 4,
-    },
-
-    {
-        nome: "antiaereo",
-        codigo: 56,
-        quantidade: 4,
     },
 
     /* CARTAS DE OBJETIVO */
