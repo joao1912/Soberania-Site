@@ -256,29 +256,33 @@ input#play:hover {
 
 /*pag 5 (Jogo Iniciado)*/
 
+body#jogoIniciadoBody {
+    background-color: antiquewhite;
+    padding: 20px;
+}
+
 div#conteinerFormularioDeJogo {
     display: flex;
     flex-direction: column;
 
 }
 
+#conteinerFormularioDeJogo h2 {
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: -20px;
+}
+
 header#headerFormulario {
     background-image: none;
-    background-color: lightgray;
-    
+    background-color: antiquewhite;
 }
 
-section.sub-conteiner-formulario {
-    background-color: white;
-    width: 400px;
-    height: 400px;
-    margin: auto;
-    margin-top: 30px;
-    border-radius: 30px;
+header h1 {
+    margin-top: -10px;
 }
 
-
-footer i{
+header i{
     padding: 10px;
     background-color: white;
     text-align: left;
@@ -286,17 +290,169 @@ footer i{
     border-radius: 50%;
     font-weight: bold;
     margin: 10px;
-
-    margin-top: -20px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.367);
+    margin-top: -10px;
+    margin-left: -10px;
 }
 
-footer i:hover {
+header i:hover {
     background-color: rgb(77, 76, 76);
     color: red;
 }
 
+section.sub-conteiner-formulario {
+    background-color: white;
+    width: 400px;
+    height: 350px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px rgba(56, 55, 55, 0.155);
+    margin-bottom: 40px;
+}
 
+.buttonForm {
+    background-color: black;
+    color: white;
+    width: 250px;
+    height: 60px;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
 
+.buttonForm:hover {
+    cursor: pointer;
+}
 
+#quant_2P {
+    margin-top: -5px;
+    background-color: cadetblue;
+}
 
+#quant_2P:hover {
+    background-color: rgb(69, 116, 118);
+}
+
+#quant_3P {
+    background-color: brown;
+}
+
+#quant_3P:hover {
+    background-color: rgb(130, 34, 34);
+}
+
+#quant_4P {
+    background-color: coral;
+}
+
+#quant_4P:hover {
+    background-color: rgb(201, 100, 64);
+}
+
+#event_sim {
+    margin-top: -5px;
+    background-color: cadetblue;
+}
+
+#event_sim:hover {
+    background-color: rgb(69, 116, 118);
+}
+
+#event_nao {
+    background-color: brown;
+}
+
+#event_nao:hover {
+    background-color: rgb(130, 34, 34);
+}
+
+.definitionNames {
+    background-color: gray;
+    width: 80%;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+}
+
+#player1 {
+    margin-top: 5px;
+    background-color: cadetblue;
+}
+
+#player2{
+    background-color: brown;
+}
+
+#player3{
+    background-color: coral;
+}
+
+#player4{
+    background-color: thistle;
+}
+
+.definitionNames section {
+    background-color: gray;
+    width: 80px;
+    height: 90%;
+    border-radius: 5px;
+    margin: 3px;
+    padding-top: 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.definitionNames input {
+    height: 30px;
+    margin-top: 15px;
+    width: 70%;
+    font-size: 1.3em;
+    margin-left: -3px;
+}
+
+#p1 {
+    background-color: rgb(68, 114, 115);
+}
+
+#p2 {
+    background-color: rgb(108, 29, 29);
+}
+
+#p3 {
+    background-color: rgb(195, 95, 59);
+}
+
+#p4 {
+    background-color: rgb(159, 140, 159);
+}
+
+section#play {
+    background-color: crimson;
+    width: 150px;
+    height: 50px;
+    margin: auto;
+    margin-top: -20px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+#play:hover {
+    cursor: pointer;
+    background-color: rgb(158, 21, 49);
+    color: rgb(185, 181, 181);
+}
 
