@@ -84,73 +84,77 @@ let Carta_31 = new Carta("Investir em Medicamentos", 31, 1)
 
 let Carta_32 = new Carta("Aceitar Refugiados", 32, 1)
 
-let Carta_33 = new Carta("Terremoto", , )
+//padrao Ruins
 
-let Carta_34 = new Carta("", , )
+let Carta_33 = new Carta("Terremoto", 33, 1)
 
-let Carta_35 = new Carta("", , )
+let Carta_34 = new Carta("Erupção Vulcanica", 34, 1)
 
-let Carta_36 = new Carta("", , )
+let Carta_35 = new Carta("Vazamento de Gás", 35, 1)
 
-let Carta_37 = new Carta("", , )
+let Carta_36 = new Carta("Vazamento de Esgoto", 36, 1)
 
-let Carta_38 = new Carta("", , )
+let Carta_37 = new Carta("Surto de Catapora", 37, 1)
 
-let Carta_39 = new Carta("", , )
+let Carta_38 = new Carta("Perda Na Safra", 38, 1)
 
-let Carta_40 = new Carta("", , )
+let Carta_39 = new Carta("Falta de Água", 39, 1)
 
-let Carta_41 = new Carta("", , )
+let Carta_40 = new Carta("Greve", 40, 1)
 
-let Carta_42 = new Carta("", , )
+let Carta_41 = new Carta("Morte de Inocentes", 41, 1)
 
-let Carta_43 = new Carta("", , )
+let Carta_42 = new Carta("Aumento no Imposto", 42, 1)
 
-let Carta_44 = new Carta("", , )
+let Carta_43 = new Carta("Queda na Bolsa", 43, 1)
 
-let Carta_45 = new Carta("", , )
+//cartas de objetivo
 
-let Carta_46 = new Carta("", , )
+let Carta_44 = new Carta("Motor de Dobra Espacial", 44, 1)
 
-let Carta_47 = new Carta("", , )
+let Carta_45 = new Carta("Bomba de Antimatéria", 45, 1)
 
-let Carta_48 = new Carta("", , )
+let Carta_46 = new Carta("Maquina do Tempo", 46, 1)
 
-let Carta_49 = new Carta("", , )
+let Carta_47 = new Carta("Pilula de Imortalidade", 47, 1)
 
-let Carta_50 = new Carta("", , )
+let Carta_48 = new Carta("Protese Avançada", 48, 1)
 
-let Carta_51 = new Carta("", , )
+let Carta_49 = new Carta("Domínio", 49, 1)
 
-let Carta_52 = new Carta("", , )
+let Carta_50 = new Carta("Domínio", 50, 1)
 
-let Carta_53 = new Carta("", , )
+let Carta_51 = new Carta("Domínio", 51, 1)
 
-let Carta_54 = new Carta("", , )
+let Carta_52 = new Carta("Domínio", 52, 1)
 
-let Carta_55 = new Carta("", , )
+//carta de multiplicador
 
-let Carta_56 = new Carta("", , )
+let Carta_53 = new Carta("Bomba Atômica", 53, 1)
 
-let Carta_57 = new Carta("", , )
+let Carta_54 = new Carta("Tanque", 54, 4)
 
-let Carta_58 = new Carta("", , )
+let Carta_55 = new Carta("Avião de Transporte", 55, 4)
 
-let Carta_59 = new Carta("", , )
+let Carta_56 = new Carta("Espião", 56, 4)
 
-let Carta_60 = new Carta("", , )
+let Carta_57 = new Carta("Sabotagem", 57, 1)
 
-let Carta_61 = new Carta("", , )
+let Carta_58 = new Carta("Bombardeiro", 58, 2)
 
-let Carta_62 = new Carta("", , )
+let Carta_59 = new Carta("Submarino", 59, 4)
 
-let Carta_63 = new Carta("", , )
+let Carta_60 = new Carta("Navio de Transporte", 60, 4)
 
-let Carta_64 = new Carta("", , )
+let Carta_61 = new Carta("Helicóptero", 61, 4)
 
-let Carta_65 = new Carta("", , )
+let Carta_62 = new Carta("Navio Militar", 62, 4)
 
+let Carta_63 = new Carta("Caça", 63, 4)
 
+let Carta_64 = new Carta("Forças Especiais", 64, 8)
 
+let Carta_65 = new Carta("Soldado", 65, 60)
 
+let Carta_66 = new Carta("Artilharia", 66, 4)
 
