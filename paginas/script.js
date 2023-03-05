@@ -1,12 +1,17 @@
+import {quantPlayers, cartasEvento} from './jogoIniciado_script.js'
+
 const botaoHome = document.getElementById("Bsair")
+
 
 /* --------------------------------------------- */
     /* Configurações importantes*/ 
-    let QuantidadeJogadores = 4
-    let Cartas_de_evento = ""
+    var dadosFormulario = {
+        QuantidadeJogadores: quantPlayers,
+        eventCards: cartasEvento
+    }
     let CodigoErro = ""
 /* --------------------------------------------- */
-
+console.log(typeof dadosFormulario.QuantidadeJogadores)
 let atributos = dados()
 function dados() {
     
@@ -76,7 +81,7 @@ function dados() {
 }
 
 function setQuantPlayers(){
-    switch(QuantidadeJogadores) {
+    switch(dadosFormulario.QuantidadeJogadores) {
         case 2:
             document.getElementById("pais3").remove()
             document.getElementById("pais4").remove()
@@ -86,7 +91,7 @@ function setQuantPlayers(){
             break
         default:
     }
-    setQuantTablesTransfer(QuantidadeJogadores)
+    setQuantTablesTransfer(dadosFormulario.QuantidadeJogadores)
 }
 
 function setQuantTablesTransfer(quantPlayers) {
