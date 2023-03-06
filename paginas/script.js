@@ -2,7 +2,6 @@ import {quantPlayers, cartasEvento} from './jogoIniciado_script.js'
 
 const botaoHome = document.getElementById("Bsair")
 
-
 /* --------------------------------------------- */
     /* Configurações importantes*/ 
     var dadosFormulario = {
@@ -11,7 +10,6 @@ const botaoHome = document.getElementById("Bsair")
     }
     let CodigoErro = ""
 /* --------------------------------------------- */
-console.log(typeof dadosFormulario.QuantidadeJogadores)
 let atributos = dados()
 function dados() {
     
@@ -167,10 +165,6 @@ function reoladed(objAtributos) {
 
 reoladed(atributos)
 setDataAttributes()
-
-function iniciar() {
-    window.location.href = "pagina-jogoIniciado.html"
-}
 
 botaoHome.addEventListener("click",function(){
     let sair = confirm("Você ira perder todo progresso, deseja sair?")
