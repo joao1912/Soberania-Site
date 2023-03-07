@@ -21,6 +21,7 @@ try {
     }
     let CodigoErro = ""
 /* --------------------------------------------- */
+console.log(dadosFormulario.Paises)
 let atributos = dados()
 function dados() {
     

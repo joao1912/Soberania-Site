@@ -1,8 +1,16 @@
 let formulario = {
     quantPlayers: 0,
-    cartasEvento: ""
+    cartasEvento: "",
     nomesPaises: []
 }
+let p1 = document.getElementById("pais1")
+let p2 = document.getElementById("pais2")
+let p3 = document.getElementById("pais3")
+let p4 = document.getElementById("pais4")
+
+
+
+
 ;(function(){
     if(document.querySelector("#conteinerFormularioDeJogo")){
         document.querySelector("#conteinerFormularioDeJogo").addEventListener("click",function(event){   
@@ -34,7 +42,9 @@ let formulario = {
         document.querySelector("#playGame").addEventListener("click",function(){
             if(true) {
                 localStorage.setItem("formulario",JSON.stringify(formulario))
-                window.location.href = "pagina-jogoRodando.html"
+                formulario.nomesPaises.push(p1.value, p2.value, p2.value, p4.value)
+                console.log(formulario.nomesPaises)
+                //window.location.href = "pagina-jogoRodando.html"
             } else {
 
             }
