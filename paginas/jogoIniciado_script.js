@@ -3,10 +3,10 @@ let formulario = {
     cartasEvento: "",
     nomesPaises: []
 }
-let p1 = document.getElementById("pais1")
-let p2 = document.getElementById("pais2")
-let p3 = document.getElementById("pais3")
-let p4 = document.getElementById("pais4")
+let p1 = document.getElementById("pais1").value
+let p2 = document.getElementById("pais2").velue
+let p3 = document.getElementById("pais3").velue
+let p4 = document.getElementById("pais4").velue
 
 
 
@@ -42,7 +42,7 @@ let p4 = document.getElementById("pais4")
         document.querySelector("#playGame").addEventListener("click",function(){
             if(true) {
                 localStorage.setItem("formulario",JSON.stringify(formulario))
-                formulario.nomesPaises.push(p1.value, p2.value, p2.value, p4.value)
+                formulario.nomesPaises.push(p1, p2, p2, p4)
                 console.log(formulario.nomesPaises)
                 //window.location.href = "pagina-jogoRodando.html"
             } else {
