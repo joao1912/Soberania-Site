@@ -3,10 +3,10 @@ let formulario = {
     cartasEvento: "",
     nomesPaises: []
 }
-let p1 = document.getElementById("pais1").textContent
-let p2 = document.getElementById("pais2").textContent
-let p3 = document.getElementById("pais3").textContent
-let p4 = document.getElementById("pais4").textContent
+let p1 = document.getElementById("pais1").value
+let p2 = document.getElementById("pais2").value
+let p3 = document.getElementById("pais3").value
+let p4 = document.getElementById("pais4").value
 
 
 
@@ -39,10 +39,12 @@ let p4 = document.getElementById("pais4").textContent
             }
         })
         //fazer verificação e colocar os nomes dos paises no array
+        
         document.querySelector("#playGame").addEventListener("click",function(){
             if(true) {
-                localStorage.setItem("formulario",JSON.stringify(formulario))
                 formulario.nomesPaises.push(p1) //esta indo vazil
+                localStorage.setItem("formulario",JSON.stringify(formulario))
+                console.log(p1)
                 console.log(formulario.nomesPaises)
                 //window.location.href = "pagina-jogoRodando.html"
             } else {
