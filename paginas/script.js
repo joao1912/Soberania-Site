@@ -1,12 +1,23 @@
-import {quantPlayers, cartasEvento} from './jogoIniciado_script.js'
 
 const botaoHome = document.getElementById("Bsair")
+let formulario = {}
+try {
+    formulario = JSON.parse(localStorage.getItem("formulario"))
+} catch(e) {
+    formulario = {
+        quantPlayers: 4,
+        cartasEvento: "OFF",
+        nomesPaises: ["Pais 1", "Pais 2", "Pais 3", "Pais 4",]
+    }
+}
+
 
 /* --------------------------------------------- */
     /* Configurações importantes*/ 
     var dadosFormulario = {
-        QuantidadeJogadores: quantPlayers,
-        eventCards: cartasEvento
+        QuantidadeJogadores: formulario.quantPlayers,
+        eventCards: formulario.cartasEvento,
+        Paises: formulario.nomesPaises
     }
     let CodigoErro = ""
 /* --------------------------------------------- */
