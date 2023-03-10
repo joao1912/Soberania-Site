@@ -407,6 +407,10 @@ section.sub-conteiner-formulario {
     background-color: thistle;
 }
 
+#CountryNamesConteiner {
+    display: none; 
+}
+
 .definitionNames section {
     background-color: gray;
     width: 80px;
@@ -444,6 +448,7 @@ section.sub-conteiner-formulario {
 }
 
 section#playGame {
+    display: none;
     background-color: crimson;
     width: 150px;
     height: 50px;
