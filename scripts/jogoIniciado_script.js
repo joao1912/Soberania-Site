@@ -8,9 +8,7 @@ const p2 = document.getElementById("pais2")
 const p3 = document.getElementById("pais3")
 const p4 = document.getElementById("pais4")
 
-
-
-
+let error = [0,""]
 
 ;(function(){
     if(document.querySelector("#conteinerFormularioDeJogo")){
@@ -18,6 +16,12 @@ const p4 = document.getElementById("pais4")
             const id = event.target.id
             const botaoDePlayers = document.querySelectorAll(".quantPlayers")
             const botaoDeEvento = document.querySelectorAll(".eventButton")
+            const botaoDoisPlayers = document.getElementById("quant_2P")
+            const botaoTresPlayers = document.getElementById("quant_3P")
+            const botaoQuatroPlayers = document.getElementById("quant_4P")
+
+            const botaoEventoSim = document.querySelector("#event_sim")
+            const botaoEventoNao = document.querySelector("#event_nao")
             switch(id) {
                 case "quant_2P":
                     formulario.quantPlayers = 2
@@ -25,10 +29,10 @@ const p4 = document.getElementById("pais4")
                         elemento.style.borderRadius = "0px"
                     })
         
-                    document.getElementById("quant_2P").style.background = "rgb(45, 74, 75)"
-                    document.getElementById("quant_2P").style.borderRadius = "10px"
-                    document.getElementById("quant_3P").style.background = "brown"
-                    document.getElementById("quant_4P").style.background = "coral"
+                    botaoDoisPlayers.style.background = "rgb(45, 74, 75)"
+                    botaoDoisPlayers.style.borderRadius = "10px"
+                    botaoTresPlayers.style.background = "brown"
+                    botaoQuatroPlayers.style.background = "coral"
 
                     visibleCoutryNames(2)
                     break
@@ -38,10 +42,10 @@ const p4 = document.getElementById("pais4")
                         elemento.style.borderRadius = "0px"
                     })
 
-                    document.getElementById("quant_2P").style.background = "cadetblue"
-                    document.getElementById("quant_3P").style.background = "rgb(88, 24, 24)"
-                    document.getElementById("quant_3P").style.borderRadius = "10px"
-                    document.getElementById("quant_4P").style.background = "coral"
+                    botaoDoisPlayers.style.background = "cadetblue"
+                    botaoTresPlayers.style.background = "rgb(88, 24, 24)"
+                    botaoTresPlayers.style.borderRadius = "10px"
+                    botaoQuatroPlayers.style.background = "coral"
 
                     visibleCoutryNames(3)
                     break
@@ -51,10 +55,10 @@ const p4 = document.getElementById("pais4")
                         elemento.style.borderRadius = "0px"
                     })
 
-                    document.getElementById("quant_2P").style.background = "cadetblue"
-                    document.getElementById("quant_3P").style.background = "brown"
-                    document.getElementById("quant_4P").style.background = "rgb(145, 73, 47)"
-                    document.getElementById("quant_4P").style.borderRadius = "10px"
+                    botaoDoisPlayers.style.background = "cadetblue"
+                    botaoTresPlayers.style.background = "brown"
+                    botaoQuatroPlayers.style.background = "rgb(145, 73, 47)"
+                    botaoQuatroPlayers.style.borderRadius = "10px"
 
                     visibleCoutryNames()
                     break
@@ -65,9 +69,9 @@ const p4 = document.getElementById("pais4")
                         elemento.style.borderRadius = "0px"
                     })
 
-                    document.querySelector("#event_sim").style.borderRadius = "10px"
-                    document.querySelector("#event_nao").style.background = "brown"
-                    document.querySelector("#event_sim").style.background = "rgb(45, 74, 75)"
+                    botaoEventoSim.style.borderRadius = "10px"
+                    botaoEventoNao.style.background = "brown"
+                    botaoEventoSim.style.background = "rgb(45, 74, 75)"
 
                     visibleButtonPlay()
 
@@ -78,9 +82,9 @@ const p4 = document.getElementById("pais4")
                         elemento.style.borderRadius = "0px"
                     })
 
-                    document.querySelector("#event_nao").style.borderRadius = "10px"
-                    document.querySelector("#event_sim").style.background = "cadetblue"
-                    document.querySelector("#event_nao").style.background = "rgb(88, 24, 24)"
+                    botaoEventoNao.style.borderRadius = "10px"
+                    botaoEventoSim.style.background = "cadetblue"
+                    botaoEventoNao.style.background = "rgb(88, 24, 24)"
 
                     visibleButtonPlay()
 
@@ -129,25 +133,115 @@ const p4 = document.getElementById("pais4")
                     })
                     containerCountries.style.height = "350px"
             }
+            visibleButtonPlay()
         }
 
         function visibleButtonPlay() {
-            document.getElementById("playGame").style.display = "block"
+            if(formulario.quantPlayers && formulario.cartasEvento) {
+               document.getElementById("playGame").style.display = "block" 
+            }
         }
         
         
         document.querySelector("#playGame").addEventListener("click",function(){
-            if(true) {
-                formulario.nomesPaises.push(p1.value) 
-                formulario.nomesPaises.push(p2.value) 
-                formulario.nomesPaises.push(p3.value) 
-                formulario.nomesPaises.push(p4.value) 
-                localStorage.setItem("formulario",JSON.stringify(formulario))
-                window.location.href = "pagina-jogoRodando.html"
-            } else {
+            const inputCountry = document.querySelectorAll(".inputCountry")
+  
+            switch(formulario.quantPlayers) {
+                case 2:
 
+                    for(let c = 0 ; c < 2 ; c++) {
+                        if(inputCountry[c].value === "") {
+                            error = [1, "#input-vazio#"]
+                        } else if(inputCountry[c].value.length < 6) {
+                            error = [1, "#pouco-caracter#"]
+                        } 
+                    }
+
+                    if(error.indexOf(1) !== -1) {
+                        detecErro(...error)
+                        break
+                    }
+
+                    formulario.nomesPaises.push(p1.value) 
+                    formulario.nomesPaises.push(p2.value)
+                    play()
+
+                    break
+                case 3:
+
+                    for(let c = 0 ; c < 3 ; c++) {
+                        if(inputCountry[c].value === "") {
+                            error = [1, "#input-vazio#"]
+                        } else if(inputCountry[c].value.length < 6) {
+                            error = [1, "#pouco-caracter#"]
+                        } 
+                    }
+
+                    if(error.indexOf(1) !== -1) {
+                        detecErro(...error)
+                        break
+                    }
+
+                    formulario.nomesPaises.push(p1.value) 
+                    formulario.nomesPaises.push(p2.value)
+                    formulario.nomesPaises.push(p3.value)
+                    play()
+
+                    break
+                case 4:
+
+                    ;[...inputCountry].forEach(function(input){
+                        if(input.value === "") {
+                            error = [1, "#input-vazio#"]
+                        } else if(input.value.length < 6) {
+                            error = [1, "#pouco-caracter#"]
+                        } 
+                    })
+
+                    if(error.indexOf(1) !== -1) {
+                        detecErro(...error)
+                        break
+                    }
+
+                    formulario.nomesPaises.push(p1.value) 
+                    formulario.nomesPaises.push(p2.value)
+                    formulario.nomesPaises.push(p3.value)
+                    formulario.nomesPaises.push(p4.value)
+                    play()
+
+                    break
             }
+
         })
+    }
+
+    function detecErro(cod,erro) {
+        document.querySelector("#playGame").style.display = "none"
+        let telaError = document.querySelector("#erros")
+        telaError.style.display = "block"
+        switch(erro) {
+            case "#input-vazio#":
+                telaError.innerHTML = "Preencha os nomes"
+                break
+            case "#pouco-caracter#":
+                telaError.innerHTML = "Mínimo 6 caracteres"
+                break
+        }
+        setTimeout(function(){
+            telaError.style="display:none"
+            document.querySelector("#playGame").style.display = "block"
+            }, 3000);
+
+        error = [0, ""]
+    }
+
+    function play() {
+        formulario.nomesPaises.push(p1.value) 
+        formulario.nomesPaises.push(p2.value) 
+        formulario.nomesPaises.push(p3.value) 
+        formulario.nomesPaises.push(p4.value) 
+        localStorage.setItem("formulario",JSON.stringify(formulario))
+        window.location.href = "../paginas/pagina-jogoRodando.html"
     }
     
 })()

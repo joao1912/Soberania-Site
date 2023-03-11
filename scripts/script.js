@@ -21,7 +21,7 @@ try {
     }
     let CodigoErro = ""
 /* --------------------------------------------- */
-console.log(dadosFormulario.Paises)
+
 let atributos = dados()
 function dados() {
     
@@ -244,7 +244,6 @@ telaFerramentas.addEventListener("click",function(event){
 function Erros(n, erro) {
     let telaError = document.querySelector("#erros")
     telaError.style.display = "block"
-    console.log(erro)
     switch(erro) {
         case "#saldo_insuficiente#":
             telaError.innerHTML = "Saldo Insuficiente"
