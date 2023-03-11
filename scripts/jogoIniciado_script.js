@@ -152,7 +152,7 @@ let error = [0,""]
                     for(let c = 0 ; c < 2 ; c++) {
                         if(inputCountry[c].value === "") {
                             error = [1, "#input-vazio#"]
-                        } else if(inputCountry[c].value.length < 6) {
+                        } else if(inputCountry[c].value.length < 4) {
                             error = [1, "#pouco-caracter#"]
                         } 
                     }
@@ -172,7 +172,7 @@ let error = [0,""]
                     for(let c = 0 ; c < 3 ; c++) {
                         if(inputCountry[c].value === "") {
                             error = [1, "#input-vazio#"]
-                        } else if(inputCountry[c].value.length < 6) {
+                        } else if(inputCountry[c].value.length < 4) {
                             error = [1, "#pouco-caracter#"]
                         } 
                     }
@@ -238,7 +238,7 @@ let error = [0,""]
     function play() {
 
         localStorage.setItem("formulario",JSON.stringify(formulario))
-        window.location.href = "../paginas/pagina-jogoRodando.html"
+        window.location.href = "../paginas/pagina-JogoRodando.html"
     }
     
 })()
