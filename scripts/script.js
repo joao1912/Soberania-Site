@@ -1,5 +1,13 @@
 
 const botaoHome = document.getElementById("Bsair")
+botaoHome.addEventListener("click",function(){
+    let sair = confirm("Você ira perder todo progresso, deseja sair?")
+    if(sair) { 
+        window.location.href = "../index.html" 
+        localStorage.clear()
+    } 
+})
+
 let formulario = {}
 try {
     formulario = JSON.parse(localStorage.getItem("formulario"))
@@ -21,6 +29,10 @@ try {
     }
     let CodigoErro = ""
 /* --------------------------------------------- */
+
+if(dadosFormulario.eventCards === "ON") {
+    document.getElementById("evento").style.display = "block"
+}
 
 let atributos = dados()
 function dados() {
@@ -144,67 +156,62 @@ function reoladed(objAtributos) {
     document.getElementById("DadosJogadores").innerHTML = `
     <h1>Status</h1>
     <section class="status" id="pais1">
-        <h2>país 1</h2>
+        <h2>${dadosFormulario.Paises[0]}</h2>
         <p id="populacao_P1">População: <strong>${objAtributos.player1.populacao}/50</strong></p> 
         <p id="militar_P1">Militar: <strong>${objAtributos.player1.militar}/15</strong></p>
         <p id="economia_P1">Economia: <strong>$ ${objAtributos.player1.economia}</strong></p>
         <p id="op_P1">Opinião publica: <strong>${objAtributos.player1.opiniao_publica}/100</strong></p>
     </section>
     <section class="status" id="pais2">
-        <h2>país 2</h2>
+        <h2>${dadosFormulario.Paises[1]}</h2>
         <p id="populacao_P2">População: <strong>${objAtributos.player2.populacao}/50</strong></p>
         <p id="militar_P2">Militar: <strong>${objAtributos.player2.militar}/15</strong></p>
         <p id="economia_P2">Economia: <strong>$ ${objAtributos.player2.economia}</strong></p>
         <p id="op_P2">Opinião publica: <strong>${objAtributos.player2.opiniao_publica}/100</strong></p>
     </section>
     <section class="status" id="pais3">
-        <h2>país 3</h2>
+        <h2>${dadosFormulario.Paises[2]}</h2>
         <p id="populacao_P3">População: <strong>${objAtributos.player3.populacao}/50</strong></p>
         <p id="militar_P3">Militar: <strong>${objAtributos.player3.militar}/15</strong></p>
         <p id="economia_P3">Economia: <strong>$ ${objAtributos.player3.economia}</strong></p>
         <p id="op_P3">Opinião publica: <strong>${objAtributos.player3.opiniao_publica}/100</strong></p>
     </section>
     <section class="status" id="pais4">
-        <h2>país 4</h2>
+        <h2>${dadosFormulario.Paises[3]}</h2>
         <p id="populacao_P4">População: <strong>${objAtributos.player4.populacao}/50</strong></p>
         <p id="militar_P4">Militar: <strong>${objAtributos.player4.militar}/15</strong></p>
         <p id="economia_P4">Economia: <strong>$ ${objAtributos.player4.economia}</strong></p>
         <p id="op_P4">Opinião publica: <strong>${objAtributos.player4.opiniao_publica}/100</strong></p>
     </section>
     `
+
+    const CountryNegativeTable_P1 = document.getElementById("pais1_negativo")
+    const CountryNegativeTable_P2 = document.getElementById("pais2_negativo")
+    const CountryNegativeTable_P3 = document.getElementById("pais3_negativo")
+    const CountryNegativeTable_P4 = document.getElementById("pais4_negativo")
+
+    const CountryPositiveTable_P1 = document.getElementById("pais1_positivo")
+    const CountryPositiveTable_P2 = document.getElementById("pais2_positivo")
+    const CountryPositiveTable_P3 = document.getElementById("pais3_positivo")
+    const CountryPositiveTable_P4 = document.getElementById("pais4_positivo")
+
+    CountryNegativeTable_P1.textContent = dadosFormulario.Paises[0]
+    CountryNegativeTable_P2.textContent = dadosFormulario.Paises[1]
+    CountryNegativeTable_P3.textContent = dadosFormulario.Paises[2]
+    CountryNegativeTable_P4.textContent = dadosFormulario.Paises[3]
+
+    CountryPositiveTable_P1.textContent = dadosFormulario.Paises[0]
+    CountryPositiveTable_P2.textContent = dadosFormulario.Paises[1]
+    CountryPositiveTable_P3.textContent = dadosFormulario.Paises[2]
+    CountryPositiveTable_P4.textContent = dadosFormulario.Paises[3]
+
     setQuantPlayers()
 }
 
 reoladed(atributos)
 setDataAttributes()
 
-botaoHome.addEventListener("click",function(){
-    let sair = confirm("Você ira perder todo progresso, deseja sair?")
-    if(sair) { 
-        window.location.href = "../index.html" 
-        localStorage.clear()
-    } 
-})
 
-function QuantJogadores() {
-    if (quantJ1.checked) {
-        QuantidadeJogadores = 1
-    } else if(quantJ2.checked) {
-        QuantidadeJogadores = 2
-    } else if(quantJ3.checked) {
-        QuantidadeJogadores = 3
-    } else if(quantJ4.checked) {
-        QuantidadeJogadores = 4
-    }
-}
-
-function CardEvent() {
-    if(eventYes.checked) {
-        Cartas_de_evento = "sim"
-    } else if(eventNo.checked) {
-        Cartas_de_evento = "nao"
-    }
-}
 
 function JogoRodando() {
     window.location.href = "pagina-JogoRodando.html"

@@ -162,8 +162,8 @@ let error = [0,""]
                         break
                     }
 
-                    formulario.nomesPaises.push(p1.value) 
-                    formulario.nomesPaises.push(p2.value)
+                    formulario.nomesPaises.push(p1.value.toLowerCase()) 
+                    formulario.nomesPaises.push(p2.value.toLowerCase())
                     play()
 
                     break
@@ -182,9 +182,9 @@ let error = [0,""]
                         break
                     }
 
-                    formulario.nomesPaises.push(p1.value) 
-                    formulario.nomesPaises.push(p2.value)
-                    formulario.nomesPaises.push(p3.value)
+                    formulario.nomesPaises.push(p1.value.toLowerCase()) 
+                    formulario.nomesPaises.push(p2.value.toLowerCase())
+                    formulario.nomesPaises.push(p3.value.toLowerCase())
                     play()
 
                     break
@@ -193,7 +193,7 @@ let error = [0,""]
                     ;[...inputCountry].forEach(function(input){
                         if(input.value === "") {
                             error = [1, "#input-vazio#"]
-                        } else if(input.value.length < 6) {
+                        } else if(input.value.length < 4) {
                             error = [1, "#pouco-caracter#"]
                         } 
                     })
@@ -203,10 +203,10 @@ let error = [0,""]
                         break
                     }
 
-                    formulario.nomesPaises.push(p1.value) 
-                    formulario.nomesPaises.push(p2.value)
-                    formulario.nomesPaises.push(p3.value)
-                    formulario.nomesPaises.push(p4.value)
+                    formulario.nomesPaises.push(p1.value.toLowerCase()) 
+                    formulario.nomesPaises.push(p2.value.toLowerCase())
+                    formulario.nomesPaises.push(p3.value.toLowerCase())
+                    formulario.nomesPaises.push(p4.value.toLowerCase())
                     play()
 
                     break
@@ -224,7 +224,7 @@ let error = [0,""]
                 telaError.innerHTML = "Preencha os nomes"
                 break
             case "#pouco-caracter#":
-                telaError.innerHTML = "Mínimo 6 caracteres"
+                telaError.innerHTML = "Mínimo 4 caracteres"
                 break
         }
         setTimeout(function(){
@@ -236,10 +236,7 @@ let error = [0,""]
     }
 
     function play() {
-        formulario.nomesPaises.push(p1.value) 
-        formulario.nomesPaises.push(p2.value) 
-        formulario.nomesPaises.push(p3.value) 
-        formulario.nomesPaises.push(p4.value) 
+
         localStorage.setItem("formulario",JSON.stringify(formulario))
         window.location.href = "../paginas/pagina-jogoRodando.html"
     }
