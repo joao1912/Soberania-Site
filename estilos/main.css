@@ -3,7 +3,121 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+}
+
+html,body {
+    background-color: antiquewhite;
+}
+
+header {
+    background-color: black;
+    color: white;
+    height: 80px;
+    text-align: center;
+    padding-top: 17px;
+    font-family: 'Cinzel', serif;
+    text-decoration: underline;
+}
+
+section#conteinerPrincipal {
+    background-color: antiquewhite;
+    width: 100vw;
+    height: 1760px;
+    padding: 10px;
+}
+
+section#containerPaginas {
+    text-align: right;
+}
+
+section {
+    font-family: 'Patrick Hand', cursive;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 1.8em;
+}
+
+section p {
+    text-align: left;
+    font-size: 1.3em;
+    margin: 9px;
+    margin-top: 4px;
+}
+
+section.container_left {
+    background-color: white;
+    width: 270px;
+    height: 270px;
+    margin-left: -10px;
+    margin-top: 30px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 0px 4px lightgray;
+    padding: 10px;
+}
+
+section.container_right {
+    background-color: white;
+    width: 270px;
+    height: 270px;
+    display: inline-block;
+    margin-top: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px 0px 3px lightgray;
+    padding: 10px;
+}
+
+section button {
+    border: 0px;
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Patrick Hand', cursive;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+.container_right button {
+   margin-left: 120px;
+}
+
+#buttonPagCartas {
+    background-color: lightgray;
+}
+
+#buttonPagFerramentas {
+    background-color: lightgray;
+    margin-top: 27px;
+}
+
+#buttonPagJogar {
+    background-color: lightgray;
+    margin-top: 55px;
+}
+
+section#info {
+    background-color: white;
+    width: 90%;
+    height: 800px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 4px lightgray;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#info h1 {
+    text-align: center;
+    font-size: 2.4em;
+    margin-bottom: 20px;
+}
+
+#info p {
+    text-align: center;
 }
 
