@@ -1,13 +1,3 @@
-
-const botaoHome = document.getElementById("Bsair")
-botaoHome.addEventListener("click",function(){
-    let sair = confirm("Você ira perder todo progresso, deseja sair?")
-    if(sair) { 
-        window.location.href = "../index.html" 
-        localStorage.clear()
-    } 
-})
-
 let formulario = {}
 try {
     formulario = JSON.parse(localStorage.getItem("formulario"))
@@ -18,7 +8,6 @@ try {
         nomesPaises: ["Pais 1", "Pais 2", "Pais 3", "Pais 4",]
     }
 }
-
 
 /* --------------------------------------------- */
     /* Configurações importantes*/ 
@@ -33,6 +22,17 @@ try {
 if(dadosFormulario.eventCards === "ON") {
     document.getElementById("evento").style.display = "block"
 }
+
+setQuantTablesTransfer(dadosFormulario.QuantidadeJogadores)
+
+const botaoHome = document.getElementById("Bsair")
+botaoHome.addEventListener("click",function(){
+    let sair = confirm("Você ira perder todo progresso, deseja sair?")
+    if(sair) { 
+        window.location.href = "../index.html" 
+        localStorage.clear()
+    } 
+})
 
 let atributos = dados()
 function dados() {
@@ -113,7 +113,7 @@ function setQuantPlayers(){
             break
         default:
     }
-    setQuantTablesTransfer(dadosFormulario.QuantidadeJogadores)
+    
 }
 
 function setQuantTablesTransfer(quantPlayers) {
@@ -135,15 +135,10 @@ function setQuantTablesTransfer(quantPlayers) {
         pais3_positivo.remove()
         pais4_positivo.remove()
 
-        conteinerPlayersTransfer_negativo.style.height = "75px"
-        conteinerPlayersTransfer_positivo.style.height = "75px"
     } else if(quantPlayers === 3) {
         pais4_negativo.remove()
 
         pais4_positivo.remove()
-
-        conteinerPlayersTransfer_negativo.style.height = "100px"
-        conteinerPlayersTransfer_positivo.style.height = "100px"
     }
 }
 
@@ -195,27 +190,42 @@ function reoladed(objAtributos) {
     const CountryPositiveTable_P3 = document.getElementById("pais3_positivo")
     const CountryPositiveTable_P4 = document.getElementById("pais4_positivo")
 
-    CountryNegativeTable_P1.textContent = dadosFormulario.Paises[0]
-    CountryNegativeTable_P2.textContent = dadosFormulario.Paises[1]
-    CountryNegativeTable_P3.textContent = dadosFormulario.Paises[2]
-    CountryNegativeTable_P4.textContent = dadosFormulario.Paises[3]
+    switch(dadosFormulario.QuantidadeJogadores) {
+        case 2:
+            CountryNegativeTable_P1.textContent = dadosFormulario.Paises[0]
+            CountryNegativeTable_P2.textContent = dadosFormulario.Paises[1]
 
-    CountryPositiveTable_P1.textContent = dadosFormulario.Paises[0]
-    CountryPositiveTable_P2.textContent = dadosFormulario.Paises[1]
-    CountryPositiveTable_P3.textContent = dadosFormulario.Paises[2]
-    CountryPositiveTable_P4.textContent = dadosFormulario.Paises[3]
+            CountryPositiveTable_P1.textContent = dadosFormulario.Paises[0]
+            CountryPositiveTable_P2.textContent = dadosFormulario.Paises[1]
+            break
+
+        case 3:
+            CountryNegativeTable_P1.textContent = dadosFormulario.Paises[0]
+            CountryNegativeTable_P2.textContent = dadosFormulario.Paises[1]
+            CountryNegativeTable_P3.textContent = dadosFormulario.Paises[2]
+
+            CountryPositiveTable_P1.textContent = dadosFormulario.Paises[0]
+            CountryPositiveTable_P2.textContent = dadosFormulario.Paises[1]
+            CountryPositiveTable_P3.textContent = dadosFormulario.Paises[2]
+            break
+
+        case 4:
+            CountryNegativeTable_P1.textContent = dadosFormulario.Paises[0]
+            CountryNegativeTable_P2.textContent = dadosFormulario.Paises[1]
+            CountryNegativeTable_P3.textContent = dadosFormulario.Paises[2]
+            CountryNegativeTable_P4.textContent = dadosFormulario.Paises[3]
+
+            CountryPositiveTable_P1.textContent = dadosFormulario.Paises[0]
+            CountryPositiveTable_P2.textContent = dadosFormulario.Paises[1]
+            CountryPositiveTable_P3.textContent = dadosFormulario.Paises[2]
+            CountryPositiveTable_P4.textContent = dadosFormulario.Paises[3]
+    }
 
     setQuantPlayers()
 }
 
 reoladed(atributos)
 setDataAttributes()
-
-
-
-function JogoRodando() {
-    window.location.href = "pagina-JogoRodando.html"
-}
 
 const telaFerramentas = document.getElementById("ferramentas")
 const telaEconomia = document.getElementById("telaEconomia")
