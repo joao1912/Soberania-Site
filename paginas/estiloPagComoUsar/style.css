@@ -1,0 +1,27 @@
+
+
+#infoFerramentas {
+    width: 90vw;
+    
+    background-color: white;
+    margin: auto;
+    margin-top: 6px;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.267);
+}
+
+#infoFerramentas  h3 {
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
+
+#infoFerramentas p {
+   padding: 10px;
+   text-align: justify;
+   text-indent: 20px;
+   line-height: 1.3em;
+   margin-bottom: 20px;
+   
+}
