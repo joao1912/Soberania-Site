@@ -1,12 +1,35 @@
+@charset "UTF-8";
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
+html, body {
+    background-color: black;
+}
+
+header {
+    text-decoration: none;
+    text-align: left;
+    padding-top: 0px;
+}
+
+header h1 {
+    color: white;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin-top: -40px;
+}
 
 .destaque {
     font-weight: bold;
 }
 
 main#manualCartas {
-    background-color: white;
+    background-color: antiquewhite;
     width: 95vw;
     margin: auto;
     margin-top: 10px;
@@ -22,28 +45,69 @@ h2.tiposCartas {
     margin-bottom: 5px;
 }
 
-section.conteinerPrincipal_cartas_escuro {
-    background-color: #549E00;
+section h2 {
+    font-size: 1.4em;
+    text-decoration: underline;
+}
+
+section p {
+    font-size: 1.2em;
+}
+
+section.conteinerCartasItens {
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
-    height: 190px;
+    height: 220px;
+    background-color: coral;
 }
 
-section.conteinerPrincipal_cartas_claro {
-    background-color: #91EB2A;
+section.conteinerCartasMulti {
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
-    height: 190px;
+    height: 300px;
+    background-color: brown;
 }
 
-section.conteinerPrincipal_cartas_escuro p {
+section.conteinerCartasContrucao {
+    padding: 12px;
+    border-radius: 30px;
+    margin-bottom: 150px;
+    height: 220px;
+    background-color: cadetblue;
+}
+
+section.conteinerCartasAdversidade {
+    padding: 12px;
+    border-radius: 30px;
+    margin-bottom: 150px;
+    height: 220px;
+    background-color: lightcoral;
+}
+
+section.conteinerCartasCooperacao {
+    padding: 12px;
+    border-radius: 30px;
+    margin-bottom: 150px;
+    height: 220px;
+    background-color: thistle;
+}
+
+section.conteinerCartasObjetivo {
+    padding: 12px;
+    border-radius: 30px;
+    margin-bottom: 150px;
+    height: 220px;
+    background-color: crimson;
+}
+
+section.conteinerPrincipal_cartas_1 p {
     margin-top: 10px;
     line-height: 1.2em;
 }
 
-section.conteinerPrincipal_cartas_claro p {
+section.conteinerPrincipal_cartas_2 p {
     margin-top: 10px;
     line-height: 1.2em;
 }
@@ -53,7 +117,7 @@ section.conteinerPrincipal_cartas_claro p {
 }
 
 
-section.conteinerCarta_escuro {
+section.conteinerCarta_1 {
     position: relative;
     float: right;
     background-color: black;
@@ -63,7 +127,7 @@ section.conteinerCarta_escuro {
    
 }
 
-section.conteinerCarta_claro {
+section.conteinerCarta_2 {
     position: relative;
     float: left;
     background-color: black;
@@ -83,14 +147,14 @@ img.carta {
     border: 2px solid white;
 }
 
-section.conteinerPrincipal_cartas_escuro h2 {
+section.conteinerPrincipal_cartas_1 h2 {
     font-size: 1.3em;
 }
 
-section.conteinerPrincipal_cartas_claro h2 {
+section.conteinerPrincipal_cartas_2 h2 {
     font-size: 1.3em;
 }
 
-section.conteinerPrincipal_cartas_escuro p {
+section.conteinerPrincipal_cartas_1 p {
     line-height: 1.3em;
 }

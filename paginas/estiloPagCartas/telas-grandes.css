@@ -1,11 +1,18 @@
+@charset "UTF-8";
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
 
 main#manualCartas {
     width: 70vw;
 }
 
-section.conteinerPrincipal_cartas_escuro {
+section.conteiner {
     transition: width 1s;
     width: 40vw;
     height: 400px;
@@ -14,22 +21,13 @@ section.conteinerPrincipal_cartas_escuro {
     margin-right: 80px;
 }
 
-section.conteinerPrincipal_cartas_claro {
-    transition: width 1s;
-    width: 40vw;
-    height: 400px;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-left: 80px;
-}
-
-section.conteinerCarta_escuro {
+section.conteinerCarta_1 {
     width: 200px;
     height: 350px;
     margin-top: 12px;
 }
 
-section.conteinerCarta_claro {
+section.conteinerCarta_2 {
     width: 200px;
     height: 350px;
     margin-top: 12px;

@@ -15,9 +15,26 @@ header {
     color: white;
     height: 80px;
     text-align: center;
-    padding-top: 17px;
     font-family: 'Cinzel', serif;
     text-decoration: underline;
+    padding-top: 17px;
+}
+
+header i{
+    padding: 10px;
+    background-color: white;
+    text-align: left;
+    color: black;
+    border-radius: 50%;
+    font-weight: bold;
+    margin: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.367);
+}
+
+header i:hover {
+    background-color: rgb(77, 76, 76);
+    color: red;
 }
 
 section#conteinerPrincipal {
@@ -92,12 +109,23 @@ section button {
 
 #buttonPagFerramentas {
     background-color: lightgray;
-    margin-top: 27px;
 }
 
 #buttonPagJogar {
     background-color: lightgray;
     margin-top: 55px;
+}
+
+#buttonPagCartas:hover {
+    background-color: gray;
+}
+
+#buttonPagFerramentas:hover {
+    background-color: gray;
+}
+
+#buttonPagJogar:hover {
+    background-color: gray;
 }
 
 section#info {

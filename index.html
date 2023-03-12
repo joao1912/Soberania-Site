@@ -31,7 +31,7 @@
                 <section class="container_right">
                     <article>
                         <h2>Ferramentas do Site</h2>
-                        <p>Acessando a página sobre as ferramentas que o site oferece, voce vai encontrar um manual de como utilizar essas ferramentas durante o jogo!</p>
+                        <p>Acessando a página sobre as ferramentas que o site oferece, voce vai encontrar um manual sobre como utilizar essas ferramentas durante o jogo!</p>
                     </article>
                     <button id="buttonPagFerramentas">Ferramentas</button>
                 </section>
@@ -51,5 +51,23 @@
             </section>
         </div>
     </main>
+    <script>
+        (function(){
+            document.getElementById("containerPaginas").addEventListener("click",function(event){
+                const id = event.target.id
+                switch(id) {
+                    case "buttonPagCartas":
+                        window.location.href = "./paginas/pagina-cartas.html"
+                        break
+                    case "buttonPagFerramentas":
+                        window.location.href = "./paginas/pagina-comoUsar.html"
+                        break
+                    case "buttonPagJogar":
+                        window.location.href = "./paginas/pagina-formularioJogo.html"
+                        break
+                }
+            })
+        })()
+    </script>
 </body>
 </html>
