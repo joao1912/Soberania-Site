@@ -145,7 +145,8 @@ let error = [0,""]
         
         document.querySelector("#playGame").addEventListener("click",function(){
             const inputCountry = document.querySelectorAll(".inputCountry")
-  
+            let valoresPaises = [p1.value, p2.value, p3.value, p4.value]
+            console.log(valoresPaises)
             switch(formulario.quantPlayers) {
                 case 2:
 
@@ -162,8 +163,9 @@ let error = [0,""]
                         break
                     }
 
-                    formulario.nomesPaises.push(p1.value.toLowerCase()) 
-                    formulario.nomesPaises.push(p2.value.toLowerCase())
+                    for(let c = 0 ; c <= 1 ; c++) {
+                        formulario.nomesPaises.push(valoresPaises[c].toLowerCase())
+                    }
                     play()
 
                     break
@@ -182,9 +184,9 @@ let error = [0,""]
                         break
                     }
 
-                    formulario.nomesPaises.push(p1.value.toLowerCase()) 
-                    formulario.nomesPaises.push(p2.value.toLowerCase())
-                    formulario.nomesPaises.push(p3.value.toLowerCase())
+                    for(let c = 0 ; c <= 2 ; c++) {
+                        formulario.nomesPaises.push(valoresPaises[c].toLowerCase())
+                    }
                     play()
 
                     break
@@ -202,13 +204,12 @@ let error = [0,""]
                         detecErro(...error)
                         break
                     }
-
-                    formulario.nomesPaises.push(p1.value.toLowerCase()) 
-                    formulario.nomesPaises.push(p2.value.toLowerCase())
-                    formulario.nomesPaises.push(p3.value.toLowerCase())
-                    formulario.nomesPaises.push(p4.value.toLowerCase())
+                    
+                    for(let c = 0 ; c <= 3 ; c++) {
+                        formulario.nomesPaises.push(valoresPaises[c].toLowerCase())
+                    }
                     play()
-
+                    
                     break
             }
 
@@ -236,10 +237,8 @@ let error = [0,""]
     }
 
     function play() {
-
         localStorage.setItem("formulario",JSON.stringify(formulario))
         window.location.href = "../paginas/pagina-JogoRodando.html"
     }
     
 })()
-
