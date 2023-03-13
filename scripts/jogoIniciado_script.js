@@ -146,14 +146,15 @@ let error = [0,""]
         document.querySelector("#playGame").addEventListener("click",function(){
             const inputCountry = document.querySelectorAll(".inputCountry")
             let valoresPaises = [p1.value, p2.value, p3.value, p4.value]
-            console.log(valoresPaises)
+            const caracterMinimos = 4
+
             switch(formulario.quantPlayers) {
                 case 2:
 
                     for(let c = 0 ; c < 2 ; c++) {
                         if(inputCountry[c].value === "") {
                             error = [1, "#input-vazio#"]
-                        } else if(inputCountry[c].value.length < 4) {
+                        } else if(inputCountry[c].value.length < caracterMinimos) {
                             error = [1, "#pouco-caracter#"]
                         } 
                     }
@@ -170,11 +171,10 @@ let error = [0,""]
 
                     break
                 case 3:
-
                     for(let c = 0 ; c < 3 ; c++) {
                         if(inputCountry[c].value === "") {
                             error = [1, "#input-vazio#"]
-                        } else if(inputCountry[c].value.length < 4) {
+                        } else if(inputCountry[c].value.length < caracterMinimos) {
                             error = [1, "#pouco-caracter#"]
                         } 
                     }
@@ -195,7 +195,7 @@ let error = [0,""]
                     ;[...inputCountry].forEach(function(input){
                         if(input.value === "") {
                             error = [1, "#input-vazio#"]
-                        } else if(input.value.length < 4) {
+                        } else if(input.value.length < caracterMinimos) {
                             error = [1, "#pouco-caracter#"]
                         } 
                     })
