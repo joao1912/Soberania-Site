@@ -1,4 +1,10 @@
 export {dadosFormulario}
+export {telaFerramentas}
+export {telaEconomia}
+export {telaFabricar}
+export {telaUsarCarta}
+export {telaRegras}
+export {telasDasCartas}
 
 import { botoesDeRetorno } from "./ReturnButtons.js"
 import { setQuantTablesTransfer } from "./Cleaner.js"
@@ -286,9 +292,10 @@ function Erros(n, erro) {
         eventoErro.style="display:none"
         }, 3000);
     CodigoErro = []
-};
+}
 
-(function(){
+const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
+;(function(){
 
     document.getElementById("menuIcone1").addEventListener("click",function(){
         const menu = document.querySelector("#selecionarPais1")
@@ -296,11 +303,10 @@ function Erros(n, erro) {
         if(menu.style.visibility == "hidden") {
             menu.style.visibility = "visible"
             botaoTransfer.style.visibility = "hidden"
-            alert("entrou 1")
+
         } else {
             menu.style.visibility = "hidden"
             botaoTransfer.style.visibility = "visible"
-            alert("entrou 2")
         }
     })
 
@@ -525,8 +531,9 @@ function Erros(n, erro) {
 
     const telaFabricar = document.querySelector("#telaFabricar")
     const botoesFabricarCartas = document.querySelector("#telaBotoesExtras")
-    const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
+    
 
+    
     botoesFabricarCartas.addEventListener("click",function(event){
         const botao = event.target.id
         

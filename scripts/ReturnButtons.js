@@ -1,4 +1,9 @@
 export {botoesDeRetorno}
+import { telaFabricar } from "./main.js"
+import { telaRegras } from "./main.js"
+import { telaUsarCarta } from "./main.js"
+import { telaFerramentas } from "./main.js"
+import { telasDasCartas } from "./main.js"
 
 const botoesDeRetorno = document.querySelectorAll(".Aretornar")
 
@@ -16,6 +21,7 @@ botoesDeRetorno[3].addEventListener('click',function(){
 telaRegras.style.display = "none"
 telaFerramentas.style.display = "block"
 })
+
 
 botoesDeRetorno[4].addEventListener("click",function(){
     for(let c = 0 ; c < 3 ; c++) {

@@ -157,4 +157,3 @@ let Carta_64 = new Carta("Forças Especiais", 64, 8)
 let Carta_65 = new Carta("Soldado", 65, 60)
 
 let Carta_66 = new Carta("Artilharia", 66, 4)
-
