@@ -1,3 +1,9 @@
+export {dadosFormulario}
+
+import { botoesDeRetorno } from "./ReturnButtons.js"
+import { setQuantTablesTransfer } from "./Cleaner.js"
+import { setQuantPlayers } from "./Cleaner.js"
+
 let formulario = {}
 try {
     formulario = JSON.parse(localStorage.getItem("formulario"))
@@ -101,7 +107,7 @@ function dados() {
         }
     }
 }
-
+/*
 function setQuantPlayers(){
     switch(dadosFormulario.QuantidadeJogadores) {
         case 2:
@@ -141,7 +147,7 @@ function setQuantTablesTransfer(quantPlayers) {
         pais4_positivo.remove()
     }
 }
-
+*/
 function setDataAttributes() {
     return localStorage.setItem("atributos", JSON.stringify(atributos))
 }
@@ -222,10 +228,11 @@ function reoladed(objAtributos) {
     }
 
     setQuantPlayers()
+    setDataAttributes()
 }
 
 reoladed(atributos)
-setDataAttributes()
+
 
 const telaFerramentas = document.getElementById("ferramentas")
 const telaEconomia = document.getElementById("telaEconomia")
@@ -251,8 +258,6 @@ telaFerramentas.addEventListener("click",function(event){
         case "regras":
             telaFerramentas.style.display = "none"
             telaRegras.style.display = "block"
-            break
-        default:
             break
     }
 
@@ -285,15 +290,38 @@ function Erros(n, erro) {
 
 (function(){
 
+    document.getElementById("menuIcone1").addEventListener("click",function(){
+        const menu = document.querySelector("#selecionarPais1")
+        
+        if(menu.style.visibility == "hidden") {
+            menu.style.visibility = "visible"
+            botaoTransfer.style.visibility = "hidden"
+            alert("entrou 1")
+        } else {
+            menu.style.visibility = "hidden"
+            botaoTransfer.style.visibility = "visible"
+            alert("entrou 2")
+        }
+    })
+
+    document.getElementById("menuIcone2").addEventListener("click",function(){
+        const menu = document.querySelector("#selecionarPais2")
+
+        if(menu.style.visibility == "hidden") {
+            menu.style.visibility = "visible"
+            botaoTransfer.style.visibility = "hidden"
+        } else {
+            menu.style.visibility = "hidden"
+            botaoTransfer.style.visibility = "visible"
+        }
+    })
+    
     let economiaPositivo = ""
     let economiaNegativo = ""
     let transfer = 0
 
-    const botoesDeRetorno = document.getElementsByClassName("Aretornar")
     const economiaAtualPais = document.querySelectorAll(".infoPais")
-
     
-
     botoesDeRetorno[0].addEventListener('click',function(){
     telaEconomia.style.display = "none"
     telaFerramentas.style.display = "block"
@@ -308,45 +336,7 @@ function Erros(n, erro) {
 
     })
 
-    botoesDeRetorno[1].addEventListener('click',function(){
-    telaFabricar.style.display = "none"
-    telaFerramentas.style.display = "block"
-    })
-
-    botoesDeRetorno[2].addEventListener('click',function(){
-    telaUsarCarta.style.display = "none"
-    telaFerramentas.style.display = "block"
-    })
-
-    botoesDeRetorno[3].addEventListener('click',function(){
-    telaRegras.style.display = "none"
-    telaFerramentas.style.display = "block"
-    })
-
     const botaoTransfer = document.querySelector(".botaoTransfer")
-
-    document.getElementById("menuIcone1").addEventListener("click",function(){
-        const menu = document.querySelector("#selecionarPais1")
-        if(menu.style.visibility == "hidden") {
-            menu.style.visibility = "visible"
-            botaoTransfer.style.visibility = "hidden"
-        } else {
-            menu.style.visibility = "hidden"
-            botaoTransfer.style.visibility = "visible"
-        }
-    })
-
-    document.getElementById("menuIcone2").addEventListener("click",function(){
-        const menu = document.querySelector("#selecionarPais2")
-        if(menu.style.visibility == "hidden") {
-            menu.style.visibility = "visible"
-            botaoTransfer.style.visibility = "hidden"
-        } else {
-            menu.style.visibility = "hidden"
-            botaoTransfer.style.visibility = "visible"
-        }
-    })
-
     const selecaoPais1 = document.querySelector("#selecionarPais1")
     const selecaoPais2 = document.querySelector("#selecionarPais2")
 
@@ -448,7 +438,7 @@ function Erros(n, erro) {
                     atributos.player1.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = atributos.player1.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "pais2":
                     if(transfer > atributos.player2.economia) {
@@ -458,7 +448,7 @@ function Erros(n, erro) {
                     atributos.player2.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = atributos.player2.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "pais3":
                     if(transfer > atributos.player3.economia) {
@@ -468,7 +458,7 @@ function Erros(n, erro) {
                     atributos.player3.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = atributos.player3.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "pais4":
                     if(transfer > atributos.player4.economia) {
@@ -478,7 +468,7 @@ function Erros(n, erro) {
                     atributos.player4.economia -= transfer
                     dinheiroAtual_negativo.innerHTML = atributos.player4.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "banco":
                 /* NULL */
@@ -493,7 +483,7 @@ function Erros(n, erro) {
                     atributos.player1.economia += transfer
                     dinheiroAtual_positivo.innerHTML = atributos.player1.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
 
                 case "pais2":
@@ -504,7 +494,7 @@ function Erros(n, erro) {
                     atributos.player2.economia += transfer
                     dinheiroAtual_positivo.innerHTML = atributos.player2.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "pais3":
                     if(CodigoErro.indexOf(1) !== -1) {
@@ -514,7 +504,7 @@ function Erros(n, erro) {
                     atributos.player3.economia += transfer
                     dinheiroAtual_positivo.innerHTML = atributos.player3.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "pais4":
                     if(CodigoErro.indexOf(1) !== -1) {
@@ -524,7 +514,7 @@ function Erros(n, erro) {
                     atributos.player4.economia += transfer
                     dinheiroAtual_positivo.innerHTML = atributos.player4.economia
                     reoladed(atributos)
-                    setDataAttributes()
+                    
                     break
                 case "banco":
                 /* NULL */
@@ -559,24 +549,5 @@ function Erros(n, erro) {
                 break
         }
     })
-    botoesDeRetorno[4].addEventListener("click",function(){
-        for(let c = 0 ; c < 3 ; c++) {
-            telasDasCartas[c].style.display = "none"
-            telaFabricar.style.display = "block"
-        }
-    })
 
-    botoesDeRetorno[5].addEventListener("click",function(){
-        for(let c = 0 ; c < 3 ; c++) {
-            telasDasCartas[c].style.display = "none"
-            telaFabricar.style.display = "block"
-        }
-    })
-
-    botoesDeRetorno[6].addEventListener("click",function(){
-        for(let c = 0 ; c < 3 ; c++) {
-            telasDasCartas[c].style.display = "none"
-            telaFabricar.style.display = "block"
-        }
-    })
 })()
