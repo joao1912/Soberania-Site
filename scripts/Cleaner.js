@@ -1,5 +1,3 @@
-export {setQuantTablesTransfer}
-export {setQuantPlayers}
 import { dadosFormulario } from "./main.js"
 
 function setQuantPlayers(){
@@ -41,3 +39,6 @@ function setQuantTablesTransfer(quantPlayers) {
         pais4_positivo.remove()
     }
 }
+
+export {setQuantTablesTransfer}
+export {setQuantPlayers}

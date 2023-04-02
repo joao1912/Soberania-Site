@@ -1,45 +1,42 @@
-export {botoesDeRetorno}
-import { telaFabricar } from "./main.js"
-import { telaRegras } from "./main.js"
-import { telaUsarCarta } from "./main.js"
-import { telaFerramentas } from "./main.js"
-import { telasDasCartas } from "./main.js"
+import  Telas  from "./main.js"
 
 const botoesDeRetorno = document.querySelectorAll(".Aretornar")
 
 botoesDeRetorno[1].addEventListener('click',function(){
-telaFabricar.style.display = "none"
-telaFerramentas.style.display = "block"
+    Telas.telaFabricar.style.display = "none"
+    Telas.telaFerramentas.style.display = "block"
 })
 
 botoesDeRetorno[2].addEventListener('click',function(){
-telaUsarCarta.style.display = "none"
-telaFerramentas.style.display = "block"
+    Telas.telaUsarCarta.style.display = "none"
+    Telas.telaFerramentas.style.display = "block"
 })
 
 botoesDeRetorno[3].addEventListener('click',function(){
-telaRegras.style.display = "none"
-telaFerramentas.style.display = "block"
+    Telas.telaRegras.style.display = "none"
+    Telas.telaFerramentas.style.display = "block"
 })
 
 
 botoesDeRetorno[4].addEventListener("click",function(){
     for(let c = 0 ; c < 3 ; c++) {
-        telasDasCartas[c].style.display = "none"
-        telaFabricar.style.display = "block"
+        Telas.telasDasCartas[c].style.display = "none"
+        Telas.telaFabricar.style.display = "block"
     }
 })
 
 botoesDeRetorno[5].addEventListener("click",function(){
     for(let c = 0 ; c < 3 ; c++) {
-        telasDasCartas[c].style.display = "none"
-        telaFabricar.style.display = "block"
+        Telas.telasDasCartas[c].style.display = "none"
+        Telas.telaFabricar.style.display = "block"
     }
 })
 
 botoesDeRetorno[6].addEventListener("click",function(){
     for(let c = 0 ; c < 3 ; c++) {
-        telasDasCartas[c].style.display = "none"
-        telaFabricar.style.display = "block"
+        Telas.telasDasCartas[c].style.display = "none"
+        Telas.telaFabricar.style.display = "block"
     }
 })
+
+export {botoesDeRetorno}

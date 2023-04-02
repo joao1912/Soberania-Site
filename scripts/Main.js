@@ -1,14 +1,7 @@
-export {dadosFormulario}
-export {telaFerramentas}
-export {telaEconomia}
-export {telaFabricar}
-export {telaUsarCarta}
-export {telaRegras}
-export {telasDasCartas}
-
 import { botoesDeRetorno } from "./ReturnButtons.js"
 import { setQuantTablesTransfer } from "./Cleaner.js"
 import { setQuantPlayers } from "./Cleaner.js"
+import { botaoTransfer } from "./Economy.js"
 
 let formulario = {}
 try {
@@ -23,12 +16,11 @@ try {
 
 /* --------------------------------------------- */
     /* Configurações importantes*/ 
-    var dadosFormulario = {
+    let dadosFormulario = {
         QuantidadeJogadores: formulario.quantPlayers,
         eventCards: formulario.cartasEvento,
         Paises: formulario.nomesPaises
     }
-    let CodigoErro = ""
 /* --------------------------------------------- */
 
 if(dadosFormulario.eventCards === "ON") {
@@ -113,47 +105,7 @@ function dados() {
         }
     }
 }
-/*
-function setQuantPlayers(){
-    switch(dadosFormulario.QuantidadeJogadores) {
-        case 2:
-            document.getElementById("pais3").remove()
-            document.getElementById("pais4").remove()
-            break
-        case 3:
-            document.getElementById("pais4").remove()
-            break
-        default:
-    }
-    
-}
 
-function setQuantTablesTransfer(quantPlayers) {
-    const conteinerPlayersTransfer_negativo = document.querySelector("#selecionarPais1")
-    const conteinerPlayersTransfer_positivo = document.querySelector("#selecionarPais2")
-    const ul_negativo = conteinerPlayersTransfer_negativo.firstElementChild
-    const ul_positivo = conteinerPlayersTransfer_positivo.firstElementChild
-
-    const pais3_negativo = ul_negativo.firstElementChild.nextElementSibling.nextElementSibling
-    const pais4_negativo = ul_negativo.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling
-    
-    const pais3_positivo = ul_positivo.firstElementChild.nextElementSibling.nextElementSibling
-    const pais4_positivo = ul_positivo.firstElementChild.nextElementSibling.nextElementSibling.nextElementSibling
-    
-    if (quantPlayers === 2) {
-        pais3_negativo.remove()
-        pais4_negativo.remove()
-
-        pais3_positivo.remove()
-        pais4_positivo.remove()
-
-    } else if(quantPlayers === 3) {
-        pais4_negativo.remove()
-
-        pais4_positivo.remove()
-    }
-}
-*/
 function setDataAttributes() {
     return localStorage.setItem("atributos", JSON.stringify(atributos))
 }
@@ -269,31 +221,6 @@ telaFerramentas.addEventListener("click",function(event){
 
 })
 
-function Erros(n, erro) {
-    let telaError = document.querySelector("#erros")
-    telaError.style.display = "block"
-    switch(erro) {
-        case "#saldo_insuficiente#":
-            telaError.innerHTML = "Saldo Insuficiente"
-            break
-        case "#pagamento_invalido#":
-            telaError.innerHTML = "Pagamento Inválido"
-            break
-        case "#valor_invalido#":
-            telaError.innerHTML = "Valor Inválido"
-            break
-        case "#apenas_numeros#":
-            telaError.innerHTML = "Apenas Números"
-            break
-    }
-
-    setTimeout(function(){
-        const eventoErro = document.getElementById("erros");
-        eventoErro.style="display:none"
-        }, 3000);
-    CodigoErro = []
-}
-
 const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
 ;(function(){
 
@@ -322,9 +249,6 @@ const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
         }
     })
     
-    let economiaPositivo = ""
-    let economiaNegativo = ""
-    let transfer = 0
 
     const economiaAtualPais = document.querySelectorAll(".infoPais")
     
@@ -342,197 +266,8 @@ const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
 
     })
 
-    const botaoTransfer = document.querySelector(".botaoTransfer")
-    const selecaoPais1 = document.querySelector("#selecionarPais1")
-    const selecaoPais2 = document.querySelector("#selecionarPais2")
-
-    selecaoPais1.addEventListener("click",function(event){
-        const pais = event.target.id
-        switch(pais) {
-            case "pais1_negativo": 
-                selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = atributos.player1.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaNegativo = "pais1"
-                break
-            case "pais2_negativo": 
-                selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = atributos.player2.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaNegativo = "pais2"
-                break
-            case "pais3_negativo": 
-                selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = atributos.player3.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaNegativo = "pais3"
-                break
-            case "pais4_negativo": 
-                selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent =  atributos.player4.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaNegativo = "pais4"
-                break
-            case "banco_negativo":
-                selecaoPais1.style.visibility = "hidden"
-                economiaAtualPais[0].textContent = "$$$$$$"
-                botaoTransfer.style.visibility = "visible"
-                economiaNegativo = "banco"
-                break
-        }
-    })
-
-    selecaoPais2.addEventListener("click",function(event){
-        const pais = event.target.id
-
-        switch(pais) {
-            case "pais1_positivo":
-                selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = atributos.player1.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaPositivo = "pais1" 
-                break
-            case "pais2_positivo":
-                selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = atributos.player2.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaPositivo = "pais2"
-                break
-            case "pais3_positivo":
-                selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = atributos.player3.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaPositivo = "pais3"
-                break
-            case "pais4_positivo":
-                selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = atributos.player4.economia
-                botaoTransfer.style.visibility = "visible"
-                economiaPositivo = "pais4"
-                break
-            case "banco_positivo":
-                selecaoPais2.style.visibility = "hidden"
-                economiaAtualPais[1].textContent = "$$$$$$"
-                botaoTransfer.style.visibility = "visible"
-                economiaPositivo = "banco"
-                break
-        }
-    })
-    
-    botaoTransfer.addEventListener("click",function(){ 
-        let dinheiroAtual_negativo = document.querySelectorAll(".infoPais")[0]
-        let dinheiroAtual_positivo = document.querySelectorAll(".infoPais")[1]
-        let valorT = Number(document.querySelector(".textoMoney").value)
-        if(economiaNegativo === economiaPositivo || economiaNegativo === "" || economiaPositivo === "") {
-            CodigoErro = [1,"#pagamento_invalido#"]
-            Erros(...CodigoErro)
-        } else if(valorT == "" || valorT < 0) {
-            CodigoErro = [1,"#valor_invalido#"]
-            Erros(...CodigoErro)
-        } else if(typeof valorT !== "number") {
-            CodigoErro = [1,"#apenas_numeros#"]
-            Erros(...CodigoErro)
-        } else {
-            
-            transfer = Number(document.querySelector(".textoMoney").value)
-            switch(economiaNegativo) {
-                case "pais1":
-                    if(transfer > atributos.player1.economia) {
-                        CodigoErro = [1,"#saldo_insuficiente#"]
-                        break
-                    }
-                    atributos.player1.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = atributos.player1.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "pais2":
-                    if(transfer > atributos.player2.economia) {
-                        CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
-                        break
-                    }
-                    atributos.player2.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = atributos.player2.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "pais3":
-                    if(transfer > atributos.player3.economia) {
-                        CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"]
-                        break
-                    }
-                    atributos.player3.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = atributos.player3.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "pais4":
-                    if(transfer > atributos.player4.economia) {
-                        CodigoErro = CodigoErro = [1,"#saldo_insuficiente#"] 
-                        break
-                    }
-                    atributos.player4.economia -= transfer
-                    dinheiroAtual_negativo.innerHTML = atributos.player4.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "banco":
-                /* NULL */
-            }
-            
-            switch(economiaPositivo) {
-                case "pais1":
-                    if(CodigoErro.indexOf(1) !== -1) {
-                        Erros(...CodigoErro)
-                        break
-                    }
-                    atributos.player1.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = atributos.player1.economia
-                    reoladed(atributos)
-                    
-                    break
-
-                case "pais2":
-                    if(CodigoErro.indexOf(1) !== -1) {
-                        Erros(...CodigoErro)
-                        break
-                    }
-                    atributos.player2.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = atributos.player2.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "pais3":
-                    if(CodigoErro.indexOf(1) !== -1) {
-                        Erros(...CodigoErro)
-                        break
-                    }
-                    atributos.player3.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = atributos.player3.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "pais4":
-                    if(CodigoErro.indexOf(1) !== -1) {
-                        Erros(...CodigoErro)
-                        break
-                    }
-                    atributos.player4.economia += transfer
-                    dinheiroAtual_positivo.innerHTML = atributos.player4.economia
-                    reoladed(atributos)
-                    
-                    break
-                case "banco":
-                /* NULL */
-            }
-        }
-        document.querySelector(".textoMoney").value = ""
-    })
-
     const telaFabricar = document.querySelector("#telaFabricar")
     const botoesFabricarCartas = document.querySelector("#telaBotoesExtras")
-    
-
     
     botoesFabricarCartas.addEventListener("click",function(event){
         const botao = event.target.id
@@ -558,3 +293,7 @@ const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
     })
 
 })()
+
+export {dadosFormulario}
+export {reoladed}
+export default {telaFerramentas, telaEconomia, telaFabricar, telaUsarCarta, telaRegras, telasDasCartas , atributos}
