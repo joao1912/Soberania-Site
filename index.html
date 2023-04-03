@@ -12,15 +12,25 @@
 <body>
     <header>
         <h1><span>Soberania</span></h1>
-        <nav>
-            <a href="index.html" target="_self">Home</a>
-            <a href="paginas/pagina-comoUsar.html" target="_self">Como Usar</a>
-            <a href="paginas/pagina-cartas.html" target="_self">Cartas</a>
-            <a href="paginas/pagina-jogar.html" target="_self">Jogar</a>
+
+        <nav id="navContainer">
+            <div id="navHome">Home</div>
+            <div id="navComoUsar">Como Usar</div>
+            <div id="navCartas">Cartas</div>
+            <div id="navJogar">Jogar</div>
         </nav>
+    <span class="iconMilitar" >
+            <span id="exercitoEsquerdo">
+                <span id="tank">c</span><span>6</span>
+            </span>  
+            <span id="exercitoDireito">
+                <span>A</span> <span id="carro">G</span>  
+            </span>
+    </span>
+        
     </header>
     <main>
-        <section id="infoHome">
+        <section id="containerHome">
             <h2>Sobre o Jogo</h2>
             <article class="baseDeConteudo">
                 <h3>Sub-titulo 1</h3>
@@ -49,9 +59,352 @@
                 </p>
             </article>
         </section>
+
+        <section id="containerComoUsar">
+            <h2>Como Usar o Site</h2>
+            <section id="infoFerramentas">
+                <article>
+                    <h3>Ferramenta 1</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis doloribus nulla mollitia laboriosam vero ullam facilis ab cumque quasi consectetur rerum obcaecati eaque harum quibusdam, omnis pariatur, ipsum eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea accusantium iusto itaque nemo fugiat illum in odio, alias necessitatibus! Error necessitatibus, corrupti labore rerum autem pariatur debitis libero asperiores.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo asperiores quisquam sit tenetur libero quidem nam a, voluptates nulla similique autem placeat neque aliquid voluptatibus consectetur distinctio inventore iure!
+                    </p>
+                </article>
+                <article>
+                    <h3>Ferramenta 2</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis doloribus nulla mollitia laboriosam vero ullam facilis ab cumque quasi consectetur rerum obcaecati eaque harum quibusdam, omnis pariatur, ipsum eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea accusantium iusto itaque nemo fugiat illum in odio, alias necessitatibus! Error necessitatibus, corrupti labore rerum autem pariatur debitis libero asperiores.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo asperiores quisquam sit tenetur libero quidem nam a, voluptates nulla similique autem placeat neque aliquid voluptatibus consectetur distinctio inventore iure!
+                    </p>
+                </article>
+                <article>
+                    <h3>Ferramenta 3</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis doloribus nulla mollitia laboriosam vero ullam facilis ab cumque quasi consectetur rerum obcaecati eaque harum quibusdam, omnis pariatur, ipsum eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea accusantium iusto itaque nemo fugiat illum in odio, alias necessitatibus! Error necessitatibus, corrupti labore rerum autem pariatur debitis libero asperiores.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo asperiores quisquam sit tenetur libero quidem nam a, voluptates nulla similique autem placeat neque aliquid voluptatibus consectetur distinctio inventore iure!
+                    </p>
+                </article>
+                <article>
+                    <h3>Ferramenta 4</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis doloribus nulla mollitia laboriosam vero ullam facilis ab cumque quasi consectetur rerum obcaecati eaque harum quibusdam, omnis pariatur, ipsum eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea accusantium iusto itaque nemo fugiat illum in odio, alias necessitatibus! Error necessitatibus, corrupti labore rerum autem pariatur debitis libero asperiores.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo asperiores quisquam sit tenetur libero quidem nam a, voluptates nulla similique autem placeat neque aliquid voluptatibus consectetur distinctio inventore iure!
+                    </p>
+                </article>
+                <article>
+                    <h3>Ferramenta 5</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quis doloribus nulla mollitia laboriosam vero ullam facilis ab cumque quasi consectetur rerum obcaecati eaque harum quibusdam, omnis pariatur, ipsum eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea accusantium iusto itaque nemo fugiat illum in odio, alias necessitatibus! Error necessitatibus, corrupti labore rerum autem pariatur debitis libero asperiores.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae nemo asperiores quisquam sit tenetur libero quidem nam a, voluptates nulla similique autem placeat neque aliquid voluptatibus consectetur distinctio inventore iure!
+                    </p>
+                </article>
+            </section>
+        </section>
+
+        <section id="containerCartas">
+            <section id="manualCartas">
+                <h2 class="tiposCartas">Cartas de Item</h2>
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Petróleo</h2>
+                        <p>
+                            Cada carta rende 3 pontos de combustível, utilizado para mover as tropas aliadas. 
+                        </p>
+                        <p class="cartaQuant">Quantidade: (20)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Uranio</h2>
+                        <p>
+                            Pode ser usado em armas e negociar com jogadores.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (1)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Metal</h2>
+                        <p>
+                            Produto universal, usado em diversas áreas.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (12)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Concreto</h2>
+                        <p>
+                            Pode ser usado para dominar um estado para si. 
+                        </p>
+                        <p class="cartaQuant">Quantidade: (10)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Munição</h2>
+                        <p>
+                            Usado em armas e na construção de outras cartas.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (8)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Projeto</h2>
+                        <p>
+                            Necessário para criação de armas e produtos.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (8)</p>
+                    </article>
+                </section>
+                <h2 class="tiposCartas">Multiplicadores</h2>
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Bomba Atômica</h2>
+                        <p>
+                            Destrói 3 estados em uma jogada, havendo construção ou tropas neles, serão <span class="destaque">aniquilados</span>, esses estados passam a ser seu território.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (1)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Tanque</h2>
+                        <p>
+                           <span class="destaque">Habilidade:</span> tropas terrestres ganham 1 de velocidade estando em uma area 3x3 em relação ao Tanque. 
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Avião de Transporte</h2>
+                        <p>
+                            usa 3 pontos de combustível, Transporta 3 tropas(M) a <span class="destaque">qualquer</span> ponto do tabuleiro.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Espião</h2>
+                        <p>
+                            Escolha <span class="destaque">aleatoriamente</span> 3 cartas do baralho de algum jogador.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Sabotagem</h2>
+                        <p>
+                            <span class="destaque">Inimigo:</span> -20(O.P) / -3.000(E) <br> OU <br> <span class="destaque">Inimigo:</span> -2(M)
+                        </p>
+                        <p class="cartaQuant">Quantidade: (1)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Bombardeiro</h2>
+                        <p>
+                            Na rodada seguinte <span class="destaque">após</span> ser anunciado, ele aniquila 2(M) em um estado selecionado, é necessario possuir um aéroporto para usar esta carta.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (2)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Submarino</h2>
+                        <p>
+                            <span class="destaque">Habilidade:</span> Se tirar 1 ou 2 no dado, o submarino tem a escolha de submergir, não recebendo dano por uma rodada.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Navio de Transporte</h2>
+                        <p>
+                            Transporta 4(E) para qualquer <span class="destaque">litoral</span> no tabuleiro.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Helicóptero</h2>
+                        <p>
+                            <span class="destaque">Habilidade:</span> todas as tropas inimigas em um raio de 3X3 blocos ficam com a velocidade (1)
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Navio Militar</h2>
+                        <p>
+                            <span class="destaque">Habilidade:</span> ganha 1 ponto de ataque contra tropas no litoral. <br>
+                            Capaz de atacar tropas marinhas, aérias ou no litoral.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Caça</h2>
+                        <p>
+                            <span class="destaque">Habilidade:</span> se tirar 1 ou 2 no dado no PRIMEIRO ataque, ele tira uma vida da tropa de seu inimigo. <br> capaz de atacar tropas marítimas, aérias e terrestres.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Forças Especiais</h2>
+                        <p>
+                            <span class="destaque">Habilidade:</span> Ao ser construido, pode aparecer em qualquer território <span class="destaque">não</span> habitado por soldados.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Soldado</h2>
+                        <p>
+                            Soldados podem ser agrupados para se tornarem fortes o bastante para combater todos que virem contra eles.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (---)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2>Artilharia</h2>
+                        <p>
+                            <span class="destaque">Habilidade:</span> Ao ser construído, pode aparecer em qualquer território seu não habitado por soldados.
+                        </p>
+                        <p class="cartaQuant">Quantidade: (4)</p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_escuro">
+                    <section class="conteinerCarta_escuro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2></h2>
+                        <p>
+                            
+                        </p>
+                        <p></p>
+                    </article>
+                </section>
+        
+                <section class="conteinerPrincipal_cartas_claro">
+                    <section class="conteinerCarta_claro">
+                        <img src="../imagens/camulfado jpg.jpg" alt="#" class="carta">
+                    </section>
+                    <article>
+                        <h2></h2>
+                        <p>
+                    
+                        </p>
+                        <p></p>
+                    </article>
+                </section>
+                <h2 class="tiposCartas">Cartas de Adversidade</h2>
+            </section>
+        </section>
+
+        <section id="containerJogar">
+            <section id="sub-container">
+                <section id="conteinerPlay">
+                    <div id="play">Jogar</div>
+                </section>
+            </section>
+        </section>
     </main>
     <footer>
 
     </footer>
+    <script src="scripts/Home.js"></script>
 </body>
 </html>
