@@ -17,11 +17,18 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    
 }
 
 html {
     background-color: antiquewhite;
+}
+
+p, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    text-align: center;
 }
 
 section#containerComoUsar {
@@ -29,11 +36,16 @@ section#containerComoUsar {
     width: 90vw;
     background-color: white;
     margin: auto;
-    margin-top: 6px;
+    margin-top: 49px;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.267);
+}
+
+#containerComoUsar h2 {
+    margin-bottom: 15px;
+    text-decoration: underline;
 }
 
 section#containerCartas {
@@ -41,7 +53,7 @@ section#containerCartas {
     width: 90vw;
     background-color: white;
     margin: auto;
-    margin-top: 6px;
+    margin-top: 49px;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -51,7 +63,7 @@ section#containerCartas {
 header {
     height: 165px;
     background-color: black;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 header h1 {
@@ -59,9 +71,7 @@ header h1 {
     font-size: 3.5em;
     font-family: top-secret;
     text-align: center;
-    margin-top: 10px;
     color: white;
-    margin-top: 10px;
 }
 
 nav {
@@ -295,250 +305,3 @@ section#sub-container {
     transform: scale(1.1);
     transition: 0.2s linear;
 }
-
-/*pag 5 (Jogo Iniciado)*/
-
-@keyframes crescer {
-    from {
-        width: 20px;
-    } 
-    to {
-        width: 200px;
-        color: white;
-    }
-
-}
-
-body#jogoIniciadoBody {
-    background-color: antiquewhite;
-    padding: 20px;
-}
-
-#h1Formulario {
-    color: black;
-}
-
-div#conteinerFormularioDeJogo {
-    display: flex;
-    flex-direction: column;
-
-}
-
-#conteinerFormularioDeJogo h2 {
-    text-decoration: underline;
-    text-align: center;
-    margin-bottom: -20px;
-
-} 
-
-header {
-    margin-bottom: 30px;
-}
-
-header#headerFormulario {
-    background-image: none;
-    background-color: antiquewhite;
-}
-
-header h1 {
-    margin-top: -10px;
-}
-
-header i{
-    padding: 10px;
-    background-color: white;
-    text-align: left;
-    color: black;
-    border-radius: 50%;
-    font-weight: bold;
-    margin: 10px;
-    margin-top: 10px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.367);
-    margin-top: -10px;
-    margin-left: -10px;
-}
-
-header i:hover {
-    background-color: rgb(77, 76, 76);
-    color: red;
-}
-
-section.sub-conteiner-formulario {
-    background-color: white;
-    width: 90%;
-    height: 350px;
-    margin: auto;
-    margin-top: 30px;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 5px rgba(56, 55, 55, 0.155);
-    margin-bottom: 40px;
-}
-
-.buttonForm {
-    background-color: black;
-    color: white;
-    width: 250px;
-    width: 90%;
-    height: 60px;
-    text-align: center;
-    margin-top: 10px;
-    padding-top: 20px;
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.buttonForm:hover {
-    cursor: pointer;
-}
-
-#quant_2P {
-    margin-top: -5px;
-    background-color: cadetblue;
-}
-
-#quant_2P:hover {
-    background-color: rgb(69, 116, 118);
-}
-
-#quant_3P {
-    background-color: brown;
-}
-
-#quant_3P:hover {
-    background-color: rgb(130, 34, 34);
-}
-
-#quant_4P {
-    background-color: coral;
-}
-
-#quant_4P:hover {
-    background-color: rgb(201, 100, 64);
-}
-
-#event_sim {
-    margin-top: -5px;
-    background-color: cadetblue;
-}
-
-#event_sim:hover {
-    background-color: rgb(69, 116, 118);
-}
-
-#event_nao {
-    background-color: brown;
-}
-
-#event_nao:hover {
-    background-color: rgb(130, 34, 34);
-}
-
-.definitionNames {
-    background-color: gray;
-    width: 80%;
-    height: 60px;
-    margin-top: 10px;
-    border-radius: 5px;
-    text-align: center;
-    display: flex;
-}
-
-#player1 {
-    margin-top: 5px;
-    background-color: cadetblue;
-}
-
-#player2{
-    background-color: brown;
-}
-
-#player3{
-    background-color: coral;
-}
-
-#player4{
-    background-color: thistle;
-}
-
-#CountryNamesConteiner {
-    display: none; 
-}
-
-.definitionNames section {
-    background-color: gray;
-    width: 80px;
-    height: 90%;
-    border-radius: 5px;
-    margin: 3px;
-    padding-top: 18px;
-    color: white;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.definitionNames input {
-    height: 30px;
-    margin-top: 15px;
-    width: 70%;
-    font-size: 1.0em;
-    margin-left: -3px;
-}
-
-#p1 {
-    background-color: rgb(68, 114, 115);
-}
-
-#p2 {
-    background-color: rgb(108, 29, 29);
-}
-
-#p3 {
-    background-color: rgb(195, 95, 59);
-}
-
-#p4 {
-    background-color: rgb(159, 140, 159);
-}
-
-div#erros {
-    display: none;
-    margin: auto;
-    text-align: center;
-    margin-top: 11px;
-    padding: 2px;
-    width: 20px;
-    height: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    border: 2px solid rgba(184, 5, 5, 0.874);
-    border-radius: 15px;
-    color: white;
-    color: transparent;  
-    background-color: rgb(50, 49, 49);
-    animation: crescer 500ms both;
-}
-
-section#playGame {
-    display: none;
-    background-color: crimson;
-    width: 150px;
-    height: 50px;
-    margin: auto;
-    margin-top: -20px;
-    border-radius: 10px;
-    text-align: center;
-    padding-top: 15px;
-    color: white;
-    font-weight: bold;
-}
-
-#playGame:hover {
-    cursor: pointer;
-    background-color: rgb(158, 21, 49);
-    color: rgb(185, 181, 181);
-}
-
