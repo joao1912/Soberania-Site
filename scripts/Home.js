@@ -1,4 +1,5 @@
 (function(){
+
     document.getElementById("navContainer").addEventListener("click",function(event){
         const navPost = event.target.id
 
@@ -40,4 +41,9 @@
             default:
         }
     })
+    
+    document.getElementById("conteinerPlay").addEventListener("click",function(){
+        window.location.href = "../paginas/pagina-jogoIniciado.html"
+    })
+
 })()
