@@ -1,0 +1,15 @@
+section#DadosJogadores {
+    width: 700px;
+}
+
+section#ferramentas {
+    width: 700px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.tela {
+    width: 700px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
