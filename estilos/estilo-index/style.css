@@ -1,16 +1,16 @@
 @charset "UTF-8";
 @font-face {
     font-family: top-secret;
-    src: url(../fonts/Top\ Secret.ttf);
+    src: url(../../fonts/Top\ Secret.ttf);
 }
 @font-face {
     font-family: militarIcon;
-    src: url(../fonts/militarIcons.ttf);
+    src: url(../../fonts/militarIcons.ttf);
 }
 
 @font-face {
     font-family: Andimila;
-    src: url(../fonts/Andimia.ttf);
+    src: url(../../fonts/Andimia.ttf);
 }
 
 * {
