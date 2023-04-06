@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+    background-color: antiquewhite;
+}
+
 main#manualCartas {
     width: 90vw;
     padding-top: 36px;
@@ -23,6 +27,15 @@ section.conteinerPrincipal_cartas_claro {
     padding-left: 30px;
 }
 
+/*CARTAS*/
+
+h2.tiposCartas {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 /* pag 4 (Play)*/
 
 #mainPlay {
@@ -31,6 +44,16 @@ section.conteinerPrincipal_cartas_claro {
     
 }
 
-html {
-    background-color: lightgray;
+section#containerJogar {
+    width: 500px;
+    height: 300px;
+    padding-top: 95px;
+    transition: all 1s;
+}
+
+section#conteinerPlay {
+    width: 250px;
+    height: 100px;
+    padding-top: 36px;
+    font-size: 1.5em;
 }

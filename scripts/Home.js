@@ -43,7 +43,7 @@
     })
     
     document.getElementById("conteinerPlay").addEventListener("click",function(){
-        window.location.href = "../paginas/pagina-jogoIniciado.html"
+        window.location.href = "../paginas/pagina-formulario.html"
     })
 
 })()

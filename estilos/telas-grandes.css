@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+    background-color: antiquewhite;
+}
+
 .baseDeConteudo {
     width: 60vw;
     padding: 30px;
@@ -14,6 +18,13 @@
 }
 
 /*Pag 3 (cartas)*/
+
+h2.tiposCartas {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
 
 main#manualCartas {
     width: 70vw;
@@ -49,7 +60,6 @@ section.conteinerCarta_claro {
     margin-top: 12px;
 }
 
-
 img.carta {
     width: 180px;
     height: 330px;
@@ -63,6 +73,16 @@ img.carta {
     
 }
 
-html {
-    background-color: lightgray;
+section#containerJogar {
+    width: 500px;
+    height: 300px;
+    padding-top: 95px;
+    transition: all 1s;
+}
+
+section#conteinerPlay {
+    width: 250px;
+    height: 100px;
+    padding-top: 36px;
+    font-size: 1.5em;
 }
