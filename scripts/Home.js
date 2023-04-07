@@ -43,7 +43,7 @@
     })
     
     document.getElementById("conteinerPlay").addEventListener("click",function(){
-        window.location.href = "../paginas/pagina-formulario.html"
+        window.location.href = "./paginas/pagina-formulario.html"
     })
 
 })()
