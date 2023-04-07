@@ -238,7 +238,7 @@ let error = [0,""]
 
     function play() {
         localStorage.setItem("formulario",JSON.stringify(formulario))
-        window.location.href = "../paginas/pagina-JogoRodando.html"
+        window.location.href = "./paginas/pagina-JogoRodando.html"
     }
     
 })()
