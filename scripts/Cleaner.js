@@ -1,4 +1,4 @@
-import { dadosFormulario } from "./main.js"
+import { dadosFormulario } from "./Main.js"
 
 function setQuantPlayers(){
     switch(dadosFormulario.QuantidadeJogadores) {

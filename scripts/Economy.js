@@ -1,6 +1,6 @@
-import Principal from "./main.js"
+import Principal from "./Main.js"
 import { Erros } from "./Error.js"
-import { reoladed } from "./main.js"
+import { reoladed } from "./Main.js"
 
 const economiaAtualPais = document.querySelectorAll(".infoPais")
 const botaoTransfer = document.querySelector(".botaoTransfer")

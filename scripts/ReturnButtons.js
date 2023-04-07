@@ -1,4 +1,4 @@
-import  Telas  from "./main.js"
+import  Telas  from "./Main.js"
 
 const botoesDeRetorno = document.querySelectorAll(".Aretornar")
 
