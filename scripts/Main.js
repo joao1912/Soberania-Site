@@ -29,14 +29,6 @@ if(dadosFormulario.eventCards === "ON") {
 
 setQuantTablesTransfer(dadosFormulario.QuantidadeJogadores)
 
-const botaoHome = document.getElementById("Bsair")
-botaoHome.addEventListener("click",function(){
-    let sair = confirm("Você ira perder todo progresso, deseja sair?")
-    if(sair) { 
-        window.location.href = "../index.html" 
-        localStorage.clear()
-    } 
-})
 
 let atributos = dados()
 function dados() {

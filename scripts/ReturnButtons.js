@@ -1,6 +1,8 @@
 import  Telas  from "./Main.js"
 
 const botoesDeRetorno = document.querySelectorAll(".Aretornar")
+const botaoHome = document.getElementById("Bsair")
+const exitAlert = document.getElementById("exitAlert")
 
 botoesDeRetorno[1].addEventListener('click',function(){
     Telas.telaFabricar.style.display = "none"
@@ -37,6 +39,48 @@ botoesDeRetorno[6].addEventListener("click",function(){
         Telas.telasDasCartas[c].style.display = "none"
         Telas.telaFabricar.style.display = "block"
     }
+})
+
+botaoHome.addEventListener("click",function(){
+    const paragSaida  = document.getElementById("paragSaida")
+    const topContainer = document.getElementById("top-container")
+    const botaoSim = document.getElementById("botaoSimSaida")
+    const botaoNao = document.getElementById("botaoNaoSaida")
+    const h1Evento = document.getElementById("evento")
+
+    topContainer.style.marginBottom  = "50px"
+    h1Evento.style.display = "none"
+    setTimeout(function(){
+        botaoSim.style.display = "inline-block"
+        botaoNao.style.display = "inline-block"
+        paragSaida.style.display = "block"
+        }, 200);
+    
+    botaoHome.style.display = "none"
+    exitAlert.style.display = "block"
+
+    exitAlert.addEventListener("click",function(event){
+        const id =  event.target.id
+        
+        switch(id)  {
+            case "botaoSimSaida":
+                window.location.href = "../index.html" 
+                localStorage.clear()
+                break
+            case "botaoNaoSaida":
+                exitAlert.style.display = "none"
+                exitAlert.style.width = "30px" 
+                botaoHome.style.display = "inline-block"
+                topContainer.style.marginBottom  = "0px"
+                h1Evento.style.display = "block"
+
+                botaoSim.style.display = "none"
+                botaoNao.style.display = "none"
+                paragSaida.style.display = "none"
+                break
+        }
+    })
+
 })
 
 export {botoesDeRetorno}
