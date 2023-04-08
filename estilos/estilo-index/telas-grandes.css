@@ -30,31 +30,25 @@ main#manualCartas {
     width: 70vw;
 }
 
-section.conteinerPrincipal_cartas_escuro {
+section#containerCartas {
+    width: 60vw;
+}
+
+section.containerCarta {
     transition: width 1s;
     width: 40vw;
     height: 400px;
     margin: auto;
     margin-bottom: 30px;
-    margin-right: 80px;
 }
 
-section.conteinerPrincipal_cartas_claro {
-    transition: width 1s;
-    width: 40vw;
-    height: 400px;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-left: 80px;
-}
-
-section.conteinerCarta_escuro {
+section.containerImg_right {
     width: 200px;
     height: 350px;
     margin-top: 12px;
 }
 
-section.conteinerCarta_claro {
+section.containerImg_left {
     width: 200px;
     height: 350px;
     margin-top: 12px;

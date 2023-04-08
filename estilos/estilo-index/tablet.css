@@ -9,7 +9,7 @@ main#manualCartas {
     padding-top: 36px;
 }
 
-section.conteinerPrincipal_cartas_escuro {
+section.containerCarta {
     transition: width 1s;
     margin: auto;
     width: 80vw;
@@ -18,16 +18,6 @@ section.conteinerPrincipal_cartas_escuro {
     padding-right: 30px;
 }
 
-section.conteinerPrincipal_cartas_claro {
-    transition: width 1s;
-    margin: auto;
-    width: 80vw;
-    height: 200px;
-    margin-bottom: 120px;
-    padding-left: 30px;
-}
-
-/*CARTAS*/
 
 h2.tiposCartas {
     text-align: center;

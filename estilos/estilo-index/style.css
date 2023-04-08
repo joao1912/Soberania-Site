@@ -196,28 +196,38 @@ h2.tiposCartas {
     margin-bottom: 5px;
 }
 
-section.conteinerPrincipal_cartas_escuro {
-    background-color: #549E00;
+section.containerCarta {
     padding: 12px;
     border-radius: 30px;
     margin-bottom: 150px;
     height: 190px;
 }
 
-section.conteinerPrincipal_cartas_claro {
-    background-color: #91EB2A;
-    padding: 12px;
-    border-radius: 30px;
-    margin-bottom: 150px;
-    height: 190px;
+.cartaTipo-item {
+    background-color: coral;
 }
 
-section.conteinerPrincipal_cartas_escuro p {
-    margin-top: 10px;
-    line-height: 1.2em;
+.cartaTipo-multiplicador {
+    background-color: rgb(220, 36, 36);
 }
 
-section.conteinerPrincipal_cartas_claro p {
+.cartaTipo-adversidade {
+    background-color: cadetblue;
+}
+
+.cartaTipo-construcao {
+    background-color: dimgrey;
+}
+
+.cartaTipo-evento {
+    background-color: thistle;
+}
+
+.cartaTipo-objetivo {
+    background-color: crimson;
+}
+
+section.containerCarta p {
     margin-top: 10px;
     line-height: 1.2em;
 }
@@ -227,7 +237,7 @@ section.conteinerPrincipal_cartas_claro p {
 }
 
 
-section.conteinerCarta_escuro {
+section.containerImg_right {
     position: relative;
     float: right;
     background-color: black;
@@ -237,7 +247,7 @@ section.conteinerCarta_escuro {
    
 }
 
-section.conteinerCarta_claro {
+section.containerImg_left {
     position: relative;
     float: left;
     background-color: black;
