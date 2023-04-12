@@ -157,3 +157,4 @@ const Carta_64 = new Carta("Forças Especiais", 64, 8)
 const Carta_65 = new Carta("Soldado", 65, 60)
 
 const Carta_66 = new Carta("Artilharia", 66, 4)
+

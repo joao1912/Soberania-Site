@@ -241,42 +241,6 @@ const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
         }
     })
 
-    /* usar carta */
-
-    document.getElementById("menuUsarCarta").addEventListener("click",function(){
-        const listCountry = document.getElementById("paisesUsarCarta")
-        const botaoPronto = document.getElementById("botaoProntoUsarCarta")
-
-        if (listCountry.style.display == "none") {
-            botaoPronto.style.display = "none"
-            listCountry.style.display = "inline-block"
-        } else {
-            listCountry.style.display = "none"
-            botaoPronto.style.display = "inline-block"
-        }
-    })
-
-    document.getElementById("listaPaises").addEventListener("click",function(event){
-        const id = event.target.id
-
-        switch(id) {
-            case "pais1":
-               
-                break
-            case "pais2":
-
-                break
-            case "pais3":
-
-                break
-            case "pais4":
-
-                break
-            
-        }
-    })
-    
-
     const economiaAtualPais = document.querySelectorAll(".infoPais")
     
     botoesDeRetorno[0].addEventListener('click',function(){
