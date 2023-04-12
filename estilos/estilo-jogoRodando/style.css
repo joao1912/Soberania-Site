@@ -691,7 +691,6 @@ div#botaoProntoUsarCarta {
     height: 60px;
     background-color: rgba(116, 13, 34, 0.87);
     border-radius: 10px;
-    margin-top: 40px;
     font-size: 2em;
     padding-top: 15px;
     font-family: Andimia;
@@ -711,11 +710,15 @@ div#containerAlvoCarta {
 }
 
 #menuAlvoCartas {
-    display: block;
+    display: block;   
     margin: auto;
     margin-top: 10px;
     margin-bottom: -4px;
     width: 100px;
+}
+
+#menuAlvoCartas > span,div {
+    display: inline-block;
 }
 
 ul#paisesAlvos {
@@ -757,5 +760,31 @@ div.botaoUsar:hover {
 }
 */
 
+div.botaoEscolha {
+    width: 90px;
+    height: 50px;
+    margin: 25px;
+    margin-top: -10px ;
+    padding: 13px;
+    border-radius: 5px;
+    padding-top: 16px;
+    font-weight: bold;
+}
+
+.botaoEscolha:hover {
+    transform: scale(1.1);
+    transition: 0.6 linear;
+    cursor: pointer;
+}
+
+div.botaoOpicao-1 {
+    background-color: cadetblue;
+    float: left;
+}
+
+div.botaoOpicao-2 {
+    background-color: coral;
+    float: right;
+}
 
 

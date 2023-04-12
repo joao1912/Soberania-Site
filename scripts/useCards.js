@@ -1,17 +1,30 @@
 
 
 
-document.getElementById("menuUsarCarta").addEventListener("click",function(){
+document.getElementById("menuUsarCarta").addEventListener("click",function(event){
     const listCountry = document.getElementById("paisesUsarCarta")
     const botaoPronto = document.getElementById("botaoProntoUsarCarta")
+    const id = event.target.id
 
-    if (listCountry.style.display == "none") {
-        botaoPronto.style.display = "none"
-        listCountry.style.display = "inline-block"
-    } else {
-        listCountry.style.display = "none"
-        botaoPronto.style.display = "inline-block"
+    switch(id) {
+        case "menuIcone1":
+            if (listCountry.style.display == "none") {
+                botaoPronto.style.display = "none"
+                listCountry.style.display = "inline-block"
+            } else {
+                listCountry.style.display = "none"
+                botaoPronto.style.display = "inline-block"
+            }
+            break
+        case "botaoOpicao-1":
+            
+            break
+        case "botaoOpicao-2":
+
+            break
     }
+
+    
 })
 
 document.getElementById("listaPaises").addEventListener("click",function(event){
