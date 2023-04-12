@@ -16,10 +16,10 @@ document.getElementById("menuUsarCarta").addEventListener("click",function(event
                 botaoPronto.style.display = "inline-block"
             }
             break
-        case "botaoOpicao-1":
-            
+        case "opcao1-telaUsarCarta":
+
             break
-        case "botaoOpicao-2":
+        case "opcao2-telaUsarCarta":
 
             break
     }
@@ -57,17 +57,29 @@ document.getElementById("listaPaises").addEventListener("click",function(event){
     }
 })
 
-document.getElementById("menuAlvoCartas").addEventListener("click",function(){
+document.getElementById("menuAlvoCartas").addEventListener("click",function(event){
     const listCountry = document.getElementById("paisesAlvos")
     const botaoUsar = document.getElementsByClassName("botaoUsar")[0]
+    const id = event.target.id
 
-    if (listCountry.style.display == "none") {
-        botaoUsar.style.display = "none"
-        listCountry.style.display = "inline-block"
-    } else {
-        listCountry.style.display = "none"
-        botaoUsar.style.display = "block"
+    switch(id) {
+        case "menuIcone1":
+            if (listCountry.style.display == "none") {
+                botaoUsar.style.display = "none"
+                listCountry.style.display = "inline-block"
+            } else {
+                listCountry.style.display = "none"
+                botaoUsar.style.display = "block"
+            }
+            break
+        case "opcao1-telaAlvosCarta":
+
+            break
+        case "opcao2-telaAlvosCarta":
+
+            break
     }
+    
 })
 
 document.getElementById("paisesAlvos").addEventListener("click",function(event){

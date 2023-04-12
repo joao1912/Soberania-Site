@@ -630,7 +630,9 @@ section.custo ul > li {
 /* usar carta */
 
 div#containerUsarCarta {
-    display: block; /* provisorio*/
+    display: none; /* provisorio FLEX*/
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
@@ -705,25 +707,29 @@ div#botaoProntoUsarCarta:hover {
 */
 
 div#containerAlvoCarta {
-    display: none; /* Cprincipal */
+    display: flex; /* Cprincipal */
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-#menuAlvoCartas {
-    display: block;   
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: -4px;
-    width: 100px;
+h2#alvo {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    font-family: Andimia;
 }
 
-#menuAlvoCartas > span,div {
-    display: inline-block;
+#menuAlvoCartas {
+    margin-top: 10px;
+    margin-bottom: -4px;
 }
 
 ul#paisesAlvos {
     list-style-type: none;
     display: none;
+    margin-top: -47px;
+
 }
 
 ul#paisesAlvos li {
@@ -746,7 +752,6 @@ div.botaoUsar {
     height: 50px;
     background-color: rgba(116, 13, 34, 0.87);
     border-radius: 10px;
-    margin-top: 27px;
     font-size: 1.6em;
     padding-top: 13px;
     font-family: Andimia;
@@ -762,13 +767,15 @@ div.botaoUsar:hover {
 
 div.botaoEscolha {
     width: 90px;
-    height: 50px;
+    height: 60px;
     margin: 25px;
     margin-top: -10px ;
-    padding: 13px;
+    padding: 3px;
     border-radius: 5px;
-    padding-top: 16px;
+    padding-top: 21px;
     font-weight: bold;
+    font-family: Andimia;
+    line-height: 1.3em;
 }
 
 .botaoEscolha:hover {
@@ -786,5 +793,3 @@ div.botaoOpicao-2 {
     background-color: coral;
     float: right;
 }
-
-
