@@ -630,7 +630,7 @@ section.custo ul > li {
 /* usar carta */
 
 div#containerUsarCarta {
-    display: none; /* provisorio FLEX*/
+    display: flex; /* provisorio FLEX*/
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -649,6 +649,7 @@ div#containerUsarCarta input {
 
 div#paisesUsarCarta {
     display: none;   
+    margin-top: -47px;
 }
 
 div#containerUsarCarta h2#cod {
@@ -707,7 +708,7 @@ div#botaoProntoUsarCarta:hover {
 */
 
 div#containerAlvoCarta {
-    display: flex; /* Cprincipal */
+    display: none; /* Cprincipal (flex) */
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -766,6 +767,7 @@ div.botaoUsar:hover {
 */
 
 div.botaoEscolha {
+    visibility: hidden;
     width: 90px;
     height: 60px;
     margin: 25px;
