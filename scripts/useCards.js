@@ -3,10 +3,8 @@ import { cartas } from "./CadastroCartas.js"
 
 const carta = {
     usuario: "",
-    id: 0,
     afetados: "",
-    escolha: "",
-    canUse: false
+    escolha: ""
 }
 
 
@@ -47,7 +45,6 @@ document.getElementById("listaPaises").addEventListener("click",function(event){
     function habilitaBotaoPronto() {
         botaoPronto.style.backgroundColor = "crimson"
         botaoPronto.style.cursor = "pointer"
-
     }
 
 
@@ -133,25 +130,22 @@ document.getElementById("paisesAlvos").addEventListener("click",function(event){
 
 document.getElementById("botaoProntoUsarCarta").addEventListener("click",function(){
     let areaCodigo = document.getElementById("codigoCarta")
+    let id = null
     if (carta.usuario != "") {
-        carta.id = areaCodigo.value
-        getAffectedCard(carta.id)
-        getChoicesCard(carta.id)
+        id = areaCodigo.value
+        getAffectedCard(id)
+        getChoicesCard(id)
 
-        
-        if (carta.afetados == "um") {
-            carta.canUse = true
-        } 
-        
-        if (carta.canUse == true) {
-            useCard(carta.id, carta.afetados)
+        if (carta.afetados == "um" || carta.afetados == "todos" && carta.escolha == "escolha-nao")  {
+            useCard(id, carta.escolha)
         }
+        
     }
 })
 
 const telaUsarCarta_1 = document.getElementById("containerUsarCarta")
 const telaUsarCarta_2 = document.getElementById("containerAlvoCarta")
-const telaResultado = document.getElementById("")
+const telaResultado = document.getElementById("contaneinerResultadoCarta")
 
 const botaoEscolha1_tela_1 = document.getElementById("opcao1-telaUsarCarta")
 const botaoEscolha2_tela_1 = document.getElementById("opcao2-telaUsarCarta")
@@ -162,32 +156,42 @@ const botaoEscolha2_tela_2 = document.getElementById("opcao2-telaAlvosCarta")
 
 function getAffectedCard(id) {
     switch (cartas[id].afetados[0]) {
-        case "um", "todos":
+        case "um":
             telaUsarCarta_1.style.display = "none"
             telaResultado.style.display = "flex"
+            carta.afetados = "um"
 
             break
         case "dois":
             telaUsarCarta_1.style.display = "none"
             telaUsarCarta_2.style.display = "flex"
+            carta.afetados = "dois"
 
             break
+        case "todos":
+            telaUsarCarta_1.style.display = "none"
+            telaResultado.style.display = "flex"
+            carta.afetados = "todos"
     }
 
 }
 
 function getChoicesCard(id) {
     if (cartas[id].afetados[1] == "escolha-sim") {
-        if(carta.afetados[0] == "um") {
+        if(carta.afetados[0] == "um" || carta.afetados[0] == "todos") {
             botaoEscolha1_tela_1.style.display = "flex"
             botaoEscolha2_tela_1.style.display = "flex"
-        } else {
+
+        } else if(carta.afetados[0] == "dois") {
             botaoEscolha1_tela_2.style.display = "flex"
             botaoEscolha2_tela_2.style.display = "flex"
-        }
+        } 
+        carta.escolha = "escolha-sim"
+    } else {
+        carta.escolha = "escolha-nao"
     }
 }
 
-function useCard(id, affecteds) {
-    
+function useCard(id, choice) {
+    alert("ID: "+ id  )
 }

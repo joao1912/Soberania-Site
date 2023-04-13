@@ -795,3 +795,7 @@ div.botaoOpicao-2 {
     background-color: coral;
     float: right;
 }
+
+div#contaneinerResultadoCarta {
+    display: none;
+}
