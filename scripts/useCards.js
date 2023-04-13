@@ -8,6 +8,8 @@ const carta = {
     id: 0,
     usuarioExibido: "",
     usuario: "",
+    alvoExibido: "",
+    alvo: "",
     afetados: "",
     escolha: ""
 }
@@ -106,19 +108,23 @@ document.getElementById("paisesAlvos").addEventListener("click",function(event){
 
     switch(id) {
         case "alvo1":
-            
+            carta.alvoExibido = dadosFormulario.Paises[0]
+            carta.alvo = "alvo1"
 
             break
         case "alvo2":
-           
+            carta.alvoExibido = dadosFormulario.Paises[1]
+            carta.alvo = "alvo2"
 
             break
         case "alvo3":
-            
+            carta.alvoExibido = dadosFormulario.Paises[2]
+            carta.alvo = "alvo3"
 
             break
         case "alvo4":
-            
+            carta.alvoExibido = dadosFormulario.Paises[3]
+            carta.alvo = "alvo4"
 
             break
         
@@ -171,9 +177,9 @@ document.getElementById("containerBotaoEscolha").addEventListener("click", funct
         case "botaoPronto-maisAfetados":
             if (escolha != 0) {
                 if (escolha == 1) {
-                    useCard(Number(carta.id), escolha)
+                    useCard(Number(carta.id), escolha, carta.usuario)
                 } else if (escolha == 2) {
-                    useCard(Number(carta.id), escolha)
+                    useCard(Number(carta.id), escolha, carta.usuario)
                 }
             }
     }
@@ -228,37 +234,52 @@ function getChoicesCard(id) {
 }
 
 
-function useCard(id, escolha) {
+function useCard(id, escolha, usuario, alvo) {
     
     if(escolha) {
 
         switch (id) {
             case 15:
-                
-                switch (carta.usuario) {
-                    case "pais1":
+
+                if(escolha = 1) {
+
                     
-                        break
-                    case "pais2":
 
-                        break
-                    case "pais3":
+                } else {
 
-                        break
-                    case "pais4":
 
-                        break
+
+                }
+                break
+
+            case 16:
+
+                if(escolha = 1) {
+
+
+
+                } else {
+
+
+                    
+                }
+                break
+
+            case 20:
+
+                if(escolha = 1) {
+
+
+
+                } else {
+
+
+                    
                 }
 
                 break
-            case 16:
-
-                break
-            case 20:
-
-                break
             case 57:
-
+                //alvo
                 break
             default:
                 console.log("Carta não localizada")
@@ -267,88 +288,452 @@ function useCard(id, escolha) {
     } else {
         switch (id) {
             case 13:
-                
+
+                Principal.atributos.player1.economia -= 4000
+                Principal.atributos.player2.economia -= 4000
+                Principal.atributos.player3.economia -= 4000
+                Principal.atributos.player4.economia -= 4000
+
+                Principal.atributos.player1.populacao -= 15
+                Principal.atributos.player2.populacao -= 15
+                Principal.atributos.player3.populacao -= 15
+                Principal.atributos.player4.populacao -= 15
+             
                 break
             case 14:
+
+                Principal.atributos.player1.economia = Math.ceil(Principal.atributos.player1.economia * 50 / 100)
+                Principal.atributos.player2.economia = Math.ceil(Principal.atributos.player2.economia * 50 / 100)
+                Principal.atributos.player3.economia = Math.ceil(Principal.atributos.player3.economia * 50 / 100)
+                Principal.atributos.player4.economia = Math.ceil(Principal.atributos.player4.economia * 50 / 100)
 
                 break
             case 17:
 
+                Principal.atributos.player1.populacao += 15
+                Principal.atributos.player2.populacao += 15
+                Principal.atributos.player3.populacao += 15
+                Principal.atributos.player4.populacao += 15
+
                 break
             case 18:
+
+                Principal.atributos.player1.opiniao_publica += 20
+                Principal.atributos.player2.opiniao_publica += 20
+                Principal.atributos.player3.opiniao_publica += 20
+                Principal.atributos.player4.opiniao_publica += 20
 
                 break
             case 19:
 
+                Principal.atributos.player1.economia += 6000
+                Principal.atributos.player2.economia += 6000
+                Principal.atributos.player3.economia += 6000
+                Principal.atributos.player4.economia += 6000
+
                 break
             case 22:
+                
+                //pendente
 
                 break
             case 23:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.economia += 500
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.economia += 500
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.economia += 500
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.economia += 500
+                        break
+                }
+
                 break
             case 24:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao += 2
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao += 2
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao += 2
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao += 2
+                        break
+                }
 
                 break
             case 25:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.opiniao_publica += 10
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.opiniao_publica += 10
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.opiniao_publica += 10
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.opiniao_publica += 10
+                        break
+                }
+
                 break
             case 26:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.economia += 500
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.economia += 500
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.economia += 500
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.economia += 500
+                        break
+                }
 
                 break
             case 27:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.economia += 500
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.economia += 500
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.economia += 500
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.economia += 500
+                        break
+                }
+
                 break
             case 28:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.opiniao_publica += 10
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.opiniao_publica += 10
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.opiniao_publica += 10
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.opiniao_publica += 10
+                        break
+                }
+                
 
                 break
             case 29:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao += 2
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao += 2
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao += 2
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao += 2
+                        break
+                }
+
                 break
             case 30:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao += 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao += 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao += 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao += 5
+                        break
+                }
 
                 break
             case 31:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao += 5
+                        Principal.atributos.player1.opiniao_publica += 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao += 5
+                        Principal.atributos.player2.opiniao_publica += 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao += 5
+                        Principal.atributos.player3.opiniao_publica += 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao += 5
+                        Principal.atributos.player4.opiniao_publica += 5
+                        break
+                }
+
                 break
             case 32:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao += 5
+                        Principal.atributos.player1.opiniao_publica += 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao += 5
+                        Principal.atributos.player2.opiniao_publica += 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao += 5
+                        Principal.atributos.player3.opiniao_publica += 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao += 5
+                        Principal.atributos.player4.opiniao_publica += 5
+                        break
+                }
 
                 break
             case 33:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao -= 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao -= 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao -= 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao -= 5
+                        break
+                }
+
                 break
             case 34:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao -= 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao -= 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao -= 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao -= 5
+                        break
+                }
 
                 break
             case 35:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao -= 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao -= 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao -= 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao -= 5
+                        break
+                }
+
                 break
             case 36:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.opiniao_publica -= 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.opiniao_publica -= 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.opiniao_publica -= 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.opiniao_publica -= 5
+                        break
+                }
 
                 break
             case 37:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao -= 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao -= 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao -= 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao -= 5
+                        break
+                }
+
                 break
             case 38:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.economia -= 500
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.economia -= 500
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.economia -= 500
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.economia -= 500
+                        break
+                }
 
                 break
             case 39:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao -= 5
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao -= 5
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao -= 5
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao -= 5
+                        break
+                }
+
                 break
             case 40:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.economia -= 500
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.economia -= 500
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.economia -= 500
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.economia -= 500
+                        break
+                }
 
                 break
             case 41:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.opiniao_publica -= 10
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.opiniao_publica -= 10
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.opiniao_publica -= 10
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.opiniao_publica -= 10
+                        break
+                }
+
                 break
             case 42:
+
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.populacao -= 5
+                        Principal.atributos.player1.opiniao_publica -= 10
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.populacao -= 5
+                        Principal.atributos.player2.opiniao_publica -= 10
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.populacao -= 5
+                        Principal.atributos.player3.opiniao_publica -= 10
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.populacao -= 5
+                        Principal.atributos.player4.opiniao_publica -= 10
+                        break
+                }
 
                 break
             case 43:
 
+                switch(usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.economia -= 500
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.economia -= 500
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.economia -= 500
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.economia -= 500
+                        break
+                }
+
+                break
+            case 53:
+                //alvo
                 break
             default:
                 console.log("Carta não localizada")
         }
     }
+    reoladed(Principal.atributos)
 }
