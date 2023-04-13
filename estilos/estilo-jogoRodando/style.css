@@ -649,7 +649,6 @@ div#containerUsarCarta input {
 
 div#paisesUsarCarta {
     display: none;   
-    margin-top: -47px;
 }
 
 div#containerUsarCarta h2#cod {
@@ -689,7 +688,7 @@ ul#listaPaises li:hover {
     background-color: lightgray;
 }
 
-div#botaoProntoUsarCarta {
+div.botaoProntoUsarCarta {
     width: 200px;
     height: 60px;
     background-color: rgba(116, 13, 34, 0.87);
@@ -698,14 +697,9 @@ div#botaoProntoUsarCarta {
     padding-top: 15px;
     font-family: Andimia;
     cursor: default;
+    margin-top: 40px;
 }
-/*
-div#botaoProntoUsarCarta:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: 0.2s linear;
-}
-*/
+
 
 div#containerAlvoCarta {
     display: none; /* Cprincipal (flex) */
@@ -758,13 +752,6 @@ div.botaoUsar {
     font-family: Andimia;
     cursor: default;
 }
-/*
-div.botaoUsar:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: 0.2s linear;
-}
-*/
 
 div.botaoEscolha {
     visibility: hidden;
@@ -786,6 +773,22 @@ div.botaoEscolha {
     cursor: pointer;
 }
 
+div#contaneinerResultadoCarta {
+    display: none;
+}
+
+#containerBotaoEscolha {
+    display: none; /*FLEX*/
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#containerBotaoEscolha div {
+    visibility: visible;
+}
+
 div.botaoOpicao-1 {
     background-color: cadetblue;
     float: left;
@@ -794,8 +797,4 @@ div.botaoOpicao-1 {
 div.botaoOpicao-2 {
     background-color: coral;
     float: right;
-}
-
-div#contaneinerResultadoCarta {
-    display: none;
 }

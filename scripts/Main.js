@@ -285,6 +285,10 @@ const telasDasCartas = document.querySelectorAll(".botoesExtrasCartas")
 
 })()
 
+function teste() {
+    atributos.player1
+}
+
 export {dadosFormulario}
 export {reoladed}
 export default {telaFerramentas, telaEconomia, telaFabricar, telaUsarCarta, telaRegras, telasDasCartas , atributos}
