@@ -125,7 +125,7 @@ const cartas = [
 
     new Carta("Espião", 56, 4),
 
-    new Carta("Sabotagem", 57, 1, ["um","escolha-sim"]),
+    new Carta("Sabotagem", 57, 1, ["um","escolha-sim"]), //arrumar, tem alvo
 
     new Carta("Bombardeiro", 58, 2),
 

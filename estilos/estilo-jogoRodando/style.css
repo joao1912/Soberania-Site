@@ -739,7 +739,7 @@ ul#paisesAlvos li:hover {
     cursor: pointer;
 }
 
-div.botaoUsar {
+div#botaoUsar {
     display: block;
     margin: auto;
     text-align: center;

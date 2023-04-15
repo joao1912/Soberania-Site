@@ -5,13 +5,15 @@ import Principal from "./Main.js"
 
 
 const carta = {
-    id: 0,
+    id: undefined,
     usuarioExibido: "",
     usuario: "",
     alvoExibido: "",
     alvo: "",
     afetados: "",
-    escolha: ""
+    escolha: undefined,
+    opicoes: false
+
 }
 
 
@@ -74,7 +76,7 @@ document.getElementById("listaPaises").addEventListener("click",function(event){
 
 document.getElementById("menuAlvoCartas").addEventListener("click",function(event){
     const listCountry = document.getElementById("paisesAlvos")
-    const botaoUsar = document.getElementsByClassName("botaoUsar")[0]
+    const botaoUsar = document.getElementById("botaoUsar")
     const id = event.target.id
 
     switch(id) {
@@ -88,10 +90,10 @@ document.getElementById("menuAlvoCartas").addEventListener("click",function(even
             }
             break
         case "opcao1-telaAlvosCarta":
-
+            carta.escolha == 1
             break
         case "opcao2-telaAlvosCarta":
-
+            carta.escolha = 2
             break
     }
     
@@ -100,7 +102,7 @@ document.getElementById("menuAlvoCartas").addEventListener("click",function(even
 document.getElementById("paisesAlvos").addEventListener("click",function(event){
     const id = event.target.id
     const listCountry = document.getElementById("paisesAlvos")
-    const botaoUsar = document.getElementsByClassName("botaoUsar")[0]
+    const botaoUsar = document.getElementById("botaoUsar")
 
     listCountry.style.display = "none"
     botaoUsar.style.display = "block"
@@ -110,40 +112,63 @@ document.getElementById("paisesAlvos").addEventListener("click",function(event){
         case "alvo1":
             carta.alvoExibido = dadosFormulario.Paises[0]
             carta.alvo = "alvo1"
+            habilitaBotaoUsar()
 
             break
         case "alvo2":
             carta.alvoExibido = dadosFormulario.Paises[1]
             carta.alvo = "alvo2"
+            habilitaBotaoUsar()
 
             break
         case "alvo3":
             carta.alvoExibido = dadosFormulario.Paises[2]
             carta.alvo = "alvo3"
+            habilitaBotaoUsar()
 
             break
         case "alvo4":
             carta.alvoExibido = dadosFormulario.Paises[3]
             carta.alvo = "alvo4"
+            habilitaBotaoUsar()
 
             break
         
+    }
+
+    function habilitaBotaoUsar() {
+        const botaoUsar = document.getElementById("botaoUsar")
+
+        botaoUsar.style.backgroundColor = "crimson"
+        botaoUsar.style.cursor = "pointer"
+    }
+})
+
+document.getElementById("botaoUsar").addEventListener("click",function(){
+    
+    if(carta.alvo != "") {
+     
+        useCard(Number(carta.id), carta.escolha || null, carta.usuario, carta.alvo)
     }
 })
 
 document.getElementsByClassName("botaoProntoUsarCarta")[0].addEventListener("click",function(){
     let areaCodigo = document.getElementById("codigoCarta")
     let id = null
+
     if (carta.usuario != "") {
         id = areaCodigo.value
         carta.id = id
-        getAffectedCard(id)
-        getChoicesCard(id)
+        setScreenAffectedCard(id)
+        setScreenChoicesCard(id)
 
-        if (carta.escolha == "escolha-nao" && carta.afetados == "um" || carta.afetados == "todos")  {
-            useCard(Number(id))
+        if(carta.opicoes == false) {
+            if (carta.afetados == "um" || carta.afetados == "todos")  {
+                alert(carta.opicoes)
+                useCard(Number(id))
+            }
         }
-        
+
     }
 })
 
@@ -152,7 +177,7 @@ document.getElementById("containerBotaoEscolha").addEventListener("click", funct
     const botaoEscolha_1 = document.getElementById("opcao1-maisAfetados")
     const botaoEscolha_2 = document.getElementById("opcao2-maisAfetados")
     const botaoPronto = document.getElementById("botaoPronto-maisAfetados")
-    let escolha = 0
+   
 
     switch(id) {
         case "opcao1-maisAfetados":
@@ -162,7 +187,7 @@ document.getElementById("containerBotaoEscolha").addEventListener("click", funct
             botaoPronto.style.backgroundColor = "crimson"
             botaoPronto.style.cursor = "pointer"
 
-            escolha = 1
+            carta.escolha == 1
             break
 
         case "opcao2-maisAfetados":
@@ -172,15 +197,16 @@ document.getElementById("containerBotaoEscolha").addEventListener("click", funct
             botaoPronto.style.backgroundColor = "crimson"
             botaoPronto.style.cursor = "pointer"
 
-            escolha = 2
+            carta.escolha = 2
+            
+            
+
             break
         case "botaoPronto-maisAfetados":
-            if (escolha != 0) {
-                if (escolha == 1) {
-                    useCard(Number(carta.id), escolha, carta.usuario)
-                } else if (escolha == 2) {
-                    useCard(Number(carta.id), escolha, carta.usuario)
-                }
+            if (carta.escolha != undefined) {
+                
+                useCard(Number(carta.id), carta.escolha, carta.usuario)
+   
             }
     }
 })
@@ -193,7 +219,7 @@ const botaoEscolha1_tela_2 = document.getElementById("opcao1-telaAlvosCarta")
 const botaoEscolha2_tela_2 = document.getElementById("opcao2-telaAlvosCarta")
 
 
-function getAffectedCard(id) {
+function  setScreenAffectedCard(id) {
     switch (cartas[id].afetados[0]) {
         case "um":
             telaUsarCarta_1.style.display = "none"
@@ -213,7 +239,7 @@ function getAffectedCard(id) {
 
 }
 
-function getChoicesCard(id) {
+function  setScreenChoicesCard(id) {
     const containerUsarCarta = document.getElementById("containerUsarCarta")
     const containerBotaoEscolha = document.getElementById("containerBotaoEscolha")
 
@@ -227,9 +253,7 @@ function getChoicesCard(id) {
             botaoEscolha1_tela_2.style.display = "flex"
             botaoEscolha2_tela_2.style.display = "flex"
         } 
-        carta.escolha = "escolha-sim"
-    } else {
-        carta.escolha = "escolha-nao"
+        carta.opicoes = true
     }
 }
 
@@ -237,49 +261,190 @@ function getChoicesCard(id) {
 function useCard(id, escolha, usuario, alvo) {
     
     if(escolha) {
-
+        
         switch (id) {
             case 15:
 
-                if(escolha = 1) {
+                if(escolha == 1) {
+                    switch (usuario) {
+                        case "pais1":
+                            Principal.atributos.player1.populacao -= 20
+                            Principal.atributos.player1.opiniao_publica -= 20
 
+                            break
+                        case "pais2":
+                            Principal.atributos.player2.populacao -= 20
+                            Principal.atributos.player2.opiniao_publica -= 20
+
+                            break
+                        case "pais3":
+                            Principal.atributos.player3.populacao -= 20
+                            Principal.atributos.player3.opiniao_publica -= 20
+
+                            break
+                        case "pais4":
+                            Principal.atributos.player4.populacao -= 20
+                            Principal.atributos.player4.opiniao_publica -= 20
+
+                            break
+                    }
                     
 
                 } else {
 
+                    switch (usuario) {
+                        case "pais1":
+                            Principal.atributos.player1.militar -= 3
+                            Principal.atributos.player1.economia -= 3000
 
+                            break
+                        case "pais2":
+                            Principal.atributos.player2.militar -= 3
+                            Principal.atributos.player2.economia -= 3000
+
+                            break
+                        case "pais3":
+                            Principal.atributos.player3.militar -= 3
+                            Principal.atributos.player3.economia -= 3000
+
+                            break
+                        case "pais4":
+                            Principal.atributos.player4.militar -= 3
+                            Principal.atributos.player4.economia -= 3000
+
+                            break
+                    }
 
                 }
                 break
 
             case 16:
 
-                if(escolha = 1) {
+                if(escolha == 1) {
 
+                    switch (usuario) {
+                        case "pais1":
+                            Principal.atributos.player1.militar += 3
+                            Principal.atributos.player1.economia -= 2000
 
+                            break
+                        case "pais2":
+                            Principal.atributos.player2.militar += 3
+                            Principal.atributos.player2.economia -= 2000
+
+                            break
+                        case "pais3":
+                            Principal.atributos.player3.militar += 3
+                            Principal.atributos.player3.economia -= 2000
+
+                            break
+                        case "pais4":
+                            Principal.atributos.player4.militar += 3
+                            Principal.atributos.player4.economia -= 2000
+
+                            break
+                    }
 
                 } else {
 
+                    switch (usuario) {
+                        case "pais1":
+                            Principal.atributos.player1.economia -= 5000
+                            Principal.atributos.player1.opiniao_publica -= 5
 
+                            break
+                        case "pais2":
+                            Principal.atributos.player2.economia -= 5000
+                            Principal.atributos.player2.opiniao_publica -= 5
+
+                            break
+                        case "pais3":
+                            Principal.atributos.player3.economia -= 5000
+                            Principal.atributos.player3.opiniao_publica -= 5
+
+                            break
+                        case "pais4":
+                            Principal.atributos.player4.economia -= 5000
+                            Principal.atributos.player4.opiniao_publica -= 5
+
+                            break
+                    }
                     
                 }
                 break
 
             case 20:
+               
+                if(escolha == 1) {
 
-                if(escolha = 1) {
-
-
-
+                    //+1 carta
+                    
                 } else {
+                    
+                    Principal.atributos.player1.militar -= 4
+                    Principal.atributos.player2.militar -= 4
+                    Principal.atributos.player3.militar -= 4
+                    Principal.atributos.player4.militar -= 4
 
+                    Principal.atributos.player1.populacao -= 10
+                    Principal.atributos.player2.populacao -= 10
+                    Principal.atributos.player3.populacao -= 10
+                    Principal.atributos.player4.populacao -= 10
 
+                    //+3 cartas
                     
                 }
 
                 break
             case 57:
-                //alvo
+                
+                if (escolha == 1) {
+                    switch (alvo) {
+                        case "alvo1":
+                            Principal.atributos.player1.opiniao_publica -= 20
+                            Principal.atributos.player1.economia -= 3000
+
+                            break
+                        case "alvo2":
+                            Principal.atributos.player2.opiniao_publica -= 20
+                            Principal.atributos.player2.economia -= 3000
+
+                            break
+                        case "alvo3":
+                            Principal.atributos.player3.opiniao_publica -= 20
+                            Principal.atributos.player3.economia -= 3000
+
+                            break
+                        case "alvo4":
+                            Principal.atributos.player4.opiniao_publica -= 20
+                            Principal.atributos.player4.economia -= 3000
+
+                    }
+
+                } else {
+
+                    switch (alvo) {
+                        case "alvo1":
+                            Principal.atributos.player1.militar -= 2
+                            
+                            break
+                        case "alvo2":
+                            Principal.atributos.player2.militar -= 2
+                            
+
+                            break
+                        case "alvo3":
+                            Principal.atributos.player3.militar -= 2
+                           
+
+                            break
+                        case "alvo4":
+                            Principal.atributos.player4.militar -= 2
+                        
+                    }
+
+                }
+
                 break
             default:
                 console.log("Carta não localizada")
@@ -302,10 +467,10 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 14:
 
-                Principal.atributos.player1.economia = Math.ceil(Principal.atributos.player1.economia * 50 / 100)
-                Principal.atributos.player2.economia = Math.ceil(Principal.atributos.player2.economia * 50 / 100)
-                Principal.atributos.player3.economia = Math.ceil(Principal.atributos.player3.economia * 50 / 100)
-                Principal.atributos.player4.economia = Math.ceil(Principal.atributos.player4.economia * 50 / 100)
+                Principal.atributos.player1.economia = Math.floor(Principal.atributos.player1.economia * 50 / 100)
+                Principal.atributos.player2.economia = Math.floor(Principal.atributos.player2.economia * 50 / 100)
+                Principal.atributos.player3.economia = Math.floor(Principal.atributos.player3.economia * 50 / 100)
+                Principal.atributos.player4.economia = Math.floor(Principal.atributos.player4.economia * 50 / 100)
 
                 break
             case 17:
@@ -729,7 +894,51 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 53:
-                //alvo
+                
+                    switch (usuario) {
+                        case "pais1":
+                            Principal.atributos.player1.opiniao_publica -= 60
+
+                            break
+                        case "pais2":
+                            Principal.atributos.player2.opiniao_publica -= 60
+
+                            break
+                        case "pais3":
+                            Principal.atributos.player3.opiniao_publica -= 60
+
+                            break
+                        case "pais4":
+                            Principal.atributos.player4.opiniao_publica -= 60
+
+                            break
+                    }
+
+                    switch (alvo) {
+                        case "alvo1":
+                            Principal.atributos.player1.opiniao_publica += 20
+                            Principal.atributos.player1.militar -= 5
+                            Principal.atributos.player1.populacao -= 15
+
+                            break
+                        case "alvo2":
+                            Principal.atributos.player2.opiniao_publica += 20
+                            Principal.atributos.player2.militar -= 5
+                            Principal.atributos.player2.populacao -= 15
+
+                            break
+                        case "alvo3":
+                            Principal.atributos.player3.opiniao_publica += 20
+                            Principal.atributos.player3.militar -= 5
+                            Principal.atributos.player3.populacao -= 15
+
+                            break
+                        case "alvo4":
+                            Principal.atributos.player4.opiniao_publica += 20
+                            Principal.atributos.player4.militar -= 5
+                            Principal.atributos.player4.populacao -= 15
+                    }
+
                 break
             default:
                 console.log("Carta não localizada")
