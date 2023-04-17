@@ -16,6 +16,11 @@ const carta = {
 
 }
 
+let wrongCardFlag = false
+let affecteds = {
+    quant: 0,
+    players: []
+}
 
 document.getElementById("menuUsarCarta").addEventListener("click",function(){
     const listCountry = document.getElementById("paisesUsarCarta")
@@ -259,34 +264,44 @@ function  setScreenChoicesCard(id) {
 
 
 function useCard(id, escolha, usuario, alvo) {
-    
+    wrongCardFlag = false
     if(escolha) {
         
         switch (id) {
             case 15:
-
+                affecteds.quant = 2
+                
                 if(escolha == 1) {
                     switch (usuario) {
                         case "pais1":
                             Principal.atributos.player1.populacao -= 20
                             Principal.atributos.player1.opiniao_publica -= 20
 
+                            affecteds.players = [0]
+
                             break
                         case "pais2":
                             Principal.atributos.player2.populacao -= 20
                             Principal.atributos.player2.opiniao_publica -= 20
+
+                            affecteds.players = [1]
 
                             break
                         case "pais3":
                             Principal.atributos.player3.populacao -= 20
                             Principal.atributos.player3.opiniao_publica -= 20
 
+                            affecteds.players = [2]
+
                             break
                         case "pais4":
                             Principal.atributos.player4.populacao -= 20
                             Principal.atributos.player4.opiniao_publica -= 20
 
+                            affecteds.players = [3]
+
                             break
+                            
                     }
                     
 
@@ -297,20 +312,28 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player1.militar -= 3
                             Principal.atributos.player1.economia -= 3000
 
+                            affecteds.players = [0]
+
                             break
                         case "pais2":
                             Principal.atributos.player2.militar -= 3
                             Principal.atributos.player2.economia -= 3000
+
+                            affecteds.players = [1]
 
                             break
                         case "pais3":
                             Principal.atributos.player3.militar -= 3
                             Principal.atributos.player3.economia -= 3000
 
+                            affecteds.players = [2]
+
                             break
                         case "pais4":
                             Principal.atributos.player4.militar -= 3
                             Principal.atributos.player4.economia -= 3000
+
+                            affecteds.players = [3]
 
                             break
                     }
@@ -319,7 +342,7 @@ function useCard(id, escolha, usuario, alvo) {
                 break
 
             case 16:
-
+                affecteds.quant = 2
                 if(escolha == 1) {
 
                     switch (usuario) {
@@ -374,7 +397,7 @@ function useCard(id, escolha, usuario, alvo) {
                 break
 
             case 20:
-               
+                affecteds.quant = 4
                 if(escolha == 1) {
 
                     //+1 carta
@@ -397,7 +420,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 57:
-                
+                affecteds.quant = 2
                 if (escolha == 1) {
                     switch (alvo) {
                         case "alvo1":
@@ -454,6 +477,8 @@ function useCard(id, escolha, usuario, alvo) {
         switch (id) {
             case 13:
 
+                affecteds.quant = 4
+
                 Principal.atributos.player1.economia -= 4000
                 Principal.atributos.player2.economia -= 4000
                 Principal.atributos.player3.economia -= 4000
@@ -467,6 +492,8 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 14:
 
+            affecteds.quant = 4
+
                 Principal.atributos.player1.economia = Math.floor(Principal.atributos.player1.economia * 50 / 100)
                 Principal.atributos.player2.economia = Math.floor(Principal.atributos.player2.economia * 50 / 100)
                 Principal.atributos.player3.economia = Math.floor(Principal.atributos.player3.economia * 50 / 100)
@@ -474,6 +501,8 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 17:
+
+                affecteds.quant = 4
 
                 Principal.atributos.player1.populacao += 15
                 Principal.atributos.player2.populacao += 15
@@ -483,6 +512,8 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 18:
 
+                affecteds.quant = 4
+
                 Principal.atributos.player1.opiniao_publica += 20
                 Principal.atributos.player2.opiniao_publica += 20
                 Principal.atributos.player3.opiniao_publica += 20
@@ -490,6 +521,8 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 19:
+
+                affecteds.quant = 2
 
                 Principal.atributos.player1.economia += 6000
                 Principal.atributos.player2.economia += 6000
@@ -503,7 +536,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 23:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia += 500
@@ -521,6 +554,8 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 24:
+
+                affecteds.quant = 1
 
                 switch(usuario) {
                     case "pais1":
@@ -540,6 +575,8 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 25:
 
+                affecteds.quant = 1
+
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.opiniao_publica += 10
@@ -558,6 +595,8 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 26:
 
+                affecteds.quant = 1
+
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia += 500
@@ -575,6 +614,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 27:
+                affecteds.quant = 1
 
                 switch(usuario) {
                     case "pais1":
@@ -593,6 +633,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 28:
+                affecteds.quant = 1
 
                 switch(usuario) {
                     case "pais1":
@@ -612,6 +653,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 29:
+                affecteds.quant = 1
 
                 switch(usuario) {
                     case "pais1":
@@ -630,6 +672,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 30:
+                affecteds.quant = 1
 
                 switch(usuario) {
                     case "pais1":
@@ -648,6 +691,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 31:
+                affecteds.quant = 2
 
                 switch(usuario) {
                     case "pais1":
@@ -670,6 +714,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 32:
+                affecteds.quant = 2
 
                 switch(usuario) {
                     case "pais1":
@@ -693,6 +738,8 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 33:
 
+                affecteds.quant = 1
+
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
@@ -710,7 +757,7 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             case 34:
-
+ //parou aqui
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
@@ -941,8 +988,19 @@ function useCard(id, escolha, usuario, alvo) {
 
                 break
             default:
+                wrongCardFlag = true
                 console.log("Carta não localizada")
         }
     }
     reoladed(Principal.atributos)
+
+    if (wrongCardFlag == false) {
+        telaResultado.style.display = "flex"
+        
+        
+    }
 }
+
+//sinais
+// + add_circle
+// - do_not_disturb_on
