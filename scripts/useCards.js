@@ -19,7 +19,8 @@ const carta = {
 let wrongCardFlag = false
 let affecteds = {
     quant: 0,
-    players: []
+    players: [],
+    sinal: false
 }
 
 document.getElementById("menuUsarCarta").addEventListener("click",function(){
@@ -169,7 +170,7 @@ document.getElementsByClassName("botaoProntoUsarCarta")[0].addEventListener("cli
 
         if(carta.opicoes == false) {
             if (carta.afetados == "um" || carta.afetados == "todos")  {
-                alert(carta.opicoes)
+               
                 useCard(Number(id))
             }
         }
@@ -258,7 +259,7 @@ function  setScreenChoicesCard(id) {
             botaoEscolha1_tela_2.style.display = "flex"
             botaoEscolha2_tela_2.style.display = "flex"
         } 
-        carta.opicoes = true
+        carta.opicoes = [true]
     }
 }
 
@@ -278,6 +279,7 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player1.opiniao_publica -= 20
 
                             affecteds.players = [0]
+                            
 
                             break
                         case "pais2":
@@ -285,6 +287,7 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player2.opiniao_publica -= 20
 
                             affecteds.players = [1]
+                            
 
                             break
                         case "pais3":
@@ -292,6 +295,7 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player3.opiniao_publica -= 20
 
                             affecteds.players = [2]
+                            
 
                             break
                         case "pais4":
@@ -299,6 +303,7 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player4.opiniao_publica -= 20
 
                             affecteds.players = [3]
+                            
 
                             break
                             
@@ -313,6 +318,8 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player1.economia -= 3000
 
                             affecteds.players = [0]
+                            
+                            
 
                             break
                         case "pais2":
@@ -320,6 +327,8 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player2.economia -= 3000
 
                             affecteds.players = [1]
+                            
+                            
 
                             break
                         case "pais3":
@@ -327,6 +336,8 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player3.economia -= 3000
 
                             affecteds.players = [2]
+                            
+                            
 
                             break
                         case "pais4":
@@ -334,6 +345,8 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player4.economia -= 3000
 
                             affecteds.players = [3]
+                            
+                            
 
                             break
                     }
@@ -350,20 +363,32 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player1.militar += 3
                             Principal.atributos.player1.economia -= 2000
 
+                             affecteds.players = [0]
+                             
+
                             break
                         case "pais2":
                             Principal.atributos.player2.militar += 3
                             Principal.atributos.player2.economia -= 2000
+
+                            affecteds.players = [1]
+                            
 
                             break
                         case "pais3":
                             Principal.atributos.player3.militar += 3
                             Principal.atributos.player3.economia -= 2000
 
+                            affecteds.players = [2]
+                            
+
                             break
                         case "pais4":
                             Principal.atributos.player4.militar += 3
                             Principal.atributos.player4.economia -= 2000
+
+                            affecteds.players = [3]
+                            
 
                             break
                     }
@@ -375,20 +400,32 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player1.economia -= 5000
                             Principal.atributos.player1.opiniao_publica -= 5
 
+                            affecteds.players = [0]
+                            
+
                             break
                         case "pais2":
                             Principal.atributos.player2.economia -= 5000
                             Principal.atributos.player2.opiniao_publica -= 5
+
+                            affecteds.players = [1]
+                            
 
                             break
                         case "pais3":
                             Principal.atributos.player3.economia -= 5000
                             Principal.atributos.player3.opiniao_publica -= 5
 
+                            affecteds.players = [2]
+                            
+
                             break
                         case "pais4":
                             Principal.atributos.player4.economia -= 5000
                             Principal.atributos.player4.opiniao_publica -= 5
+
+                            affecteds.players = [3]
+                            
 
                             break
                     }
@@ -398,9 +435,12 @@ function useCard(id, escolha, usuario, alvo) {
 
             case 20:
                 affecteds.quant = 4
+                affecteds.players = ["everyone"]
+                
                 if(escolha == 1) {
 
                     //+1 carta
+
                     
                 } else {
                     
@@ -413,7 +453,7 @@ function useCard(id, escolha, usuario, alvo) {
                     Principal.atributos.player2.populacao -= 10
                     Principal.atributos.player3.populacao -= 10
                     Principal.atributos.player4.populacao -= 10
-
+                    
                     //+3 cartas
                     
                 }
@@ -427,20 +467,32 @@ function useCard(id, escolha, usuario, alvo) {
                             Principal.atributos.player1.opiniao_publica -= 20
                             Principal.atributos.player1.economia -= 3000
 
+                            affecteds.players = [0]
+                            
+
                             break
                         case "alvo2":
                             Principal.atributos.player2.opiniao_publica -= 20
                             Principal.atributos.player2.economia -= 3000
+
+                            affecteds.players = [1]
+                            
 
                             break
                         case "alvo3":
                             Principal.atributos.player3.opiniao_publica -= 20
                             Principal.atributos.player3.economia -= 3000
 
+                            affecteds.players = [2]
+                            
+
                             break
                         case "alvo4":
                             Principal.atributos.player4.opiniao_publica -= 20
                             Principal.atributos.player4.economia -= 3000
+
+                            affecteds.players = [3]
+                            
 
                     }
 
@@ -449,20 +501,31 @@ function useCard(id, escolha, usuario, alvo) {
                     switch (alvo) {
                         case "alvo1":
                             Principal.atributos.player1.militar -= 2
+
+                            affecteds.players = [0]
+                            
                             
                             break
                         case "alvo2":
                             Principal.atributos.player2.militar -= 2
+
+                            affecteds.players = [1]
                             
 
                             break
                         case "alvo3":
                             Principal.atributos.player3.militar -= 2
+
+                            affecteds.players = [2]
+                            
                            
 
                             break
                         case "alvo4":
                             Principal.atributos.player4.militar -= 2
+
+                            affecteds.players = [3]
+                            
                         
                     }
 
@@ -478,6 +541,8 @@ function useCard(id, escolha, usuario, alvo) {
             case 13:
 
                 affecteds.quant = 4
+                affecteds.players = ["everyone"]
+                
 
                 Principal.atributos.player1.economia -= 4000
                 Principal.atributos.player2.economia -= 4000
@@ -492,7 +557,10 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 14:
 
-            affecteds.quant = 4
+                affecteds.quant = 4
+                affecteds.players = ["everyone"]
+                
+
 
                 Principal.atributos.player1.economia = Math.floor(Principal.atributos.player1.economia * 50 / 100)
                 Principal.atributos.player2.economia = Math.floor(Principal.atributos.player2.economia * 50 / 100)
@@ -503,6 +571,8 @@ function useCard(id, escolha, usuario, alvo) {
             case 17:
 
                 affecteds.quant = 4
+                affecteds.players = ["everyone"]
+                
 
                 Principal.atributos.player1.populacao += 15
                 Principal.atributos.player2.populacao += 15
@@ -513,6 +583,8 @@ function useCard(id, escolha, usuario, alvo) {
             case 18:
 
                 affecteds.quant = 4
+                affecteds.players = ["everyone"]
+                
 
                 Principal.atributos.player1.opiniao_publica += 20
                 Principal.atributos.player2.opiniao_publica += 20
@@ -522,7 +594,9 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 19:
 
-                affecteds.quant = 2
+                affecteds.quant = 4
+                affecteds.players = ["everyone"]
+                
 
                 Principal.atributos.player1.economia += 6000
                 Principal.atributos.player2.economia += 6000
@@ -537,18 +611,27 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 23:
                 affecteds.quant = 1
+                
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia += 500
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.economia += 500
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.economia += 500
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.economia += 500
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -560,15 +643,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao += 2
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao += 2
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao += 2
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao += 2
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -580,15 +671,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.opiniao_publica += 10
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.opiniao_publica += 10
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.opiniao_publica += 10
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.opiniao_publica += 10
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -600,15 +699,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia += 500
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.economia += 500
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.economia += 500
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.economia += 500
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -619,15 +726,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia += 500
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.economia += 500
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.economia += 500
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.economia += 500
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -638,15 +753,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.opiniao_publica += 10
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.opiniao_publica += 10
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.opiniao_publica += 10
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.opiniao_publica += 10
+                        affecteds.players = [3]
+                        
                         break
                 }
                 
@@ -658,15 +781,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao += 2
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao += 2
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao += 2
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao += 2
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -677,15 +808,23 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao += 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao += 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao += 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao += 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -697,18 +836,26 @@ function useCard(id, escolha, usuario, alvo) {
                     case "pais1":
                         Principal.atributos.player1.populacao += 5
                         Principal.atributos.player1.opiniao_publica += 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao += 5
                         Principal.atributos.player2.opiniao_publica += 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao += 5
                         Principal.atributos.player3.opiniao_publica += 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao += 5
                         Principal.atributos.player4.opiniao_publica += 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -720,18 +867,26 @@ function useCard(id, escolha, usuario, alvo) {
                     case "pais1":
                         Principal.atributos.player1.populacao += 5
                         Principal.atributos.player1.opiniao_publica += 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao += 5
                         Principal.atributos.player2.opiniao_publica += 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao += 5
                         Principal.atributos.player3.opiniao_publica += 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao += 5
                         Principal.atributos.player4.opiniao_publica += 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
@@ -743,261 +898,402 @@ function useCard(id, escolha, usuario, alvo) {
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao -= 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao -= 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao -= 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 34:
- //parou aqui
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao -= 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao -= 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao -= 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 35:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao -= 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao -= 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao -= 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 36:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.opiniao_publica -= 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.opiniao_publica -= 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.opiniao_publica -= 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.opiniao_publica -= 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 37:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao -= 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao -= 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao -= 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 38:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia -= 500
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.economia -= 500
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.economia -= 500
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.economia -= 500
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 39:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao -= 5
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao -= 5
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao -= 5
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 40:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia -= 500
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.economia -= 500
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.economia -= 500
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.economia -= 500
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 41:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.opiniao_publica -= 10
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.opiniao_publica -= 10
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.opiniao_publica -= 10
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.opiniao_publica -= 10
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 42:
-
+                affecteds.quant = 2
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
                         Principal.atributos.player1.opiniao_publica -= 10
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.populacao -= 5
                         Principal.atributos.player2.opiniao_publica -= 10
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.populacao -= 5
                         Principal.atributos.player3.opiniao_publica -= 10
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.populacao -= 5
                         Principal.atributos.player4.opiniao_publica -= 10
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
             case 43:
-
+                affecteds.quant = 1
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.economia -= 500
+                        affecteds.players = [0]
+                        
                         break
                     case "pais2":
                         Principal.atributos.player2.economia -= 500
+                        affecteds.players = [1]
+                        
                         break
                     case "pais3":
                         Principal.atributos.player3.economia -= 500
+                        affecteds.players = [2]
+                        
                         break
                     case "pais4":
                         Principal.atributos.player4.economia -= 500
+                        affecteds.players = [3]
+                        
                         break
                 }
 
                 break
-            case 53:
-                
-                    switch (usuario) {
-                        case "pais1":
-                            Principal.atributos.player1.opiniao_publica -= 60
+            case 53:    
+                affecteds.quant = 3
+                switch (usuario) {
+                    case "pais1":
+                        Principal.atributos.player1.opiniao_publica -= 60
+                        affecteds.players = [0]
+                        
 
-                            break
-                        case "pais2":
-                            Principal.atributos.player2.opiniao_publica -= 60
+                        break
+                    case "pais2":
+                        Principal.atributos.player2.opiniao_publica -= 60
+                        affecteds.players = [1]
+                        
 
-                            break
-                        case "pais3":
-                            Principal.atributos.player3.opiniao_publica -= 60
+                        break
+                    case "pais3":
+                        Principal.atributos.player3.opiniao_publica -= 60
+                        affecteds.players = [2]
+                        
 
-                            break
-                        case "pais4":
-                            Principal.atributos.player4.opiniao_publica -= 60
+                        break
+                    case "pais4":
+                        Principal.atributos.player4.opiniao_publica -= 60
+                        affecteds.players = [3]
+                        
 
-                            break
-                    }
+                        break
+                }
 
-                    switch (alvo) {
-                        case "alvo1":
-                            Principal.atributos.player1.opiniao_publica += 20
-                            Principal.atributos.player1.militar -= 5
-                            Principal.atributos.player1.populacao -= 15
+                switch (alvo) {
+                    case "alvo1":
+                        //Principal.atributos.player1.opiniao_publica += 20
+                        Principal.atributos.player1.militar -= 5
+                        Principal.atributos.player1.populacao -= 15
+                        affecteds.players = [0]
+                        
 
-                            break
-                        case "alvo2":
-                            Principal.atributos.player2.opiniao_publica += 20
-                            Principal.atributos.player2.militar -= 5
-                            Principal.atributos.player2.populacao -= 15
+                        break
+                    case "alvo2":
+                        //Principal.atributos.player2.opiniao_publica += 20
+                        Principal.atributos.player2.militar -= 5
+                        Principal.atributos.player2.populacao -= 15
+                        affecteds.players = [1]
+                        
 
-                            break
-                        case "alvo3":
-                            Principal.atributos.player3.opiniao_publica += 20
-                            Principal.atributos.player3.militar -= 5
-                            Principal.atributos.player3.populacao -= 15
+                        break
+                    case "alvo3":
+                        //Principal.atributos.player3.opiniao_publica += 20
+                        Principal.atributos.player3.militar -= 5
+                        Principal.atributos.player3.populacao -= 15
+                        affecteds.players = [2]
+                        
 
-                            break
-                        case "alvo4":
-                            Principal.atributos.player4.opiniao_publica += 20
-                            Principal.atributos.player4.militar -= 5
-                            Principal.atributos.player4.populacao -= 15
-                    }
+                        break
+                    case "alvo4":
+                        //Principal.atributos.player4.opiniao_publica += 20
+                        Principal.atributos.player4.militar -= 5
+                        Principal.atributos.player4.populacao -= 15
+                        affecteds.players = [3]
+                        
+                }
 
                 break
             default:
-                wrongCardFlag = true
+                wrongCardFlag = [true]
                 console.log("Carta não localizada")
         }
     }
     reoladed(Principal.atributos)
 
     if (wrongCardFlag == false) {
-        telaResultado.style.display = "flex"
+        telaResultado.style.display = "flex" 
         
+        const containerRespostas = document.getElementById("sub-containerResultados")
+        const conteinersRespostasTexto = document.getElementsByClassName("textoAfetado")
+        const containerResp1 = document.getElementById("resp1")
+        const containerResp2 = document.getElementById("resp2")
+        const containerResp3 = document.getElementById("resp3")
+
+        containerRespostas.style.display = "block"
         
+        switch (affecteds.quant) {
+            case 1:
+                console.log(containerResp1)
+                containerResp1.style.display = "block"
+                conteinersRespostasTexto[0].innerHTML = "500 de economia"
+                break
+            case 2:
+                containerResp1.style.display = "block"
+                containerResp2.style.display = "block"
+
+                conteinersRespostasTexto[0].innerHTML = "500 de economia"
+                conteinersRespostasTexto[1].innerHTML = "3 de militar"
+                break
+            case 3:
+                containerResp1.style.display = "block"
+                containerResp2.style.display = "block"
+                containerResp3.style.display = "block"
+
+                conteinersRespostasTexto[0].innerHTML = "500 de economia"
+                conteinersRespostasTexto[1].innerHTML = "3 de militar"
+                conteinersRespostasTexto[2].innerHTML = "20 de opinião publica"
+                break
+            case 4:
+
+                conteinersRespostasTexto[0].innerHTML = "500 de economia"
+
+                break
+        }
+
+
     }
 }
 

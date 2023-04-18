@@ -630,7 +630,7 @@ section.custo ul > li {
 /* usar carta */
 
 div#containerUsarCarta {
-    display: none; /* provisorio FLEX*/
+    display: flex; /* provisorio FLEX*/
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -796,7 +796,7 @@ div.botaoOpicao-2 {
 }
 
 div#contaneinerResultadoCarta {
-    display: flex;
+    display: none; /*flex*/
     flex-direction: column;
     align-items: center;
 }
@@ -809,7 +809,7 @@ div#contaneinerResultadoCarta {
 }
 
 #sub-containerResultados {
-    display: none;
+    display: none; /* resp */
     margin: auto;
 }
 
@@ -820,7 +820,7 @@ div#contaneinerResultadoCarta {
     color: white;
     margin-bottom: 10px;
     border-radius: 10px;
-    display: flex;
+    display: none;
     
 }
 
