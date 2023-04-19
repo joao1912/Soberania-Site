@@ -204,6 +204,7 @@ telaFerramentas.addEventListener("click",function(event){
         case "usarCard":
             telaFerramentas.style.display = "none"
             telaUsarCarta.style.display = "block"
+            document.querySelectorAll(".containersPrincipaisCartas")[0].style.display = "flex"
             break
         case "regras":
             telaFerramentas.style.display = "none"

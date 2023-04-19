@@ -1,4 +1,5 @@
 import  Telas  from "./Main.js"
+import { carta } from "./useCards.js"
 
 const botoesDeRetorno = document.querySelectorAll(".Aretornar")
 const botaoHome = document.getElementById("Bsair")
@@ -10,7 +11,25 @@ botoesDeRetorno[1].addEventListener('click',function(){
 })
 
 botoesDeRetorno[2].addEventListener('click',function(){
+
     Telas.telaUsarCarta.style.display = "none"
+
+    const containersPrincipaisCartas = document.querySelectorAll(".containersPrincipaisCartas")
+    ;[...containersPrincipaisCartas].forEach(function(container) {
+        container.style.display = "none"
+    })
+
+    document.getElementById("codigoCarta").value = ""
+
+    carta.id = undefined
+    carta.usuarioExibido = ""
+    carta.usuario = ""
+    carta.alvoExibido = ""
+    carta.alvo = ""
+    carta.afetados = ""
+    carta.escolha = undefined
+    carta.opicoes = false
+
     Telas.telaFerramentas.style.display = "block"
 })
 

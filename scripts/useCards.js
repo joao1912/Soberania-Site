@@ -153,7 +153,11 @@ document.getElementById("paisesAlvos").addEventListener("click",function(event){
 document.getElementById("botaoUsar").addEventListener("click",function(){
     
     if(carta.alvo != "") {
-     
+
+        [...containersPrincipaisCartas].forEach(function(container) {
+            container.style.display = "none"
+        })
+        
         useCard(Number(carta.id), carta.escolha || null, carta.usuario, carta.alvo)
     }
 })
@@ -171,7 +175,7 @@ document.getElementsByClassName("botaoProntoUsarCarta")[0].addEventListener("cli
         if(carta.opicoes == false) {
             if (carta.afetados == "um" || carta.afetados == "todos")  {
                
-                useCard(Number(id))
+                useCard(Number(id), null, carta.usuario, null)
             }
         }
 
@@ -219,6 +223,7 @@ document.getElementById("containerBotaoEscolha").addEventListener("click", funct
 
 const telaUsarCarta_1 = document.getElementById("containerUsarCarta")
 const telaUsarCarta_2 = document.getElementById("containerAlvoCarta")
+const containersPrincipaisCartas = document.querySelectorAll(".containersPrincipaisCartas")
 const telaResultado = document.getElementById("contaneinerResultadoCarta")
 
 const botaoEscolha1_tela_2 = document.getElementById("opcao1-telaAlvosCarta")
@@ -226,23 +231,38 @@ const botaoEscolha2_tela_2 = document.getElementById("opcao2-telaAlvosCarta")
 
 
 function  setScreenAffectedCard(id) {
-    switch (cartas[id].afetados[0]) {
-        case "um":
-            telaUsarCarta_1.style.display = "none"
-            carta.afetados = "um"
+    try {
+        switch (cartas[id].afetados[0]) {
+                case "um":
+                    [...containersPrincipaisCartas].forEach(function(container) {
+                        container.style.display = "none"
+                    })
 
-            break
-        case "dois":
-            telaUsarCarta_1.style.display = "none"
-            telaUsarCarta_2.style.display = "flex"
-            carta.afetados = "dois"
+                    
+                    carta.afetados = "um"
 
-            break
-        case "todos":
-            telaUsarCarta_1.style.display = "none"
-            carta.afetados = "todos"
+                    break
+                case "dois":
+                    [...containersPrincipaisCartas].forEach(function(container) {
+                        container.style.display = "none"
+                    })
+                    
+                    telaUsarCarta_2.style.display = "flex"
+                    carta.afetados = "dois"
+
+                    break
+                case "todos":
+                    [...containersPrincipaisCartas].forEach(function(container) {
+                        container.style.display = "none"
+                    })
+                    
+                    carta.afetados = "todos"
+            }
+    } catch(erro) {
+        throw Error(erro)
+        //fazer o gatilho do erro aqui
     }
-
+    
 }
 
 function  setScreenChoicesCard(id) {
@@ -266,6 +286,7 @@ function  setScreenChoicesCard(id) {
 
 function useCard(id, escolha, usuario, alvo) {
     wrongCardFlag = false
+  
     if(escolha) {
         
         switch (id) {
@@ -1129,6 +1150,7 @@ function useCard(id, escolha, usuario, alvo) {
                 break
             case 42:
                 affecteds.quant = 2
+                
                 switch(usuario) {
                     case "pais1":
                         Principal.atributos.player1.populacao -= 5
@@ -1249,6 +1271,7 @@ function useCard(id, escolha, usuario, alvo) {
             default:
                 wrongCardFlag = [true]
                 console.log("Carta não localizada")
+                
         }
     }
     reoladed(Principal.atributos)
@@ -1266,29 +1289,28 @@ function useCard(id, escolha, usuario, alvo) {
         
         switch (affecteds.quant) {
             case 1:
-                console.log(containerResp1)
-                containerResp1.style.display = "block"
-                conteinersRespostasTexto[0].innerHTML = "500 de economia"
+                containerResp1.style.display = "flex"
+                conteinersRespostasTexto[0].textContent = "500 de economia"
                 break
             case 2:
-                containerResp1.style.display = "block"
-                containerResp2.style.display = "block"
+                containerResp1.style.display = "flex"
+                containerResp2.style.display = "flex"
 
-                conteinersRespostasTexto[0].innerHTML = "500 de economia"
-                conteinersRespostasTexto[1].innerHTML = "3 de militar"
+                conteinersRespostasTexto[0].textContent = "500 de economia"
+                conteinersRespostasTexto[1].textContent = "3 de militar"
                 break
             case 3:
-                containerResp1.style.display = "block"
-                containerResp2.style.display = "block"
-                containerResp3.style.display = "block"
+                containerResp1.style.display = "flex"
+                containerResp2.style.display = "flex"
+                containerResp3.style.display = "flex"
 
-                conteinersRespostasTexto[0].innerHTML = "500 de economia"
-                conteinersRespostasTexto[1].innerHTML = "3 de militar"
-                conteinersRespostasTexto[2].innerHTML = "20 de opinião publica"
+                conteinersRespostasTexto[0].textContent = "500 de economia"
+                conteinersRespostasTexto[1].textContent = "3 de militar"
+                conteinersRespostasTexto[2].textContent = "20 de opinião publica"
                 break
             case 4:
 
-                conteinersRespostasTexto[0].innerHTML = "500 de economia"
+                conteinersRespostasTexto[0].textContent = "500 de economia"
 
                 break
         }
@@ -1300,3 +1322,4 @@ function useCard(id, escolha, usuario, alvo) {
 //sinais
 // + add_circle
 // - do_not_disturb_on
+export {carta}
