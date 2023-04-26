@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soberania</title>
+
+    <link href="../sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/estilo-jogoRodando/style.css">
     <link rel="stylesheet" href="../estilos/estilo-jogoRodando/tablet.css" media="screen and (min-width:768px) and (max-width:992px)">
     <link rel="stylesheet" href="../estilos/estilo-jogoRodando/telas-grandes.css" media="screen and (min-width:992px)">
@@ -12,11 +14,7 @@
 </head>
 <body>
     <main>
-        <div id="exitAlert">
-            <p id="paragSaida">Se você sair perderá tudo, tem certeza?</p>
-            <div id="botaoSimSaida" class="botaoSaida">Sim</div>
-            <div id="botaoNaoSaida" class="botaoSaida">Cancelar</div>
-        </div>
+        
         <section id="top-container">
             <a href="#" id="Bsair"><i class="material-symbols-outlined">logout</i></a>
             <h1 id="evento">Evento: (nenhum)</h1>
@@ -318,6 +316,7 @@
             </div>
         </section>
     </main>
+    <script src="../sweetalert2.all.min.js"></script>
     <script type="module" src="../scripts/Main.js"></script>
     <script type="module" src="../scripts/Cleaner.js"></script>
     <script type="module" src="../scripts/ReturnButtons.js"></script>

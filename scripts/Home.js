@@ -1,5 +1,5 @@
 (function(){
-
+    
     document.getElementById("navContainer").addEventListener("click",function(event){
         const navPost = event.target.id
 
@@ -47,3 +47,4 @@
     })
 
 })()
+
